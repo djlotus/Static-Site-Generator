@@ -1,0 +1,29 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Columns
+* 
+*/
+
+$column-count:                         12                            !default;
+
+$breakpoints: (
+                                       small,
+                                       medium,
+                                       large,
+                                       // xlarge,
+                                       // xxlarge
+);
+
+@each $bp in $breakpoints {
+   
+   @for $i from 1 through $column-count {
+
+      .#{$bp}-#{$i} {
+         width: percentage($i / $column-count);
+      }
+   
+   }
+
+}

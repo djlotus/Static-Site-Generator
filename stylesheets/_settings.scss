@@ -1,0 +1,69 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* My first attempt at Sass and my first attempt at a Framework
+* 
+*/
+
+
+// Breakpoints
+// - - - - - - - - - - - - - - - - - - - -
+//
+// (Assume Mobile-First therefore no "small" breakpoint)
+
+// $medium-bp:					           768;
+// $large-bp:					           1100;
+// $xlarge-bp:							   1400;
+// $xxlarge-bp:                            1600;
+
+// $screen:                                'only screen'
+
+// Columns
+// - - - - - - - - - - - - - - - - - - - -
+
+$column-count:                            12;
+
+// Global Gutters (re-name and re-organize)
+//- - - - - - - - - - - - - - - - - - - -
+
+$global-width:							   1000; // Unitless
+
+$global-padding:						   0.8333; // Unitless
+$global-margin:							   0.8333; // Unitless
+
+
+// Global Colors
+// - - - - - - - - - - - - - - - - - - - -
+// 
+// (Will use "tranparentize($color, $opacity) to convert ot rgba)
+
+$green:                                   #0c6e40;
+$gold:                         		      #ffca27;
+$oil:                            	      #252525;
+$dark-grey:                               #505050;
+$light-grey:						      #e5e5e5;
+$silver:                                  #f2f2f2;
+
+$color-primary:                           $green;
+$color-secondary:                         $gold;
+// $color-compliment:                     $orange;
+
+
+// Typography
+// - - - - - - - - - - - - - - - - - - - -
+
+$font-family-headings:                    "Lato", sans-serif;
+$font-family-body:                        "Lato", sans-serif;
+$font-family-buttons:                     "Archivo Narrow", sans-serif;
+$font-family-navigation:                  "Archivo Narrow", sans-serif;
+
+$font-base:                               16px;
+$font-scale:                              1.2;
+$line-height:                             1.3;
+
+$font-margin:                             $global-padding;
+
+$font-bold:							      600;
+$font-regular:						      400;
+$font-thin:							      200;

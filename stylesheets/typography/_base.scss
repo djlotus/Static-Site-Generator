@@ -1,0 +1,56 @@
+/*! Font Size   -   Minor Third (1:1.2) - [ 1.2(minor third ratio) * 16 (base font-size which is set in 
+/*! html element) = font size in pixels ]
+/*! h1  -   2.986 * 16 = 47.776 px
+/*! h2  -   2.488 * 16 = 39.808 px
+/*! h3  -   2.074 * 16 = 33.184 px
+/*! h4  -   1.728 * 16 = 27.648 px
+/*! p  -     1.44 * 16 = 23.04 px
+/*!
+/*! Line Height -   1.3
+/*! Padding     -   0.8333rem ( 13.333 pixels )
+/*!
+/*!=========================================================================================== */
+/*!
+*/
+
+
+
+@mixin font-size($font-steps) {
+    font-size: $font-base * $font-steps; // For Sad Browsers
+    font-size: $font-steps + rem;
+}
+
+@mixin headings {
+    font: {
+        family: $font-family-headings;
+        weight: 400;
+    }
+    
+    margin: $global-margin * $font-base; // For Sad Browsers
+    margin: $global-margin + rem; 
+    
+}
+
+h1,h2,h3,h4 {
+    @include headings;
+}
+
+h1 {
+   @include font-size(2.986);
+}
+
+h2 {
+   @include font-size(2.488);
+}
+
+h3 {
+    @include font-size(2.074);
+}
+
+h4 {
+    @include font-size(1.728);
+}
+
+p {
+   @include font-size(1.44);
+}

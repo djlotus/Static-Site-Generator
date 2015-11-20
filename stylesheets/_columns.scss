@@ -1,0 +1,67 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Columns
+* 
+*/
+
+$column:                               'columns'                     !default;
+$column-count:                         12                            !default;
+
+// Generate column widths per screen size
+// - - - - - - - - - - - - - - - - - - - -
+@each $bp in $breakpoints {
+   
+   @include breakpoint($bp) {
+      
+      @for $i from 1 through $column-count {
+         // Standard columns
+         .#{$bp}-#{$i} {
+            width: percentage($i / $column-count);
+         };
+         // Pushed columns
+         .#{$bp}-push-#{$i} {
+            position: relative;
+            right: auto;
+            left: percentage($i / $column-count);
+         };
+         // Pulled columns
+         .#{$bp}-pull-#{$i} {
+            position: relative;
+            left: auto;
+            right: percentage($i / $column-count);
+         };
+
+      }
+   
+   }
+
+}
+
+// Columns
+// - - - - - - - - - - - - - - - - - - - -
+.#{columns} {
+   float: left;
+   padding: {
+      left: $global-padding + em;
+      right: $global-padding + em;
+   }
+   box-sizing: border-box;
+//   width: 100%;
+}
+
+// Prevent misspelling from breaking grid
+.column {
+   @extend .#{columns};
+}
+
+// Handle last column
+[class*=column] + [class*=column] {
+   &:last-child {
+      float: right;
+   }
+   &.end {
+      float: left;
+   }
+}

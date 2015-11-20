@@ -1,0 +1,18 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Buttons
+* 
+*/
+
+a[role=button] {
+   background: $color-primary;
+   color: white;
+   padding: em(10) em(20);
+   text-decoration: none;
+   font: {
+      family: $font-family-buttons;
+      weight: normal;
+   }
+}

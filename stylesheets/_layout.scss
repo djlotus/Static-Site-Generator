@@ -1,0 +1,32 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Default Layout Styles
+* 
+*/
+
+
+// Default Body Styles
+// - - - - - - - - - - - - - - - - - - - -
+
+html {
+   font-size: $font-base;
+}
+
+body {
+   background: white;
+   color: $oil;
+   font: {
+      family: $font-family-body;
+      weight: $font-regular;
+      style: normal;
+      size: 1rem;
+   }
+   margin: 0 auto;
+   line-height: $line-height;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   width: em($global-width);
+}
