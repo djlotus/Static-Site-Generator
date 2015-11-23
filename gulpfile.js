@@ -79,13 +79,14 @@ gulp.task('sass', function(doFirst) {
       errLogToConsole: 'false'
    } ))
    // Set Autoprefixer browsers
-   .pipe(autoprefixer(
-      'last 2 version',
-      'ie 8',
-      'ie 9',
-      'iOS',
-      'FirefoxAndroid'
-   ))
+   .pipe(autoprefixer( {
+      browsers: [
+         'last 4 version',
+         'not ie < 8',
+         'iOS',
+         'FirefoxAndroid'
+      ]
+   } ))
    // Set destination for files
    .pipe(gulp.dest('dist/css'))
    // Confirmation message

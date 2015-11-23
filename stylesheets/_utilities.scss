@@ -50,3 +50,42 @@
 
    @return $pixel / $context * 1rem;
 }
+
+// Padding
+// - - - - - - - - - - - - - - - - - - - -
+@mixin padding($padding: $global-padding){
+   @if (unitless($padding)) {
+      // prevent confusion with unitless pixel values
+      @if $padding <= 100 {
+         padding: $padding + $preferred-unit;
+      }
+      @else {
+         padding: em($padding);
+      }
+      
+   }
+   @else {
+      padding: $padding;
+   }
+}
+
+// Margin
+// - - - - - - - - - - - - - - - - - - - -
+@mixin margin($margin: $global-margin){
+   @if (unitless($margin)) {
+      // prevent confusion with unitless pixel values
+      @if $margin <=100 {
+         margin: $margin + $preferred-unit;
+      }
+      @else {
+         margin: em($margin);
+      }
+   }
+   @else {
+      margin: $margin;
+   }
+}
+
+// Transitions
+// - - - - - - - - - - - - - - - - - - - -
+@mixin transition() {}

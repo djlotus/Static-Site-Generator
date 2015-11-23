@@ -433,6 +433,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 62.5em; }
 
+/* line 34, /Users/djlotus/NOVA_static_site/stylesheets/_layout.scss */
+header,
+footer {
+  padding: 0.8333rem;
+  background: yellow; }
+
 /*! Font Size   -   Minor Third (1:1.2) - [ 1.2(minor third ratio) * 16 (base font-size which is set in 
 /*! html element) = font size in pixels ]
 /*! h1  -   2.986 * 16 = 47.776 px
@@ -1026,11 +1032,46 @@ p {
 * Buttons
 * 
 */
-/* line 9, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+/* line 18, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
 a[role=button] {
   background: #0c6e40;
-  color: white;
+  color: #ffffff;
   padding: 0.625em 1.25em;
+  margin: 0.8333rem;
   text-decoration: none;
   font-family: "Archivo Narrow", sans-serif;
-  font-weight: normal; }
+  font-weight: normal;
+  display: inline-block; }
+  /* line 28, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+  a[role=button].tiny {
+    padding: 0.3125em 0.625em;
+    font-size: 80%; }
+  /* line 32, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+  a[role=button].large {
+    padding: 1.25em 2.5em;
+    font-size: 120%; }
+  /* line 36, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+  a[role=button].radius {
+    border-radius: 1em; }
+  /* line 39, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+  a[role=button].hollow {
+    background: none;
+    color: #0c6e40;
+    border: 3px solid #0c6e40; }
+    /* line 43, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+    a[role=button].hollow:hover, a[role=button].hollow:focus {
+      background: none;
+      color: #0c6e40;
+      opacity: 0.6; }
+  /* line 50, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+  a[role=button]:hover, a[role=button]:focus {
+    background: rgba(12, 110, 64, 0.7);
+    color: #252525; }
+  /* line 56, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+  a[role=button].cta {
+    background: #0c6e40;
+    color: #ffffff; }
+    /* line 59, /Users/djlotus/NOVA_static_site/stylesheets/_buttons.scss */
+    a[role=button].cta:hover {
+      background: #ffca27;
+      color: #252525; }

@@ -30,3 +30,9 @@ body {
    -moz-osx-font-smoothing: grayscale;
    width: em($global-width);
 }
+
+header,
+footer {
+   @include padding();
+   background: yellow;
+}

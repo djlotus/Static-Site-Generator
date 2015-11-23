@@ -24,6 +24,7 @@
 
 $column-count:                            12;
 
+
 // Global Gutters (re-name and re-organize)
 //- - - - - - - - - - - - - - - - - - - -
 
@@ -31,6 +32,8 @@ $global-width:							   1000; // Unitless
 
 $global-padding:						   0.8333; // Unitless
 $global-margin:							   0.8333; // Unitless
+
+$preferred-unit:                           rem;
 
 
 // Global Colors
@@ -44,6 +47,7 @@ $oil:                            	      #252525;
 $dark-grey:                               #505050;
 $light-grey:						      #e5e5e5;
 $silver:                                  #f2f2f2;
+$white:                                   #ffffff;
 
 $color-primary:                           $green;
 $color-secondary:                         $gold;
@@ -67,3 +71,15 @@ $font-margin:                             $global-padding;
 $font-bold:							      600;
 $font-regular:						      400;
 $font-thin:							      200;
+
+
+// Buttons
+// - - - - - - - - - - - - - - - - - - - -
+
+$button-bg-color-primary:                 $color-primary;
+$button-bg-color-secondary:               $color-secondary;
+
+$button-color-primary:                    $white;
+$button-color-secondary:                  $oil;
+
+$button-radius:                           $font-base;
