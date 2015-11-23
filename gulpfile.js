@@ -81,10 +81,7 @@ gulp.task('sass', function(doFirst) {
    // Set Autoprefixer browsers
    .pipe(autoprefixer( {
       browsers: [
-         'last 4 version',
-         'not ie < 8',
-         'iOS',
-         'FirefoxAndroid'
+         'last 4 version'
       ]
    } ))
    // Set destination for files
