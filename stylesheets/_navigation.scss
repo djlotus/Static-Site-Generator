@@ -1,0 +1,89 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Navigation
+* 
+*/
+
+$navigation-align-map: (
+   left: flex-start,
+   center: center,
+   right: flex-end
+);
+
+$navigation-align:                           'center'            !default;
+
+$navigation-links-color:                     $white              !default;
+
+nav[role=navigation] {
+   width: 100%;
+   background: $dark-grey;
+   font: {
+      family: $font-family-navigation;
+      weight: $font-thin;
+   }
+   & > ul {
+      @include margin(0);
+      @include padding(0);
+      list-style: none;
+      // Use Flexbox to align navigation items :D
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: nav-align($navigation-align);
+      & > li {
+         flex: 0 1 auto;
+         text-align: center;
+         @include padding();
+         border-right: 1px solid $oil;
+         position: relative;
+         &:last-of-type {
+            border-right: none;
+         }
+         &.dropdown {
+            & > ul {
+               list-style: none;
+               &.dropdown-menu {
+                  position: absolute;
+                  top: 100%;
+                  left: 0;
+                  background: $oil;
+                  @include padding(0);
+                  width: 200%;
+                  text-align: left;
+                  display: none;
+                  &.active {
+                     display: block;
+                  }
+               }
+               & > li {
+                  @include padding(1);
+                  border-bottom: 1px solid $dark-grey;
+                  &:first-of-type {
+                     border-top: 1px solid $dark-grey;
+                  }
+                  & > a {
+                     color: $navigation-links-color;
+                     text-decoration: none;
+                     &:hover,
+                     &:focus {
+                        text-decoration: underline;
+                        color: darken($navigation-links-color, 20%);
+                     }
+                  }
+               }
+            }
+         }
+         & > a {
+            padding: 0 1rem;
+            color: $navigation-links-color;
+            text-decoration: none;
+            &:hover,
+            &:focus {
+               text-decoration: underline;
+               color: darken($navigation-links-color, 20%);
+            }
+         }
+      }
+   }
+}

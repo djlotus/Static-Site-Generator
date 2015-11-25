@@ -34,12 +34,13 @@ $global-padding:						   0.8333; // Unitless
 $global-margin:							   0.8333; // Unitless
 
 $preferred-unit:                           rem;
+$max-unitless-value:                       10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
 
 
 // Global Colors
 // - - - - - - - - - - - - - - - - - - - -
 // 
-// (Will use "tranparentize($color, $opacity) to convert ot rgba)
+// (Will use "tranparentize($color, $opacity))
 
 $green:                                   #0c6e40;
 $gold:                         		      #ffca27;
@@ -60,7 +61,7 @@ $color-secondary:                         $gold;
 $font-family-headings:                    "Lato", sans-serif;
 $font-family-body:                        "Lato", sans-serif;
 $font-family-buttons:                     "Archivo Narrow", sans-serif;
-$font-family-navigation:                  "Archivo Narrow", sans-serif;
+$font-family-navigation:                  "Oswald", sans-serif;
 
 $font-base:                               16px;
 $font-scale:                              1.2;
@@ -76,10 +77,17 @@ $font-thin:							      200;
 // Buttons
 // - - - - - - - - - - - - - - - - - - - -
 
-$button-bg-color-primary:                 $color-primary;
-$button-bg-color-secondary:               $color-secondary;
+//$button-bg-color-primary:                 $color-primary;
+//$button-bg-color-secondary:               $color-secondary;
 
-$button-color-primary:                    $white;
-$button-color-secondary:                  $oil;
+//$button-color-primary:                    $white;
+//$button-color-secondary:                  $oil;
 
-$button-radius:                           $font-base;
+//$button-radius:                           $font-base;
+
+
+// Navigation
+// - - - - - - - - - - - - - - - - - - - -
+
+$navigation-align:                           'left';              // Default position of navigation items
+//$navigation-links-color:                     $white;

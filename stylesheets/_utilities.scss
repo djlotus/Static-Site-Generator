@@ -53,29 +53,123 @@
 
 // Padding
 // - - - - - - - - - - - - - - - - - - - -
-@mixin padding($padding: $global-padding){
+@mixin padding($padding: $global-padding) {
    @if (unitless($padding)) {
       // prevent confusion with unitless pixel values
-      @if $padding <= 100 {
-         padding: $padding + $preferred-unit;
+      @if $padding <= $max-unitless-value {
+         // prevent unit from being added to value of "0"
+         @if $padding == 0 {
+            padding: 0;
+         }
+         @else {
+            padding: $padding + $preferred-unit;
+         }
       }
       @else {
          padding: em($padding);
       }
-      
    }
    @else {
       padding: $padding;
    }
 }
 
+@mixin padding-top($padding: $global-padding) {
+   @if (unitless($padding)) {
+      // prevent confusion with unitless pixel values
+      @if $padding <= $max-unitless-value {
+         // prevent unit from being added to value of "0"
+         @if $padding == 0 {
+            padding-top: 0;
+         }
+         @else {
+            padding-top:: $padding + $preferred-unit;
+         }
+      }
+      @else {
+         padding-top:: em($padding);
+      }
+   }
+   @else {
+      padding-top:: $padding;
+   }
+}
+
+@mixin padding-right($padding: $global-padding) {
+   @if (unitless($padding)) {
+      // prevent confusion with unitless pixel values
+      @if $padding <= $max-unitless-value {
+         // prevent unit from being added to value of "0"
+         @if $padding == 0 {
+            padding-right: 0;
+         }
+         @else {
+            padding-right:: $padding + $preferred-unit;
+         }
+      }
+      @else {
+         padding-right:: em($padding);
+      }
+   }
+   @else {
+      padding-right:: $padding;
+   }
+}
+
+@mixin padding-bottom($padding: $global-padding) {
+   @if (unitless($padding)) {
+      // prevent confusion with unitless pixel values
+      @if $padding <= $max-unitless-value {
+         // prevent unit from being added to value of "0"
+         @if $padding == 0 {
+            padding-bottom: 0;
+         }
+         @else {
+            padding-bottom:: $padding + $preferred-unit;
+         }
+      }
+      @else {
+         padding-bottom:: em($padding);
+      }
+   }
+   @else {
+      padding-bottom:: $padding;
+   }
+}
+
+@mixin padding-left($padding: $global-padding) {
+   @if (unitless($padding)) {
+      // prevent confusion with unitless pixel values
+      @if $padding <= $max-unitless-value {
+         // prevent unit from being added to value of "0"
+         @if $padding == 0 {
+            padding-left: 0;
+         }
+         @else {
+            padding-left:: $padding + $preferred-unit;
+         }
+      }
+      @else {
+         padding-left:: em($padding);
+      }
+   }
+   @else {
+      padding-left:: $padding;
+   }
+}
+
 // Margin
 // - - - - - - - - - - - - - - - - - - - -
-@mixin margin($margin: $global-margin){
+@mixin margin($margin: $global-margin) {
    @if (unitless($margin)) {
       // prevent confusion with unitless pixel values
-      @if $margin <=100 {
-         margin: $margin + $preferred-unit;
+      @if $margin <= $max-unitless-value {
+         @if $margin == 0 {
+            margin: 0;
+         }
+         @else {
+            margin: $margin + $preferred-unit;
+         }
       }
       @else {
          margin: em($margin);
@@ -86,6 +180,90 @@
    }
 }
 
-// Transitions
+@mixin margin-top($margin: $global-margin) {
+   @if (unitless($margin)) {
+      @if $margin <= $max-unitless-value {
+         @if $margin == 0 {
+            margin-top: 0;
+         }
+         @else {
+            margin-top: $margin + $preferred-unit;
+         }
+      }
+      @else {
+         margin-top: em($margin);
+      }
+   }
+   @else {
+      margin-top: $margin;
+   }
+}
+
+@mixin margin-right($margin: $global-margin) {
+   @if (unitless($margin)) {
+      @if $margin <= $max-unitless-value {
+         @if $margin == 0 {
+            margin-right: 0;
+         }
+         @else {
+            margin-right: $margin + $preferred-unit;
+         }
+      }
+      @else {
+         margin-right: em($margin);
+      }
+   }
+   @else {
+      margin-right: $margin;
+   }
+}
+
+@mixin margin-bottom($margin: $global-margin) {
+   @if (unitless($margin)) {
+      @if $margin <= $max-unitless-value {
+         @if $margin == 0 {
+            margin-bottom: 0;
+         }
+         @else {
+            margin-bottom: $margin + $preferred-unit;
+         }
+      }
+      @else {
+         margin-bottom: em($margin);
+      }
+   }
+   @else {
+      margin-bottom: $margin;
+   }
+}
+
+@mixin margin-left($margin: $global-margin) {
+   @if (unitless($margin)) {
+      @if $margin <= $max-unitless-value {
+         @if $margin == 0 {
+            margin-left: 0;
+         }
+         @else {
+            margin-left: $margin + $preferred-unit;
+         }
+      }
+      @else {
+         margin-left: em($margin);
+      }
+   }
+   @else {
+      margin-left: $margin;
+   }
+}
+
+
+// Navigation Alignment
 // - - - - - - - - - - - - - - - - - - - -
-@mixin transition() {}
+@function nav-align($flex-align: $navigation-align) {
+   @if map-has-key($navigation-align-map, $flex-align) {
+      @return map-get($navigation-align-map, $flex-align)
+         }
+   @if not map-has-key ($navigation-align-map) {
+      @error "Could not reconcile navigation alignment";
+   }
+}

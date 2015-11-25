@@ -18,9 +18,8 @@
       family: $font-family-headings;
       weight: 400;
    }
-
-   margin: $global-margin * $font-base; // For Sad Browsers
-   margin: $global-margin + rem; 
+   @include margin();
+   @include margin-left(0);
 
 }
 

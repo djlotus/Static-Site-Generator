@@ -28,7 +28,7 @@ body {
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   width: em($global-width);
+   max-width: em($global-width);
 }
 
 header,
