@@ -20,13 +20,13 @@ ___
 Clone the Repo or download the .zip.
 From the terminal (or command line in Windows) navigate to your site's directory.
 
-```Linux Kernel Module
+```
 $ cd My/Site/Directory
 ```
 ### Build
 Run Gulp to build site
 
-```Linux Kernel Module
+```
 $ gulp
 ```
 ___
@@ -36,27 +36,27 @@ Once the site is built you can begin editing. We have a default watch task which
 ### Watch
 This task will watch for any changes to files and compile all files.
 
-```Linux Kernel Module
+```
 $ gulp watch
 ```
 
 ### HTML
 To build the HTML pages we have setup a task called *fileinclude*. This task will compile the templates and includes into static HTML pages.
 
-```Linux Kernel Module
+```
 $ gulp fileinclude
 ```
 ___
 ### Sass
 To compile the stylesheets we have setup a task called *sass*. This task will compile the Scss into nested CSS and add vendor prefixes.
 
-```Linux Kernel Module
+```
 $ gulp sass
 ```
 
 ### Scripts
 To compile any used scripts we have setup a task called *scripts*. This task compliles and minifies any scripts used in the site.
 
-```Linux Kernel Module
+```
 $ gulp scripts
 ```
