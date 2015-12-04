@@ -34,7 +34,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     concatCss = require('gulp-concat-css'),
     minifyCss = require('gulp-minify-css'),
-    plumber = require('gulp-plumber')
+    plumber = require('gulp-plumber'),
+    jquery = require('gulp-jquery')
     ;
 
 var paths = {
@@ -92,6 +93,17 @@ gulp.task('sass', function(doFirst) {
    }));
    doFirst(err);
 });
+
+// JQuery task (build jquery)
+// - - - - - - - - - - - - - - - - - - - -
+//gulp.task('jquery', function() {
+//   return jquery.src({
+//      release: 1, // JQuery 1.x.x
+//      flags: [ ]
+//   })
+//   .pipe(gulp.dest('dist/js/vendor'));
+//});
+
 
 // Concantonate scripts
 // - - - - - - - - - - - - - - - - - - - -

@@ -46,7 +46,7 @@ To build the HTML pages we have setup a task called *fileinclude*. This task wil
 ```
 $ gulp fileinclude
 ```
-___
+
 ### Sass
 To compile the stylesheets we have setup a task called *sass*. This task will compile the Scss into nested CSS and add vendor prefixes.
 

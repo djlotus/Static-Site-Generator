@@ -23,7 +23,7 @@ nav[role=navigation] {
       family: $font-family-navigation;
       weight: $font-thin;
    }
-   & > ul {
+   & ul {
       @include margin(0);
       @include padding(0);
       list-style: none;
@@ -31,50 +31,49 @@ nav[role=navigation] {
       display: flex;
       flex-wrap: wrap;
       justify-content: nav-align($navigation-align);
-      & > li {
+      & li {
          flex: 0 1 auto;
          text-align: center;
          @include padding();
          border-right: 1px solid $oil;
          position: relative;
-         &:last-of-type {
-            border-right: none;
-         }
-         &.dropdown {
-            & > ul {
-               list-style: none;
-               &.dropdown-menu {
-                  position: absolute;
-                  top: 100%;
-                  left: 0;
-                  background: $oil;
-                  @include padding(0);
-                  width: 200%;
-                  text-align: left;
-                  display: none;
-                  &.active {
-                     display: block;
-                  }
+            &:last-of-type {
+               border-right: none;
+            }
+         & a.has-dropdown {
+            & li {
+               @include padding(1);
+               border-bottom: 1px solid $dark-grey;
+               &:first-of-type {
+                  border-top: 1px solid $dark-grey;
                }
-               & > li {
-                  @include padding(1);
-                  border-bottom: 1px solid $dark-grey;
-                  &:first-of-type {
-                     border-top: 1px solid $dark-grey;
-                  }
-                  & > a {
-                     color: $navigation-links-color;
-                     text-decoration: none;
-                     &:hover,
-                     &:focus {
-                        text-decoration: underline;
-                        color: darken($navigation-links-color, 20%);
-                     }
+               & a {
+                  color: $navigation-links-color;
+                  text-decoration: none;
+                  &:hover,
+                  &:focus {
+                     text-decoration: underline;
+                     color: darken($navigation-links-color, 20%);
                   }
                }
             }
          }
-         & > a {
+         &:hover a + ul {
+            display: block;
+         }
+      }
+         & ul {
+            list-style: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: $oil;
+            @include padding(0);
+            width: 200%;
+            text-align: left;
+            display: none;
+         }
+         & a {
             padding: 0 1rem;
             color: $navigation-links-color;
             text-decoration: none;
@@ -86,4 +85,3 @@ nav[role=navigation] {
          }
       }
    }
-}
