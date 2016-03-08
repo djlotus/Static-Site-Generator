@@ -14,7 +14,6 @@ $button-color-secondary:                        $oil                    !default
 
 $button-radius:                                 $font-base              !default;
 
-
 a[role=button] {
    background: $button-bg-color-primary;
    color: $button-color-primary;
@@ -61,4 +60,11 @@ a[role=button] {
          color: $button-color-secondary;
       }
    }
+}
+
+button {
+   background: none;
+   color: $button-color-primary;
+   padding: em(10) em(20);
+   border: 3px solid $white;
 }

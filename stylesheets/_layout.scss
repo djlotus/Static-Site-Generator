@@ -15,6 +15,7 @@ html {
 }
 
 body {
+   position: relative;
    background: white;
    color: $oil;
    font: {
@@ -23,16 +24,8 @@ body {
       style: normal;
       size: 1rem;
    }
-   margin: 0 auto;
    line-height: $line-height;
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   max-width: em($global-width);
-}
-
-header,
-footer {
-   @include padding();
-   background: yellow;
 }

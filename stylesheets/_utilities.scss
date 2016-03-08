@@ -267,3 +267,13 @@
       @error "Could not reconcile navigation alignment";
    }
 }
+
+// Color Adjustments
+// - - - - - - - - - - - - - - - - - - - -
+@function lighten($color, $percentage) {
+   @return mix(white, $color, $percentage);
+}
+
+@function darken($color, $percentage) {
+   @return mix(black, $color, $percentage);
+}

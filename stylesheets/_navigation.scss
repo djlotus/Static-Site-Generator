@@ -14,67 +14,123 @@ $navigation-align-map: (
 
 $navigation-align:                           'center'            !default;
 
-$navigation-links-color:                     $white              !default;
+$navigation-links-color:                     white              !default;
+
+// Mobile Nav Button
+.show-nav {
+   @include padding-top();
+   @include padding-bottom();
+   background: $color-primary;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   @include breakpoint(medium) {
+      display: none;
+   }
+}
 
 nav[role=navigation] {
-   width: 100%;
-   background: $dark-grey;
    font: {
       family: $font-family-navigation;
       weight: $font-thin;
    }
+   letter-spacing: 1px;
+   position: fixed;
+   width: 100%;
+   top: 4.5rem;
    & ul {
       @include margin(0);
       @include padding(0);
+      background: $oil;
       list-style: none;
-      // Use Flexbox to align navigation items :D
       display: flex;
-      flex-wrap: wrap;
-      justify-content: nav-align($navigation-align);
+      position: relative;
+      flex-flow: column nowrap;
+      border-right: none;
+      &#main-nav {
+         left: -100vw;
+         &.active {
+            left: 0;
+         }
+      }
       & li {
-         flex: 0 1 auto;
-         text-align: center;
          @include padding();
-         border-right: 1px solid $oil;
-         position: relative;
+         &.top-level {
+            border-bottom: 1px solid $light-grey;
+         }
+         & ul {
+            & li {
+               @include padding-left(3);
+            }
+         }
+      }
+      & a {
+         color: $navigation-links-color;
+         text: {
+            decoration: none;
+            transform: uppercase;
+         }
+         &:hover,
+         &:focus {
+            color: $navigation-links-color;
+         }
+      }
+   }
+   @include breakpoint(medium) {
+      position: relative;
+      top: 0;
+      width: 100%;
+      background: $oil;
+      & ul {
+         // Use Flexbox to align navigation items :D
+         flex-flow: row nowrap;
+         justify-content: nav-align($navigation-align);
+         &#main-nav {
+            left: 0;
+         }
+         & li {
+            flex: 0 1 auto;
+            text-align: left;
+            @include padding();
+            border-right: 1px solid $dark-grey;
+            position: relative;
             &:last-of-type {
                border-right: none;
             }
-         & a.has-dropdown {
-            & li {
-               @include padding(1);
-               border-bottom: 1px solid $dark-grey;
-               &:first-of-type {
-                  border-top: 1px solid $dark-grey;
+            &.top-level {
+               border-bottom: none;
+            }
+            & ul {
+               & li {
+                  @include padding-left();
                }
-               & a {
-                  color: $navigation-links-color;
-                  text-decoration: none;
-                  &:hover,
-                  &:focus {
-                     text-decoration: underline;
-                     color: darken($navigation-links-color, 20%);
+            }
+            &.has-dropdown {
+               & a:focus {
+                  & ~ ul {
+                     left: 0;
                   }
                }
             }
+            &:hover a + ul {
+               left: 0;
+            }
          }
-         &:hover a + ul {
-            display: block;
-         }
-      }
          & ul {
             list-style: none;
             position: absolute;
             top: 100%;
-            left: 0;
+            left: -10000px;
             background: $oil;
             @include padding(0);
-            width: 200%;
+            width: 300%;
             text-align: left;
-            display: none;
+            display: block;
+            &.active {
+               left: 0;
+            }
          }
          & a {
-            padding: 0 1rem;
             color: $navigation-links-color;
             text-decoration: none;
             &:hover,
@@ -84,4 +140,6 @@ nav[role=navigation] {
             }
          }
       }
+
    }
+}

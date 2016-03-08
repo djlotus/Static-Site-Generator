@@ -10,3 +10,14 @@
 // Default Header Styles
 // - - - - - - - - - - - - - - - - - - - -
 
+header {
+   @include padding-top();
+   @include padding-bottom();
+   display: block;
+   position: relative;
+   top: 4.55rem;
+   background: silver;
+   @include breakpoint(medium) {
+      top: 0;
+   }
+}

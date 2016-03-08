@@ -1,13 +1,27 @@
-<ul>
-   <li><a href="#">Link 1</a></li>
-   <li><a href="#" class="has-dropdown">Link 2</a>
-      <!-- If using dropdown menus be sure to include sub-links on landing pages so keyboard users have access to them -->
-      <ul class="dropdown">
-         <li><a href="#">Link 2a</a></li>
-         <li><a href="#">Link 2b longer</a></li>
-         <li><a href="#">Link 2c longest text</a></li>
-      </ul>
-   </li>
-   <li><a href="#">Link 3</a></li>
-   <li><a href="#">Link 4</a></li>
-</ul>
+<div class="show-nav">
+   <div class="row">
+      <div class="small-12 columns">
+         <button id="showNav" class="hollow">Show Menu</button>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <ul id="main-nav">
+      <li class="top-level"><a href="#" tabindex="1">Link 1</a></li>
+      <li class="top-level has-dropdown"><a href="#" tabindex="1">Link 2</a>
+         <ul class="dropdown">
+            <li><a class="sub_link" href="#" tabindex="1">Link 2a</a></li>
+            <li><a class="sub_link" href="#" tabindex="1">Link 2b longer</a></li>
+            <li><a class="sub_link" href="#" tabindex="1">Link 2c longest text</a></li>
+         </ul>
+      </li>
+      <li class="top-level has-dropdown"><a href="#" tabindex="1">Link 3</a>
+         <ul class="dropdown">
+            <li><a class="sub_link" href="#" tabindex="1">Link 2a</a></li>
+            <li><a class="sub_link" href="#" tabindex="1">Link 2b longer</a></li>
+            <li><a class="sub_link" href="#" tabindex="1">Link 2c longest text</a></li>
+         </ul>
+      </li>
+      <li class="top-level"><a href="#" tabindex="1">Link 4</a></li>
+   </ul>
+</div>

@@ -8,7 +8,7 @@
 
 .row {
    @include clearfix();
-   width: 100%;
+   max-width: em($global-width);
    margin: {
       top: 0;
       right: auto;

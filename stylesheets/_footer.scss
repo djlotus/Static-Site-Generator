@@ -1,0 +1,70 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Default Footer Styles
+* 
+*/
+
+
+// Default Footer Styles
+// - - - - - - - - - - - - - - - - - - - -
+
+footer {
+   background: $oil;
+   color: $color-secondary;
+   @include padding();
+   & span:nth-child(1) {
+      text: {
+         decoration: underline;
+      }
+   }
+   & a {
+      color: $color-secondary;
+      text: {
+         decoration: none;
+      }
+      &:hover,
+      &:focus {
+         filter: saturate(0);
+         text: {
+            decoration: underline;
+         }
+      }
+   }
+   & .footer-links {
+      list-style: none;
+      column-count: 2;
+   }
+   & .colophon {
+      font-size: 80%;
+      @include padding(1);
+      text: {
+         align: center;
+      }
+      & span:nth-child(2) {
+         color: white;
+      }
+   }
+   & .social {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      @include margin(1);
+      & .social-icon {
+         flex: 0 1 auto;
+         & > a:focus > img {
+            filter: saturate(0);
+         }
+         & > a > img {
+            width: 4rem;
+            height: 4rem;
+            &:hover{
+               filter: saturate(0);
+            }
+         }
+      }
+   }
+}

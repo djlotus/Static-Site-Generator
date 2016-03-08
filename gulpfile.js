@@ -169,6 +169,8 @@ gulp.task('watch', function() {
    gulp.watch(path.join(paths.sass, '*.scss'), ['sass']);
    // watch task for gulp-includes
    gulp.watch(path.join(paths.templates, '*.html'), ['fileinclude']);
+   // watch task for scripts
+   gulp.watch(path.join(paths.scripts, '*.js'), ['scripts']);
 });
 
 // Default Gulp task (builds out static site)
