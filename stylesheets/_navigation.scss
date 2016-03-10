@@ -105,11 +105,16 @@ nav[role=navigation] {
                   @include padding-left();
                }
             }
-            &.has-dropdown {
+            &[data-nav] {
                & a:focus {
-                  & ~ ul {
+                  & + .dropdown {
                      left: 0;
                   }
+               }
+            }
+            &[data-nav=true] {
+               & .dropdown {
+                  left: 0;
                }
             }
             &:hover a + ul {
