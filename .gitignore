@@ -38,7 +38,9 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
-
+# Directories #
+###############
 .sass-cache/
 images/
 node_modules/
+branches/
