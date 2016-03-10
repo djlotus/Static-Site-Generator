@@ -92,6 +92,8 @@ if (document.addEventListener) {
          navButton.innerHTML = "Show Menu"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "false"); // hide the navigation element
          isClicked = "false"; // update value of isClicked
+      } else {
+         console.log("There is a problem with the mobile navigation");
       }
    })
 }
