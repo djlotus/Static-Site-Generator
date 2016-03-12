@@ -14,11 +14,6 @@ footer {
    background: $oil;
    color: $color-secondary;
    @include padding();
-   & span:nth-child(1) {
-      text: {
-         decoration: underline;
-      }
-   }
    & a {
       color: $color-secondary;
       text: {
@@ -34,7 +29,18 @@ footer {
    }
    & .footer-links {
       list-style: none;
-      column-count: 2;
+      @include padding();
+      @include margin(0);
+      column-count: 1;
+      text-align: center;
+      @include breakpoint(medium) {
+         list-style: none;
+         column-count: 2;
+         text-align: left;
+      }
+      & li {
+         @include padding(0.625);
+      }
    }
    & .colophon {
       font-size: 80%;
@@ -49,18 +55,17 @@ footer {
    & .social {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       align-content: center;
-      @include margin(1);
       & .social-icon {
          flex: 0 1 auto;
          & > a:focus > img {
             filter: saturate(0);
          }
          & > a > img {
-            width: 4rem;
-            height: 4rem;
+            width: 3rem;
+            height: 3rem;
             &:hover{
                filter: saturate(0);
             }

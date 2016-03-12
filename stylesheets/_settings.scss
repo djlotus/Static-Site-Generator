@@ -89,5 +89,14 @@ $font-thin:							      200;
 // Navigation
 // - - - - - - - - - - - - - - - - - - - -
 
-$navigation-align:                           'left';              // Default position of navigation items
+$navigation-align:                           "left";              // Default position of navigation items
 //$navigation-links-color:                     $white;
+
+// Icon Fonts
+// - - - - - - - - - - - - - - - - - - - -
+$icomoon-font-path:                          "fonts" !default;
+
+$icon-menu:                                  "\e900";
+$icon-plus:                                  "\e901";
+$icon-minus:                                 "\e902";
+$icon-nav:                                   "\e903";
