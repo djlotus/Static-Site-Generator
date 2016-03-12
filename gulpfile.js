@@ -33,16 +33,17 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     concatCss = require('gulp-concat-css'),
-    minifyCss = require('gulp-minify-css'),
+    cleancss = require('gulp-cleancss'),
     plumber = require('gulp-plumber'),
-    jquery = require('gulp-jquery')
-    ;
+    minify = require('gulp-minify'),
+    babel = require('gulp-babel');
 
 var paths = {
    templates: 'templates/',
    sass: 'stylesheets/',
    scripts: 'js/',
-   css: 'dist/css/'
+   dist_scripts: 'dist/js',
+   css: 'dist/css/',
 };
 
 // File Include task (allow for html template system)
@@ -94,25 +95,6 @@ gulp.task('sass', function(doFirst) {
    doFirst(err);
 });
 
-// JQuery task (build jquery)
-// - - - - - - - - - - - - - - - - - - - -
-//gulp.task('jquery', function() {
-//   return jquery.src({
-//      release: 1, // JQuery 1.x.x
-//      flags: [ ]
-//   })
-//   .pipe(gulp.dest('dist/js/vendor'));
-//});
-
-
-// Concantonate scripts
-// - - - - - - - - - - - - - - - - - - - -
-gulp.task('scripts', function() {
-   return gulp.src(path.join(paths.scripts, '*.js'))
-      .pipe(concat('scripts.min.js'))
-      .pipe(gulp.dest('dist/js'))
-});
-
 // Concantonate CSS (forced to run as second process in CSS)
 // - - - - - - - - - - - - - - - - - - - -
 gulp.task('concatCss', ['sass'], function (doSecond) {
@@ -140,10 +122,9 @@ gulp.task('uncss', ['concatCss'], function(doThird) {
 
 // Minify CSS (forced to run as last process in CSS)
 // - - - - - - - - - - - - - - - - - - - -
-
-gulp.task('minifyCss', ['uncss'], function() {
+gulp.task('cleancss', ['uncss'], function() {
    return gulp.src('dist/css/main.css')
-      .pipe(minifyCss({compatibility: 'ie8'}))
+      .pipe(cleancss({compatibility: 'ie8',keepSpecialComments: 0}))
    // Strip file extension
       .pipe(rename( {
       extname: ""
@@ -161,6 +142,30 @@ gulp.task('minifyCss', ['uncss'], function() {
    }))
 });
 
+// Concantonate scripts (Forced to run first in JS)
+// - - - - - - - - - - - - - - - - - - - -
+gulp.task('scripts', function(doFirst) {
+   return gulp.src(path.join(paths.scripts, '*.js'))
+      .pipe(concat('scripts.js'))
+      .pipe(babel())
+      .pipe(gulp.dest('dist/js'));
+   doFirst(err);
+});
+
+// Minify Scripts (Forced to run second in JS)
+// - - - - - - - - - - - - - - - - - - - -
+gulp.task('minify-js', ['scripts'], function(doSecond) {
+   return gulp.src(path.join(paths.dist_scripts, 'scripts.js'))
+      .pipe(minify({
+      ext:{
+         src:'.js',
+         min:'.min.js'
+      },
+      exclude: ['dist/vendor'],
+   }))
+      .pipe(gulp.dest(paths.dist_scripts));
+   doSecond(err);
+});
 
 // Watch task
 // - - - - - - - - - - - - - - - - - - - -
@@ -175,6 +180,6 @@ gulp.task('watch', function() {
 
 // Default Gulp task (builds out static site)
 // - - - - - - - - - - - - - - - - - - - -
-gulp.task('default', ['fileinclude', 'scripts', 'sass', 'concatCss', 'uncss', 'minifyCss'], function() {
+gulp.task('default', ['fileinclude', 'scripts', 'minify-js', 'sass', 'concatCss', 'uncss', 'cleancss'], function() {
 
 });

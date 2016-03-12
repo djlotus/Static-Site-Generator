@@ -65,3 +65,10 @@ $column-count:                         12                            !default;
       float: left;
    }
 }
+
+// Handle centered columns
+[class*=-centered] {
+   float: none !important;
+   margin: 0 auto;
+   display: initial;
+}
