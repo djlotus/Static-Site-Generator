@@ -97,20 +97,25 @@ gulp.task('sass', function(doFirst) {
 
 // Concantonate CSS (forced to run as second process in CSS)
 // - - - - - - - - - - - - - - - - - - - -
-gulp.task('concatCss', ['sass'], function (doSecond) {
-   return gulp.src(path.join(paths.css, '*.css'))
-      .pipe(concatCss('main.css'))
-      .pipe(gulp.dest('dist/css'));
-   doSecond(err);
-});
+//gulp.task('concatCss', ['sass'], function (doSecond) {
+//   return gulp.src(path.join(paths.css, '*.css'))
+//      .pipe(concatCss('main.css'))
+//      .pipe(gulp.dest('dist/css'));
+//   doSecond(err);
+//});
 
 // Remove Unused CSS (forced to run as third process in CSS)
 // - - - - - - - - - - - - - - - - - - - -
-gulp.task('uncss', ['concatCss'], function(doThird) {
+gulp.task('uncss', ['sass'], function(doThird) {
    return gulp.src('dist/css/main.css')
       .pipe(uncss( {
          html: [
             'dist/*.html'
+         ],
+         ignore: [
+            /.*:focus.*/,
+            /.*:focus.*/,
+            /.*data-.*/
          ]
       }))
       .pipe(gulp.dest('dist/css'))
@@ -145,7 +150,7 @@ gulp.task('cleancss', ['uncss'], function() {
 // Concantonate scripts (Forced to run first in JS)
 // - - - - - - - - - - - - - - - - - - - -
 gulp.task('scripts', function(doFirst) {
-   return gulp.src(path.join(paths.scripts, '*.js'))
+   return gulp.src([path.join(paths.scripts, 'main.js'), path.join(paths.scripts, '*.js')])
       .pipe(concat('scripts.js'))
       .pipe(babel())
       .pipe(gulp.dest('dist/js'));
@@ -180,6 +185,6 @@ gulp.task('watch', function() {
 
 // Default Gulp task (builds out static site)
 // - - - - - - - - - - - - - - - - - - - -
-gulp.task('default', ['fileinclude', 'scripts', 'minify-js', 'sass', 'concatCss', 'uncss', 'cleancss'], function() {
+gulp.task('default', ['fileinclude', 'scripts', 'minify-js', 'sass', 'uncss', 'cleancss'], function() {
 
 });

@@ -46,6 +46,7 @@ a[role=button] {
          opacity: 0.6;
       }
    }
+   
    &:hover,
    &:focus {
       background: transparentize($button-bg-color-primary, 0.3);

@@ -16,6 +16,9 @@ html {
 
 body {
    position: relative;
+   @include breakpoint(medium) {
+      margin-top: 0;
+   }
    background: white;
    color: $oil;
    font: {

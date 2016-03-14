@@ -1,25 +1,3 @@
-//_______________________________________________________________________
-//__________---___---__---_______________________________________________
-//__________---___---__---________________---____________________________
-//__________---___---__---________________---____________________________
-//______--__---___---__---______----______---___________________---______
-//____-----_---___---__---____--------__-------__---____---___-------____
-//___---___----___---__---___----__----_-------__---____---__---___---___
-//__---_____---___---__---__----____----__---____---____---__---____---__
-//__---_____---___---__---__----____----__---____---____---__-------_____
-//__---_____---___---__---__---______---__---____---____---___--------___
-//__---_____---___---__---__----____----__---____---____---________----__
-//__----___----___---__---___---____---___---____---___----__---____---__
-//___----------___---__---____--------____-----__----------__----__----__
-//_____----_---___---__---_____------______----___-----_---___--------___
-//_______________----___________________________________________---______
-//______________-----_______________Navigation___________________________
-//______________----_____________________________________________________
-//_______________________________________________________________________
-//_______________________________________________________________________
-
-"use-strict";                 // Lock script in strict mode. May cause issues later.
-
 // Add Event Listeners to navigation to allow for keyboard navigation
 // - - - - - - - - - - - - - - - - - - - -
 
@@ -78,6 +56,7 @@ for(var i = 0; i <= topLevel.length - 1; i++) {
 
 var navButton =               document.getElementById("showNav"), // Set nav button
     mainNav =                 document.querySelector("[data-nav]"), // Set main nav element
+    navContainer =            mainNav.parentElement.parentElement, // Set parent container
     isClicked =               "false"; // Set clicked status to false by default
 
 if (document.addEventListener) {
@@ -87,13 +66,24 @@ if (document.addEventListener) {
          navButton.innerHTML = "Hide Menu"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "true"); // show the navigation element
          isClicked = "true"; // update value of isClicked
+         navContainer.style.width = "100%"; // allow container to show
       } else if (isClicked === "true") { // if nav is active, hide nav
          console.log("mobile nav is closed"); // log the state of the navigation element
          navButton.innerHTML = "Show Menu"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "false"); // hide the navigation element
          isClicked = "false"; // update value of isClicked
+         navContainer.style.width = "0"; // hide container so content under can be interactied with.
       } else {
          console.log("There is a problem with the mobile navigation");
       }
    })
-}
+};
+
+// Set top offset for header element on mobile
+// - - - - - - - - - - - - - - - - - - - -
+
+var docBody =                 document.body, // Get body
+    navbarElement =           document.getElementById("show-nav"), // Get mobile navbar element
+    navbarOffset =            navbarElement.scrollHeight; // Get height of mobile navbar element
+
+docBody.style.marginTop = navbarOffset + "px";

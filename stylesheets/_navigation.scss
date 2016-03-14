@@ -17,7 +17,7 @@ $navigation-align:                           'center'            !default;
 $navigation-links-color:                     white              !default;
 
 // Mobile Nav Button
-.show-nav {
+#show-nav {
    @include padding-top();
    @include padding-bottom();
    background: $color-primary;
@@ -28,7 +28,6 @@ $navigation-links-color:                     white              !default;
       display: none;
    }
 }
-
 nav[role=navigation] {
    font: {
       family: $font-family-navigation;
@@ -36,7 +35,7 @@ nav[role=navigation] {
    }
    letter-spacing: 1px;
    position: fixed;
-   width: 100%;
+   width: 0;
    top: 4.5rem;
    & ul {
       @include margin(0);
@@ -49,7 +48,7 @@ nav[role=navigation] {
       border-right: none;
       &[data-nav] {
          left: -100vw;
-         transition: left 500ms;
+//         transition: left 500ms;
       }
       &[data-nav=true] {
          left: 0;

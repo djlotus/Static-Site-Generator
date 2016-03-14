@@ -15,7 +15,4 @@ header {
    display: block;
    position: relative;
    background: silver;
-   @include breakpoint(medium) {
-      top: 0;
-   }
 }
