@@ -51,6 +51,11 @@
    @return $pixel / $context * 1rem;
 }
 
+// Max Width
+// - - - - - - - - - - - - - - - - - - - -
+@mixin max-width() {
+   max-width: $global-width + px;
+}
 // Padding
 // - - - - - - - - - - - - - - - - - - - -
 @mixin padding($padding: $global-padding) {

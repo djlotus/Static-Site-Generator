@@ -12,35 +12,39 @@ $navigation-align-map: (
    right: flex-end
 );
 
-$navigation-align:                           'center'            !default;
-
-$navigation-links-color:                     white              !default;
+$navigation-align:                           'center'             !default;
+$navigation-background-color:                $oil                 !default;
+$navigation-links-color:                     white                !default;
 
 // Mobile Nav Button
 #show-nav {
    @include padding-top();
    @include padding-bottom();
-   background: $color-primary;
+   background: $navigation-background-color;
    position: fixed;
    top: 0;
    width: 100%;
+   font: {
+      size: 1rem;
+   }
    @include breakpoint(medium) {
       display: none;
    }
 }
 nav[role=navigation] {
+   background: $navigation-background-color;
    font: {
       family: $font-family-navigation;
       weight: $font-thin;
+      size: 1.5rem;
    }
    letter-spacing: 1px;
    position: fixed;
    width: 0;
-   top: 4.5rem;
+   top: 7rem;
    & ul {
       @include margin(0);
       @include padding(0);
-      background: $oil;
       list-style: none;
       display: flex;
       position: relative;
@@ -48,19 +52,21 @@ nav[role=navigation] {
       border-right: none;
       &[data-nav] {
          left: -100vw;
-//         transition: left 500ms;
+         @include max-width;
+         margin: 0 auto;
       }
       &[data-nav=true] {
          left: 0;
-         transition: left 500ms;
       }
       & li {
-         @include padding();
+         @include padding(1);
          &.top-level {
             border-bottom: 1px solid $light-grey;
+            @include padding-left(2);
          }
          & ul {
             & li {
+               display: none;
                @include padding-left(3);
             }
          }
@@ -81,8 +87,8 @@ nav[role=navigation] {
       position: relative;
       top: 0;
       width: 100%;
-      background: $oil;
       & ul {
+         background: $navigation-background-color;
          // Use Flexbox to align navigation items :D
          flex-flow: row nowrap;
          justify-content: nav-align($navigation-align);
@@ -100,9 +106,11 @@ nav[role=navigation] {
             }
             &.top-level {
                border-bottom: none;
+               @include padding-left();
             }
             & ul {
                & li {
+                  display: block;
                   @include padding-left();
                }
             }

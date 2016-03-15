@@ -56,20 +56,20 @@ for(var i = 0; i <= topLevel.length - 1; i++) {
 
 var navButton =               document.getElementById("showNav"), // Set nav button
     mainNav =                 document.querySelector("[data-nav]"), // Set main nav element
-    navContainer =            mainNav.parentElement.parentElement, // Set parent container
+    navContainer =            mainNav.parentElement, // Set parent container
     isClicked =               "false"; // Set clicked status to false by default
 
 if (document.addEventListener) {
    navButton.addEventListener("click", function(e) {
       if (isClicked === "false") { // if nav not active, show nav
          console.log("mobile nav is open"); // log the state of the navigation element
-         navButton.innerHTML = "Hide Menu"; // change text in button to reflect the action of the button
+         navButton.innerHTML = "<br />Hide"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "true"); // show the navigation element
          isClicked = "true"; // update value of isClicked
          navContainer.style.width = "100%"; // allow container to show
       } else if (isClicked === "true") { // if nav is active, hide nav
          console.log("mobile nav is closed"); // log the state of the navigation element
-         navButton.innerHTML = "Show Menu"; // change text in button to reflect the action of the button
+         navButton.innerHTML = "<br />Show"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "false"); // hide the navigation element
          isClicked = "false"; // update value of isClicked
          navContainer.style.width = "0"; // hide container so content under can be interactied with.

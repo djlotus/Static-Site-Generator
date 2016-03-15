@@ -28,6 +28,7 @@
 .icon-menu {
    &:before {
       content: $icon-menu;
+      font-size: 3rem;
    }
 }
 .icon-plus {
@@ -43,7 +44,7 @@
 .icon-nav {
    &:before {
       content: $icon-nav;
-//      color: $navigation-links-color;
+      color: $navigation-links-color;
 //      display: inline-block;
 //      transform: rotate(90deg);
    }
