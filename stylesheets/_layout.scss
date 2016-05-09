@@ -10,6 +10,9 @@
 // Default Body Styles
 // - - - - - - - - - - - - - - - - - - - -
 
+* {
+   box-sizing: border-box;
+}
 html {
    font-size: $font-base;
 }
@@ -35,4 +38,9 @@ body {
 
 section {
    @include padding(2);
+}
+
+.sticky {
+   position: fixed !important;
+   z-index: 1000 !important;
 }

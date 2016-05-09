@@ -56,6 +56,13 @@
 @mixin max-width() {
    max-width: $global-width + px;
 }
+
+// Row Reset
+// - - - - - - - - - - - - - - - - - - - -
+@mixin row-reset() {
+   max-width: 100% !important;
+   margin: 0 !important;
+}
 // Padding
 // - - - - - - - - - - - - - - - - - - - -
 @mixin padding($padding: $global-padding) {
@@ -162,6 +169,7 @@
       padding-left:: $padding;
    }
 }
+
 
 // Margin
 // - - - - - - - - - - - - - - - - - - - -
@@ -272,6 +280,7 @@
       @error "Could not reconcile navigation alignment";
    }
 }
+
 
 // Color Adjustments
 // - - - - - - - - - - - - - - - - - - - -

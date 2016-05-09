@@ -2,7 +2,7 @@
 * 
 * Authored by James Murphy
 * 
-* Default Header Styles
+* Header Styles
 * 
 */
 
@@ -10,9 +10,65 @@
 // Default Header Styles
 // - - - - - - - - - - - - - - - - - - - -
 
-header {
+header[role=banner] {
    @include padding(3);
-   display: block;
    position: relative;
    background: silver;
+}
+
+// Custom Header Styles
+// - - - - - - - - - - - - - - - - - - - -
+
+$header-style:                "classic"                  !default;
+//$header-style:                "masthead"                 !default;
+
+$call-to-action-active:       "yes"                      !default;
+$call-to-action-align:        "center"                   !default;
+
+@if $header-style == classic { // "classic" header style: Logo on left side
+   .call-to-action {
+      display: none;
+   }
+} @else if $header-style == masthead { // "masthead" header style: Large image background with CTA
+   header[role=banner] {
+      background: white url("../img/1300x650.gif") no-repeat 50% 50%;
+      background-size: cover;
+      @include padding(10);
+      & .row {
+         @include row-reset();
+         @if $call-to-action-active == "yes" {
+            & .call-to-action {
+               @if $call-to-action-align == right {
+                  text-align: right;
+                  @include padding-right(4);
+               } @else if $call-to-action-align == center {
+                  text-align: center;
+               } @else if $call-to-action-align == left {
+                  text-align: left;
+                  @include padding-left(4);
+               }
+               & span {
+                  font-size: em(33.184);
+                  &:last-of-type {
+                     font-size: em(19.2);
+                  }
+               }
+               & a[role=button] {
+                  font-size: em(33.184);
+               }
+            }
+         } @else {
+            & .call-to-action {
+               display: none;
+            }
+         }
+         & .columns {
+            @include padding-left(0);
+            @include padding-right(0);
+         }
+         & img {
+            display: none;
+         }
+      }
+   }
 }

@@ -28,13 +28,13 @@ $column-count:                            12;
 // Global Gutters (re-name and re-organize)
 //- - - - - - - - - - - - - - - - - - - -
 
-$global-width:							   1000; // Unitless
+$global-width:							  1000; // Unitless
 
-$global-padding:						   0.8333; // Unitless
-$global-margin:							   0.8333; // Unitless
+$global-padding:						  0.8333; // Unitless
+$global-margin:							  0.8333; // Unitless
 
-$preferred-unit:                           rem;
-$max-unitless-value:                       10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
+$preferred-unit:                          rem;
+$max-unitless-value:                      10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
 
 
 // Global Colors
@@ -52,7 +52,7 @@ $white:                                   #ffffff;
 
 $color-primary:                           $green;
 $color-secondary:                         $gold;
-// $color-compliment:                     $orange;
+// $color-compliment:                       $orange;
 
 
 // Typography
@@ -86,18 +86,27 @@ $font-thin:							      200;
 //$button-radius:                           $font-base;
 
 
+// Header
+// - - - - - - - - - - - - - - - - - - - -
+
+$header-style:                            "masthead"; // Default header style
+
+$call-to-action-active:                   "no";
+$call-to-action-align:                    "right";
+
 // Navigation
 // - - - - - - - - - - - - - - - - - - - -
 
-$navigation-align:                           "left";              // Default position of navigation items
-//$navigation-background-color:                $oil;                // Default color for navigation background
-//$navigation-links-color:                     $white;
+//$navigation-style:                        "bar"; // options: chevron; bar
+//$navigation-align:                        "center; // options: left; center; right
+//$navigation-background-color:             $oil; // Default color for navigation background
+//$navigation-links-color:                  $white;
 
 // Icon Fonts
 // - - - - - - - - - - - - - - - - - - - -
-$icomoon-font-path:                          "fonts" !default;
+$icomoon-font-path:                       "fonts";
 
-$icon-menu:                                  "\e900";
-$icon-plus:                                  "\e901";
-$icon-minus:                                 "\e902";
-$icon-nav:                                   "\e903";
+$icon-menu:                               "\e901";
+$icon-plus:                               "\f055";
+$icon-minus:                              "\f056";
+$icon-nav:                                "\e900";

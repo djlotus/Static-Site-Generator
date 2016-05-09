@@ -12,7 +12,8 @@ $navigation-align-map: (
    right: flex-end
 );
 
-$navigation-align:                           'center'             !default;
+$navigation-style:                           "chevron"            !default;
+$navigation-align:                           "left"               !default;
 $navigation-background-color:                $oil                 !default;
 $navigation-links-color:                     white                !default;
 
@@ -29,6 +30,9 @@ $navigation-links-color:                     white                !default;
    }
    @include breakpoint(medium) {
       display: none;
+   }
+   & button > span {
+      font-family: $font-family-buttons;
    }
 }
 nav[role=navigation] {
@@ -73,6 +77,10 @@ nav[role=navigation] {
       }
       & a {
          color: $navigation-links-color;
+         font: {
+            family: $font-family-navigation;
+            weight: $font-thin;
+         }
          text: {
             decoration: none;
             transform: uppercase;
@@ -107,6 +115,20 @@ nav[role=navigation] {
             &.top-level {
                border-bottom: none;
                @include padding-left();
+               &:hover {
+                  // set underline for nav links
+                  @if $navigation-style == "bar" {
+                     &:before {
+                        position: absolute;
+                        content: "";
+                        height: 5px;
+                        width: 100%;
+                        bottom: 0;
+                        left: 0;
+                        background-color: $color-secondary;
+                     }
+                  }
+               }
             }
             & ul {
                & li {
@@ -118,6 +140,21 @@ nav[role=navigation] {
                & a:focus {
                   & + .dropdown {
                      left: 0;
+                  }
+               }
+               @if $navigation-style == "chevron" {
+                  &:before {
+                     color: $color-secondary;
+                     content: $icon-nav;
+                     display: inline-block;
+                     position: absolute;
+                     top: 2.5em;
+                     font-size: 0.625em;
+                     left: calc(50% - 0.325em);
+                  }
+               } @else {
+                  &:before {
+                     content: "";
                   }
                }
             }
@@ -149,8 +186,7 @@ nav[role=navigation] {
             text-decoration: none;
             &:hover,
             &:focus {
-               text-decoration: underline;
-               color: darken($navigation-links-color, 20%);
+               color: darken($color-secondary, 20%);
             }
          }
       }

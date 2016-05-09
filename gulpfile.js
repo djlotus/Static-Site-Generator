@@ -35,8 +35,8 @@ var gulp = require('gulp'),
     concatCss = require('gulp-concat-css'),
     cleancss = require('gulp-cleancss'),
     plumber = require('gulp-plumber'),
-    minify = require('gulp-minify'),
-    babel = require('gulp-babel');
+    minify = require('gulp-minify');
+//    babel = require('gulp-babel');
 
 var paths = {
    templates: 'templates/',
@@ -152,7 +152,7 @@ gulp.task('cleancss', ['uncss'], function() {
 gulp.task('scripts', function(doFirst) {
    return gulp.src([path.join(paths.scripts, 'main.js'), path.join(paths.scripts, '*.js')])
       .pipe(concat('scripts.js'))
-      .pipe(babel())
+//      .pipe(babel())
       .pipe(gulp.dest('dist/js'));
    doFirst(err);
 });

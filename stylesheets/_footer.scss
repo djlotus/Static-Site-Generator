@@ -31,11 +31,10 @@ footer {
       list-style: none;
       @include padding();
       @include margin(0);
-      column-count: 1;
+      column-count: 2;
       text-align: center;
       @include breakpoint(medium) {
          list-style: none;
-         column-count: 2;
          text-align: left;
       }
       & li {
@@ -50,6 +49,10 @@ footer {
       }
       & span:nth-child(2) {
          color: white;
+         display: block;
+         @include breakpoint(medium) {
+            display: inline-block;
+         }
       }
    }
    & .social {
