@@ -60,3 +60,11 @@ To compile any used scripts we have setup a task called *scripts*. This task com
 ```
 $ gulp scripts
 ```
+___
+##Components to add:
+- [x] Tabs
+- [ ] Accordions
+- [ ] Tabs-to-accordions
+- [ ] Progress bar
+- [ ] Contact form
+- [ ] Wordpress feed
