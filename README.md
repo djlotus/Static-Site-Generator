@@ -1,4 +1,4 @@
-# NOVA-Static-Site (v0.01)
+# NOVA-Static-Site (v0.11)
 Static site generator for vendor sites.
 ___
 ## Requirements
