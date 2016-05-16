@@ -48,7 +48,12 @@ $column-count:                         12                            !default;
       right: $global-padding + em;
    }
    box-sizing: border-box;
-//   width: 100%;
+   &:first-of-type {
+      @include padding-left(0);
+   }
+   &:last-of-type {
+      @include padding-right(0);
+   }
 }
 
 // Prevent misspelling from breaking grid

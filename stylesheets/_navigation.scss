@@ -19,9 +19,8 @@ $navigation-links-color:                     white                !default;
 
 // Mobile Nav Button
 #show-nav {
-   @include padding-top();
-   @include padding-bottom();
    background: $navigation-background-color;
+   @include padding();
    position: fixed;
    top: 0;
    width: 100%;

@@ -15,16 +15,20 @@ $button-color-secondary:                        $oil                    !default
 $button-radius:                                 $font-base              !default;
 
 button {
-   background: none;
-   color: $button-color-primary;
-   padding: em(10) em(20);
    border: none;
 }
 
-a[role=button] {
-   background: $button-bg-color-primary;
+#showNav {
+   background: $button-color-secondary;
+   color: $color-secondary;
+}
+
+.button:link {
    color: $button-color-primary;
    padding: em(10) em(20);
+   border: none;
+   background: $button-bg-color-primary;
+   color: $button-color-primary;
    @include margin();
    text-decoration: none;
    font: {
@@ -39,9 +43,11 @@ a[role=button] {
       padding: em(20) em(40);
       font-size: 120%;
    }
+   // rounded buttons
    &.radius {
       border-radius: em($button-radius);
    }
+   // outlined buttons
    &.hollow {
       background: none;
       color: $button-bg-color-primary;
@@ -53,19 +59,23 @@ a[role=button] {
          opacity: 0.6;
       }
    }
-   
    &:hover,
    &:focus {
       background: transparentize($button-bg-color-primary, 0.3);
       color: $button-color-secondary;
    }
    display: inline-block;
+   // call-to-action buttons
    &.cta {
       background: $color-primary;
       color: $button-color-primary;
+      transition: all 100ms ease-in-out;
       &:hover {
          background: $color-secondary;
          color: $button-color-secondary;
       }
    }
-}
+   &.raised {
+      border-bottom: 5px solid darken($button-bg-color-primary, 30%);
+   }
+} 

@@ -1,5 +1,5 @@
 @font-face {
-   font-family: 'icomoon';
+   font-family: $icon-font-family;
    src: url('#{$icomoon-font-path}/icomoon.eot');
    src: url('#{$icomoon-font-path}/icomoon.eot') format('embedded-opentype'),
       url('#{$icomoon-font-path}/icomoon.ttf') format('truetype'),
@@ -27,34 +27,48 @@
 
 .icon-menu {
    &:before {
+//      color: $silver;
+//      background: $navigation-background-color;
       content: $icon-menu;
       font-size: 3rem;
    }
 }
+.icon-plus-circle {
+   &:before {
+      content: $icon-plus-circle;
+   }
+}
+.icon-minus-circle {
+   &:before {
+      content: $icon-minus-circle;
+   }
+}
 .icon-plus {
    &:before {
+      font: {
+         family: $icon-font-family;
+         weight: $font-thin !important;
+      };
       content: $icon-plus;
+      background: white;
+      color: $color-links;
+      display: inline-block;
+      height: 1.3em;
+      width: 1.3em;
+      vertical-align: text-bottom;
+      border-radius: 50%;
+      text-align: center;
+      @include margin-right(1);
    }
 }
 .icon-minus {
+   @extend .icon-plus;
    &:before {
       content: $icon-minus;
    }
 }
-//.icon-nav {
-//   &:before {
-//      color: $color-secondary;
-//      content: $icon-nav;
-//      display: inline-block;
-//      position: absolute;
-//      top: 2.5em;
-//      font-size: 0.625em;
-//      left: calc(50% - 0.325em);
-//   }
-//}
-
-//@if $navigation-style == "classic-bar" {
-//   .icon-nav:before {
-//      display: none;
-//   }
-//}
+.icon-chevron-down {
+   &:before {
+      content: $icon-nav;
+   }
+}

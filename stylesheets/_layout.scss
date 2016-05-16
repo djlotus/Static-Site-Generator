@@ -12,6 +12,8 @@
 
 * {
    box-sizing: border-box;
+   @include padding(0);
+   @include margin(0);
 }
 html {
    font-size: $font-base;
@@ -34,6 +36,11 @@ body {
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+}
+hr {
+   max-width: $global-width + px;
+   margin: 1.728em auto;
+   box-shadow: 0 1px $light-grey;
 }
 
 section {

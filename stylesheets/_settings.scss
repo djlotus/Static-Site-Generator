@@ -44,6 +44,7 @@ $max-unitless-value:                      10; // Maximum relative untits for mix
 
 $green:                                   #0c6e40;
 $gold:                         		      #ffca27;
+$blue:                                    #1862B6;
 $oil:                            	      #252525;
 $dark-grey:                               #505050;
 $light-grey:						      #e5e5e5;
@@ -52,7 +53,7 @@ $white:                                   #ffffff;
 
 $color-primary:                           $green;
 $color-secondary:                         $gold;
-// $color-compliment:                       $orange;
+$color-links:                             $blue;
 
 
 // Typography
@@ -65,7 +66,7 @@ $font-family-navigation:                  "Oswald", sans-serif;
 
 $font-base:                               16px;
 $font-scale:                              1.2;
-$line-height:                             1.3;
+$line-height:                             1.5;
 
 $font-margin:                             $global-padding;
 
@@ -104,9 +105,12 @@ $call-to-action-align:                    "right";
 
 // Icon Fonts
 // - - - - - - - - - - - - - - - - - - - -
-$icomoon-font-path:                       "fonts";
+$icomoon-font-path: "fonts";
+$icon-font-family: "icomoon";
 
-$icon-menu:                               "\e901";
-$icon-plus:                               "\f055";
-$icon-minus:                              "\f056";
-$icon-nav:                                "\e900";
+$icon-plus-circle: "\f055";
+$icon-minus-circle: "\f056";
+$icon-plus: "\f067";
+$icon-minus: "\f068";
+$icon-nav: "\e900";
+$icon-menu: "\e901";

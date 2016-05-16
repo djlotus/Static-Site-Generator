@@ -1,0 +1,17 @@
+/*! Test NOVA Framework
+* 
+* Authored by James Murphy
+* 
+* Panels
+* 
+*/
+
+.panel {
+   background: $silver;
+   border: 1px solid $light-grey;
+   @include padding();
+   &.callout {
+      background: lighten($color-secondary, 60%);
+      border: 1px solid $color-secondary;
+   }
+}
