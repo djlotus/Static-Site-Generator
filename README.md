@@ -63,7 +63,7 @@ $ gulp scripts
 ___
 ## Components to add:
 - [x] Tabs
-- [ ] Accordions
+- [x] Accordions
 - [ ] Progress bar
 - [ ] Contact form
 - [ ] Wordpress feed

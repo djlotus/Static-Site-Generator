@@ -26,10 +26,12 @@ var totalTabs =						tabs.length, // total number of tabs
 var attrTab =						"data-tab", //  set shorthand for tab attribute
     attrPanel =						"data-panel"; // set shorthand for panel attribute
 
-var control =                       document.getElementById("tabs"); // get tabs container
+var control =                       document.getElementById("tabs") || document.getElementById("accordions"); // get tabs container
 
 // Set initial margin on tabs
-control.style.marginBottom = controlMargin + "px";
+if (control.className === "tabs") {
+   control.style.marginBottom = controlMargin + "px";
+};
 
 
 // Hide all but first panel initially. No JS will display all panels. :)
@@ -135,7 +137,9 @@ function showPanel(arr, value) {
          activePanel = activePanelObject.panelEl; // var activePanel is equal to the value of the current object's "panelEL" property
          activePanel.setAttribute(attrPanel, "active"); // set the value of the attribute to "active"
          activePanel.setAttribute("aria-hidden", "false"); // expose panel to AT
-         controlMargin = activePanel.scrollHeight;
+         if (control.className === "tabs") {
+            controlMargin = activePanel.scrollHeight;
+         };
 //         console.log(controlMargin);
          control.style.marginBottom = controlMargin + "px";
       };
@@ -150,6 +154,7 @@ function resetPanels() {
    }
 };
 
+// set icons for accordions
 function setIcon() {
    for (var i = 0; i < tabCollection.length; i++) {
       if (tabObjects[i].icon === "plus") {
@@ -159,6 +164,7 @@ function setIcon() {
       }
    }
 }
+
 
 // - - - - - - - - - - - - - - - - - - -
 // Create Tab Objects
@@ -208,7 +214,6 @@ if (document.addEventListener) {
          setNextSiblings(target, attrTab, ""); // set next elements to ""
          setNextSiblings(target, "aria-selected", "false"); // pass state to AT
          setNextSiblings(target, "class", "icon-plus");
-//         setIcon();
          // reset panels
          resetPanels();
          // show corresponding panels
@@ -230,7 +235,6 @@ if (document.addEventListener) {
          setNextSiblings(target, attrTab, ""); // set next elements to ""
          setNextSiblings(target, "aria-selected", "false"); // pass state to AT
          setNextSiblings(target, "class", "icon-plus");
-//         setIcon();
          // reset panels
          resetPanels();
          // show corresponding panels
@@ -254,7 +258,6 @@ if (document.addEventListener) {
          setNextSiblings(target, attrTab, ""); // set next elements to ""
          setNextSiblings(target, "aria-selected", "false");
          setNextSiblings(target, "class", "icon-plus");
-//         setIcon();
          // reset panels
          resetPanels();
          // show corresponding panels
@@ -277,7 +280,6 @@ if (document.addEventListener) {
          setNextSiblings(target.parentElement, attrTab, ""); // set next elements to ""
          setNextSiblings(target.parentElement, "aria-selected", "false");
          setNextSiblings(target, "class", "icon-plus");
-//         setIcon();
          // reset panels
          resetPanels();
          // show corresponding panels
