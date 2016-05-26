@@ -44,3 +44,7 @@ Thumbs.db
 images/
 node_modules/
 branches/
+
+# Debugging Resources #
+#######################
+debug.css
