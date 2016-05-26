@@ -10,20 +10,30 @@
       <title>NOVA Static Site :: Home</title>
       <link rel="stylesheet" href="css/main.css">
       <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic%7CArchivo+Narrow:400,400italic,700,700italic%7COswald:400,300,700" rel="stylesheet" type="text/css"/>
-      <!-- Provide support for most common elements not supported by sad browsers -->
-      <script src="/js/vendor/modernizr-custom.js" />
       <!-- Provide support for <picture> element and srcset attribute -->
-      <script src="picturefill.js" async></script>  
+      <script src="js/vendor/picturefill.min.js" async></script> 
    </head>
    
    <body>
-      
+
+      <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+
+      <!--
+<nav role="navigation" data-sticky data-nav-align-top>
+@@include('_navigation.html')
+</nav>
+-->
+
       <header role="banner">
          @@include('_header.html')
       </header>
-   
-      <nav role="navigation" data-sticky>
-         @@include('_navigation.html')
+
+      <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+-->   <nav role="navigation" data-sticky>
+      @@include('_navigation.html')
       </nav>
       
       <main role="main">
@@ -55,12 +65,30 @@
                      appellat.</p>
                </div>
                <div class="small-12 medium-4 medium-pull-8 columns">
-                  <a class="button tiny" href="#" role="button">Tiny Button</a><br />
-                  <a class="button" href="#" role="button">Button</a>&nbsp;&nbsp;&nbsp;
-                  <a class="button radius" href="#" role="button">Radius Button</a> <br />
-                  <a class="button hollow" href="#" role="button">Hollow Button</a>&nbsp;&nbsp;&nbsp;
-                  <a class="button cta" href="#" role="button">Call-To-Action Button</a><br />
-                  <a class="button large" href="#" role="button">Large Button</a><br />
+                  <a class="button tiny" href="index.html" role="button">Tiny Button</a><br />
+                  <a class="button" href="index.html" role="button">Button</a>&nbsp;&nbsp;&nbsp;
+                  <a class="button radius" href="index.html" role="button">Radius Button</a> <br />
+                  <a class="button hollow" href="index.html" role="button">Hollow Button</a>&nbsp;&nbsp;&nbsp;
+                  <a class="button cta" href="index.html" role="button">Call-To-Action Button</a><br />
+                  <a class="button large" href="index.html" role="button">Large Button</a><br />
+               </div>
+            </div>
+            <div class="row">
+               <div class="small-12 columns">
+                  <h2>This is the Heading</h2>
+                  <p>Senserit ne aliquip, aliqua familiaritatem senserit illum aliquip ex expetendis 
+                     voluptatibus o nostrud te se quo fugiat malis legam ne iis fugiat magna illum 
+                     appellat, illum cupidatat officia do iis velit qui sint, elit e mentitum do 
+                     labore. Quis est te duis expetendis, occaecat te nescius ut e malis senserit si 
+                     senserit aut fugiat. Possumus enim eram an irure, id litteris exercitation, 
+                     excepteur o malis aut iudicem fugiat occaecat cernantur aut multos expetendis si 
+                     sunt malis, aliqua senserit et expetendis et eram eiusmod mentitum eu id 
+                     offendit ne pariatur. Eu do fugiat occaecat de quae laborum a concursionibus ab 
+                     ubi officia efflorescere, esse incididunt hic singulis ne proident de lorem 
+                     eiusmod, ipsum mandaremus a exquisitaque id se ipsum senserit mandaremus quo 
+                     cupidatat labore singulis occaecat. De litteris sed laborum. Sint arbitror 
+                     pariatur nam consequat fugiat probant laboris. Magna cupidatat nescius hic sint 
+                     sed ullamco an magna si se aute cupidatat imitarentur, quid ingeniis pariatur.</p>
                </div>
             </div>
          </section>

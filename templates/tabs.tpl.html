@@ -10,20 +10,30 @@
       <title>NOVA Static Site :: Tabs</title>
       <link rel="stylesheet" href="css/main.css">
       <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic,900italic%7CArchivo+Narrow:400,400italic,700,700italic%7COswald:400,300,700" rel="stylesheet" type="text/css"/>
-      <!-- Provide support for most common elements not supported by sad browsers -->
-      <script src="/js/vendor/modernizr-custom.js" />
       <!-- Provide support for <picture> element and srcset attribute -->
-      <script src="picturefill.js" async></script>  
+      <script src="js/vendor/picturefill.min.js" async></script> 
    </head>
    
    <body>
-      
+
+      <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+-->
+
+      <!--
+<nav role="navigation" data-sticky data-nav-align-top>
+@@include('_navigation.html')
+</nav>
+-->
+
       <header role="banner">
          @@include('_header.html')
       </header>
-   
-      <nav role="navigation" data-sticky>
-         @@include('_navigation.html')
+
+      <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+-->   <nav role="navigation" data-sticky>
+      @@include('_navigation.html')
       </nav>
       
       <main role="main">

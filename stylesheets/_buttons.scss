@@ -23,7 +23,7 @@ button {
    color: $color-secondary;
 }
 
-.button:link {
+.button {
    color: $button-color-primary;
    padding: em(10) em(20);
    border: none;
@@ -78,4 +78,31 @@ button {
    &.raised {
       border-bottom: 5px solid darken($button-bg-color-primary, 30%);
    }
-} 
+   &.disabled {
+      pointer-events: none;
+      background: transparentize($button-bg-color-primary, 0.8);
+   }
+}
+
+.button-group {
+   display: block;
+   & .button:link {
+      @include margin-left(0);
+      @include margin-right(0);
+      &:not(:last-of-type) {
+         border-right: 1px solid $silver;
+      }
+   }
+   &.rounded {
+      & .button {
+         &:first-of-type {
+            border-top-left-radius: $button-radius;
+            border-bottom-left-radius: $button-radius;
+         }
+         &:last-of-type {
+            border-top-right-radius: $button-radius;
+            border-bottom-right-radius: $button-radius;
+         }
+      }
+   }
+}

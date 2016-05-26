@@ -108,14 +108,28 @@ var header =                  document.querySelector("[role=banner]"), // Get he
     stickyNav =               document.querySelector("[data-sticky]"), // Get sticky nav element if exists
     regNav =                  document.querySelector("[role=navigation]"); // get first instance of navigation element
 
-if (document.addEventListener) { // If happy browser
-   window.addEventListener("scroll", function() { // add scroll event
-      if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
-         if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
-            regNav.className = "sticky"; // add class "sticky" to nav element
-         } else {
-            regNav.className = ""; // leave class empty for nav element
+if (regNav.hasAttribute("data-nav-align-top")) {
+   regNav.className = "sticky";
+} else {
+   if (document.addEventListener) { // If happy browser
+      window.addEventListener("scroll", function() { // add scroll event
+         if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
+            if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
+               regNav.className = "sticky"; // add class "sticky" to nav element
+            } else {
+               regNav.className = ""; // leave class empty for nav element
+            }
          }
-      }
-   })
+      })
+   } else if (document.attachEvent) { // If sad browser :( nav should simply not stick
+      window.attachEvent("onscroll", function() { // add scroll event
+         if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
+            if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
+               regNav.className = "sticky"; // add class "sticky" to nav element
+            } else {
+               regNav.className = ""; // leave class empty for nav element
+            }
+         }
+      })
+   };
 };

@@ -36,6 +36,8 @@ $global-margin:							  0.8333; // Unitless
 $preferred-unit:                          rem;
 $max-unitless-value:                      10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
 
+$image-path:                              "../img"; // path to images folder
+
 
 // Global Colors
 // - - - - - - - - - - - - - - - - - - - -
@@ -78,22 +80,32 @@ $font-thin:							      200;
 // Buttons
 // - - - - - - - - - - - - - - - - - - - -
 
-//$button-bg-color-primary:                 $color-primary;
-//$button-bg-color-secondary:               $color-secondary;
+$button-bg-color-primary:                 $color-primary;
+$button-bg-color-secondary:               $color-secondary;
 
-//$button-color-primary:                    $white;
-//$button-color-secondary:                  $oil;
+$button-color-primary:                    $white;
+$button-color-secondary:                  $oil;
 
-//$button-radius:                           $font-base;
+$button-radius:                           $font-base;
 
 
 // Header
 // - - - - - - - - - - - - - - - - - - - -
 
-$header-style:                            "masthead"; // Default header style
+$header-style:                            "masthead"; // options: masthead; classic
+$header-bg-color:                         $light-grey;
 
-$call-to-action-active:                   "no";
-$call-to-action-align:                    "right";
+$call-to-action-active:                   "yes"; // options: yes; no
+$call-to-action-Halign:                   "left"; // options: left; center; right
+$call-to-action-Valign:                   "bottom"; // options: top; middle; bottom
+$call-to-action-control-margin:           10; // used to position cta from edges of page
+
+$show-logo-in-head:                       "yes"; // options: yes; no
+
+// used with header-type = masthead
+$banner-small:                            "#{$image-path}/1300x650.gif"; // path to banner
+$banner-medium:                           "#{$image-path}/1300x650.gif";
+$banner-large:                            "#{$image-path}/1300x650.gif";
 
 // Navigation
 // - - - - - - - - - - - - - - - - - - - -

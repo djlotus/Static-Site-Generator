@@ -1,3 +1,6 @@
+if (document.querySelector("[data-tab]")) {
+
+
 // - - - - - - - - - - - - - - - - - - - -
 // Set Variables
 // - - - - - - - - - - - - - - - - - - - -
@@ -12,10 +15,10 @@ var tabCollection =                 document.querySelectorAll("[data-tab]"), // 
 // Convert collections to objects; need loop because IE8 does not support Array.prototype.slice.call :(
 for (i = 0; i < tabCollection.length; i++) {
    tabs.push(tabCollection[i]);
-}
+};
 for (i = 0; i < panelCollection.length; i++) {
    panels.push(panelCollection[i]);
-}
+};
 
 var controlMargin =                 panels[0].scrollHeight,
     panelMargin =                   tabs[0].scrollHeight;
@@ -37,7 +40,7 @@ if (control.className === "tabs") {
 // Hide all but first panel initially. No JS will display all panels. :)
 for (var i = 1; i < panels.length; i++) {
    panels[i].setAttribute(attrPanel, "");
-}
+};
 
 
 // - - - - - - - - - - - - - - - - - - - -
@@ -163,7 +166,7 @@ function setIcon() {
          tabCollection[i].setAttribute("class", "icon-minus");
       }
    }
-}
+};
 
 
 // - - - - - - - - - - - - - - - - - - -
@@ -286,4 +289,6 @@ if (document.addEventListener) {
          showPanel(tabObjects, currentPanel);
       };
    });
+};
+   
 }

@@ -7,54 +7,127 @@
 */
 
 
+// Custom Header Styles
+// - - - - - - - - - - - - - - - - - - - -
+
+$header-style:                                  "classic"                        !default;
+$header-bg-color:                               "$light-grey"                    !default;
+
+$call-to-action-active:                         "yes"                            !default;
+$call-to-action-Halign:                         "left"                           !default;
+$call-to-action-Valign:                         "middle"                         !default;
+$call-to-action-control:                        10                               !default;
+
+$show-logo-in-head:                             "yes"                            !default;
+
+// used with header-type = masthead
+$banner-small:                                  "#{$image-path}/1300x650.gif"    !default;
+$banner-medium:                                 "#{$image-path}/1300x650.gif"    !default;
+$banner-large:                                  "#{$image-path}/1300x650.gif"    !default;
+
+
 // Default Header Styles
 // - - - - - - - - - - - - - - - - - - - -
 
 header[role=banner] {
-   @include padding(3);
+   @include padding();
    position: relative;
-   background: silver;
+   background: $header-bg-color;
+   text-align: center;
+   @include breakpoint(medium) {
+      text-align: left;
+   }
 }
 
-// Custom Header Styles
-// - - - - - - - - - - - - - - - - - - - -
-
-$header-style:                "classic"                  !default;
-//$header-style:                "masthead"                 !default;
-
-$call-to-action-active:       "yes"                      !default;
-$call-to-action-align:        "center"                   !default;
-
 @if $header-style == classic { // "classic" header style: Logo on left side
+   @if $show-logo-in-head == "no" {
+      header[role=banner] img {
+         display: none;
+      }
+   }
    .call-to-action {
       display: none;
    }
-} @else if $header-style == masthead { // "masthead" header style: Large image background with CTA
+} @else if $header-style == masthead { // "masthead" header style: Large image background with optional CTA
    header[role=banner] {
-      background: white url("../img/1300x650.gif") no-repeat 50% 50%;
+      background: white url(#{$banner-small}) no-repeat 50% 50%;
       background-size: cover;
-      @include padding(10);
+      @include padding-top(10);
+      @include padding-right();
+      @include padding-bottom();
+      @include padding-left();
+      @include breakpoint(medium) {
+         @include padding();
+      }
       & .row {
          @include row-reset();
          @if $call-to-action-active == "yes" {
-            & .call-to-action {
-               @if $call-to-action-align == right {
-                  text-align: right;
-                  @include padding-right(4);
-               } @else if $call-to-action-align == center {
-                  text-align: center;
-               } @else if $call-to-action-align == left {
-                  text-align: left;
-                  @include padding-left(4);
+            & .cta-container {
+               display: table;
+               display: flex;
+               max-width: 50%;
+               position: relative;
+               @include breakpoint(medium) {
+                  @include margin-top($call-to-action-control);
+                  @include margin-right();
+                  @include margin-bottom($call-to-action-control);
+                  @include margin-left();
                }
-               & span {
-                  font-size: em(33.184);
-                  &:last-of-type {
-                     font-size: em(19.2);
+               @include breakpoint(large) {
+                  max-width: 25%;
+               }
+               @if $call-to-action-Halign == right {
+                  text-align: right;
+                  float: right;
+                  & .button {
+                     margin-right: 0;
+                  }
+               } @else if $call-to-action-Halign == center {
+                  text-align: center;
+                  float: none;
+                  margin: 0 auto;
+                  @include breakpoint(medium) {
+                     @include margin-top($call-to-action-control);
+                     margin-right: auto;
+                     @include margin-bottom($call-to-action-control);
+                     margin-left: auto;
+                  }
+               } @else if $call-to-action-Halign == left {
+                  text-align: left;
+                  float: left;
+                  & .button {
+                     margin-left: 0;
                   }
                }
-               & a[role=button] {
-                  font-size: em(33.184);
+               @if $call-to-action-Valign == top {
+                  bottom: $call-to-action-control + $preferred-unit;
+               } @else if $call-to-action-Valign == bottom {
+                  top: 1em;
+                  @include breakpoint(medium) {
+                     top: $call-to-action-control + $preferred-unit;
+                  }
+               }
+               & .call-to-action {
+                  @include padding();
+                  max-width: none;
+                  background: transparentize(white, 0.5);
+                  float: none;
+                  & span {
+                     font-size: 1.2em;
+                     font-weight: $font-bold;
+                     &:last-of-type {
+                        font-size: 1em;
+                        font-weight: $font-regular;
+                     }
+                  }
+                  @include breakpoint(large) {
+                     & span {
+                        font-size: em(33.184);
+                        &:last-of-type {
+                           font-size: em(19.2);
+                        }
+                     }
+                  }
                }
             }
          } @else {
