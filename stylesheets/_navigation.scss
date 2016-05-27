@@ -17,6 +17,8 @@ $navigation-align:                           "left"               !default;
 $navigation-background-color:                $oil                 !default;
 $navigation-links-color:                     white                !default;
 
+$navigation-sub-style:                       ""                   !default;
+
 // Mobile Nav Button
 #show-nav {
    background: $navigation-background-color;
@@ -133,6 +135,7 @@ nav[role=navigation] {
                & li {
                   display: block;
                   @include padding-left();
+                  border-right: none;
                }
             }
             &[data-dropdown] {
@@ -179,6 +182,28 @@ nav[role=navigation] {
             &.active {
                left: 0;
             }
+            @if $navigation-sub-style == "inverted" {
+               & li {
+                  @include padding(0.5);
+               }
+               & li:not(:last-of-type) {
+                  border-bottom: 1px solid $navigation-background-color;
+               }
+               background: $navigation-links-color;
+               border-left: 1px solid $navigation-background-color;
+               box-shadow: 3px 3px 5px $navigation-background-color;
+               @include padding(0.5);
+               font-size: $font-base;
+               & a {
+                  color: $navigation-background-color;
+                  font-weight: $font-regular;
+                  &:hover,
+                  &:focus {
+                     color: $blue;
+                     text-decoration: underline;
+                  }
+               }
+            }
          }
          & a {
             color: $navigation-links-color;
@@ -190,6 +215,13 @@ nav[role=navigation] {
          }
       }
 
+   }
+   @include breakpoint(xlarge) {
+      & #logo-nav {
+         @include margin-top(0.5);
+         @include padding-left(2);
+         position: absolute;
+      }
    }
 }
 

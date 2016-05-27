@@ -18,8 +18,6 @@ $call-to-action-Halign:                         "left"                          
 $call-to-action-Valign:                         "middle"                         !default;
 $call-to-action-control:                        10                               !default;
 
-$show-logo-in-head:                             "yes"                            !default;
-
 // used with header-type = masthead
 $banner-small:                                  "#{$image-path}/1300x650.gif"    !default;
 $banner-medium:                                 "#{$image-path}/1300x650.gif"    !default;
@@ -40,11 +38,6 @@ header[role=banner] {
 }
 
 @if $header-style == classic { // "classic" header style: Logo on left side
-   @if $show-logo-in-head == "no" {
-      header[role=banner] img {
-         display: none;
-      }
-   }
    .call-to-action {
       display: none;
    }

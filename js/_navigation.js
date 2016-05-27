@@ -99,6 +99,7 @@ var docBody =                 document.body, // Get body
 
 docBody.style.marginTop = navbarOffset + "px";
 
+
 // - - - - - - - - - - - - - - - - - - - -
 // Position Sticky Navbar
 // - - - - - - - - - - - - - - - - - - - -
@@ -108,6 +109,12 @@ var header =                  document.querySelector("[role=banner]"), // Get he
     stickyNav =               document.querySelector("[data-sticky]"), // Get sticky nav element if exists
     regNav =                  document.querySelector("[role=navigation]"); // get first instance of navigation element
 
+// Show/Hide logo in navbar
+if (document.getElementById("logo-nav")) {
+   var navLogo =             document.getElementById("logo-nav");
+   navLogo.style.display = "none";
+}
+
 if (regNav.hasAttribute("data-nav-align-top")) {
    regNav.className = "sticky";
 } else {
@@ -116,8 +123,13 @@ if (regNav.hasAttribute("data-nav-align-top")) {
          if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
             if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
                regNav.className = "sticky"; // add class "sticky" to nav element
+               // show logo in nav after it sticks to top
+               if (window.innerWidth > 1400) { // only show logo in nav if above medium breakpoint
+                  navLogo.style.display = "inline-block";
+               }
             } else {
                regNav.className = ""; // leave class empty for nav element
+               navLogo.style.display = "none";
             }
          }
       })
@@ -126,8 +138,13 @@ if (regNav.hasAttribute("data-nav-align-top")) {
          if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
             if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
                regNav.className = "sticky"; // add class "sticky" to nav element
+               // show logo in nav after it sticks to top
+               if (window.innerWidth > 1400) { // only show logo in nav if above medium breakpoint
+                  navLogo.style.display = "inline-block";
+               }
             } else {
                regNav.className = ""; // leave class empty for nav element
+               navLogo.style.display = "none";
             }
          }
       })

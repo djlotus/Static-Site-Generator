@@ -92,15 +92,13 @@ $button-radius:                           $font-base;
 // Header
 // - - - - - - - - - - - - - - - - - - - -
 
-$header-style:                            "masthead"; // options: masthead; classic
-$header-bg-color:                         $light-grey;
+$header-style:                            "classic"; // options: masthead; classic
+$header-bg-color:                         $white;
 
 $call-to-action-active:                   "yes"; // options: yes; no
-$call-to-action-Halign:                   "left"; // options: left; center; right
-$call-to-action-Valign:                   "bottom"; // options: top; middle; bottom
+$call-to-action-Halign:                   "right"; // options: left; center; right
+$call-to-action-Valign:                   "middle"; // options: top; middle; bottom
 $call-to-action-control-margin:           10; // used to position cta from edges of page
-
-$show-logo-in-head:                       "yes"; // options: yes; no
 
 // used with header-type = masthead
 $banner-small:                            "#{$image-path}/1300x650.gif"; // path to banner
@@ -114,6 +112,8 @@ $navigation-style:                        "chevron"; // options: chevron; bar
 $navigation-align:                        "left"; // options: left; center; right
 $navigation-background-color:             $oil; // Default color for navigation background
 $navigation-links-color:                  $white;
+
+$navigation-sub-style:                    "inverted"; // options: _blank_; inverted
 
 // Icon Fonts
 // - - - - - - - - - - - - - - - - - - - -
