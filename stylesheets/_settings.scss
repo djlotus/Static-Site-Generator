@@ -30,8 +30,8 @@ $column-count:                            12;
 
 $global-width:							  1000; // Unitless
 
-$global-padding:						  0.8333; // Unitless
-$global-margin:							  0.8333; // Unitless
+$global-padding:						  0.73685; // Unitless
+$global-margin:							  0.73685; // Unitless
 
 $preferred-unit:                          rem;
 $max-unitless-value:                      10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
@@ -66,7 +66,7 @@ $font-family-body:                        "Lato", sans-serif;
 $font-family-buttons:                     "Archivo Narrow", sans-serif;
 $font-family-navigation:                  "Oswald", sans-serif;
 
-$font-base:                               16px;
+$font-base:                               19px;
 $font-scale:                              1.2;
 $line-height:                             1.5;
 

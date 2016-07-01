@@ -7,7 +7,7 @@
 /*! p  -      1.2 * 16 = 19.2 px
 /*!
 /*! Line Height -   1.5
-/*! Padding     -   0.8333rem ( 13.333 pixels )
+/*! Padding     -   0.73685em ( 14 pixels )
 /*!
 /*!=========================================================================================== */
 /*!
@@ -27,36 +27,43 @@
 
 }
 
+body {
+   font-size: 19px;
+}
+
 h1,h2,h3,h4 {
    @include headings;
 }
 
 h1 {
    font-size: em(47.776);
-   @include margin-top(2);
-   @include margin-right(0);
-   @include margin-bottom(0);
-   @include margin-left(0);
+   @include margin-top(0.5861);
+   @include margin-bottom(0.5861);
+   line-height: 1.1721;
 }
 
 h2 {
    font-size: em(39.808);
-   @include margin-top(1.5);
+   @include margin-top(0.7034);
+   line-height: 1.4068;
 }
 
 h3 {
    font-size: em(33.184);
-   @include margin-top(1);
+   @include margin-top(0.8438);
+   line-height: 1.6876;
 }
 
 h4 {
    font-size: em(27.648);
-   @include margin-top(1);
+   @include margin-top(1.0127);
+   line-height: 1.0127;
 }
 
 p {
-   font-size: em(19.2);
-   @include margin-top(1);
+   font-size: em(19);
+   @include margin-bottom(0.73685);
+   line-height: 1.4737;
 }
 
 a {

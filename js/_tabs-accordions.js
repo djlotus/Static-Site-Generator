@@ -33,7 +33,7 @@ var control =                       document.getElementById("tabs") || document.
 
 // Set initial margin on tabs
 if (control.className === "tabs") {
-   control.style.marginBottom = controlMargin + "px";
+   control.style.marginBottom = (controlMargin + 10) + "px";
 };
 
 
@@ -144,7 +144,7 @@ function showPanel(arr, value) {
             controlMargin = activePanel.scrollHeight;
          };
 //         console.log(controlMargin);
-         control.style.marginBottom = controlMargin + "px";
+         control.style.marginBottom = (controlMargin + 10) + "px";
       };
    };
 };

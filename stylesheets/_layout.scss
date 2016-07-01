@@ -39,12 +39,12 @@ body {
 }
 hr {
    max-width: $global-width + px;
-   margin: 1.728em auto;
+   @include margin($global-margin);
    box-shadow: 0 1px $light-grey;
 }
 
 section {
-   @include padding(2);
+   @include padding(2 * $global-padding);
 }
 
 .sticky {

@@ -38,7 +38,7 @@ footer {
          text-align: left;
       }
       & li {
-         @include padding(0.625);
+         @include padding();
       }
    }
    & .colophon {

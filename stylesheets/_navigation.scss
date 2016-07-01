@@ -41,7 +41,7 @@ nav[role=navigation] {
    font: {
       family: $font-family-navigation;
       weight: $font-thin;
-      size: 1.5rem;
+      size: 1.2em;
    }
    letter-spacing: 1px;
    position: fixed;
@@ -65,6 +65,7 @@ nav[role=navigation] {
       }
       & li {
          @include padding(1);
+         line-height: 1.228;
          &.top-level {
             border-bottom: 1px solid $light-grey;
             @include padding-left(2);
