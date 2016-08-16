@@ -19,6 +19,20 @@ $navigation-links-color:                     white                !default;
 
 $navigation-sub-style:                       ""                   !default;
 
+// Skip Nav
+.skip-nav {
+   left: -10000px;
+   position: absolute;
+   &:focus {   
+      background: #ffca27;
+      left: 0;
+      z-index: 1000;
+      position: relative;
+      padding: 1em;
+      border: 2px solid #252525;
+   }
+}
+
 // Mobile Nav Button
 #show-nav {
    background: $navigation-background-color;

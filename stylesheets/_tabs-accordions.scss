@@ -77,7 +77,7 @@
       visibility: hidden;
       @include breakpoint(medium) {
          position: absolute;
-         top: $font-base * 3.625;
+         top: $font-base * 3.31578947;
       }
    }
    & > [data-panel=active] {
@@ -151,4 +151,19 @@
       -webkit-transition: linear 3s max-height;
       transition: linear 3s max-height;
    }
+}
+
+/* Control :focus appearance of tabs/accordions */
+/* Left seperate so it's easy to find */
+
+.tabs:focus,
+.accordion:focus {
+   outline: none;
+}
+.tabs:focus > [data-tab="active"],
+.accordions:focus > [data-tab="active"] {
+   outline: -webkit-focus-ring-color auto 5px !important;
+   outline: -moz-focus-ring-color auto 5px !important;
+   outline: -ms-focus-ring-color auto 5px !important;
+   outline: -o-focus-ring-color auto 5px !important;
 }
