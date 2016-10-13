@@ -24,6 +24,12 @@ From the terminal (or command line in Windows) navigate to your site's directory
 $ cd My/Site/Directory
 ```
 ### Build
+Run NPM install to download and install dependencies
+
+```
+$ npm insall
+```
+
 Run Gulp to build site
 
 ```
