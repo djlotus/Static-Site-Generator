@@ -1,0 +1,46 @@
+[data-modal] {
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   top: 10000px;
+   visibility: hidden;
+   left: 0;
+   background: rgba(0,0,0,0.7);
+   & #modal-label {
+      @include headings();
+      font-size: em(33.184);
+      @include margin-top(0.8438);
+      line-height: 1.6876;
+   }
+}
+[data-modal=show] {
+   top: 0;
+   visibility: visible;
+   & .modal {
+      background: $white;
+      color: $oil;
+      @include padding();
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+   }
+}
+[data-modal-close],
+[data-modal-open] {
+   background: none;
+   @include padding();
+   text-decoration: underline;
+   text-align: right;
+   &:focus {
+      outline: -webkit-focus-ring-color auto 5px;
+   }
+}
+button[data-modal-close] {
+   background: $warn;
+   color: $white;
+   &:hover {
+      background: transparentize($warn, 0.3);
+   }
+}

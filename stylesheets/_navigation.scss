@@ -6,18 +6,21 @@
 * 
 */
 
+// Custom navigation Styles
+// - - - - - - - - - - - - - - - - - - - -
+
 $navigation-align-map: (
    left: flex-start,
    center: center,
    right: flex-end
 );
 
-$navigation-style:                           "chevron"            !default;
-$navigation-align:                           "left"               !default;
-$navigation-background-color:                $oil                 !default;
-$navigation-links-color:                     white                !default;
-
-$navigation-sub-style:                       ""                   !default;
+//$navigation-style:                           "chevron"            !default;
+//$navigation-align:                           "left"               !default;
+//$navigation-background-color:                $oil                 !default;
+//$navigation-links-color:                     white                !default;
+//
+//$navigation-sub-style:                       ""                   !default;
 
 // Skip Nav
 .skip-nav {
@@ -154,6 +157,9 @@ nav[role=navigation] {
                }
             }
             &[data-dropdown] {
+               & > a:hover {
+                  cursor: default;
+               }
                & a:focus {
                   & + .dropdown {
                      left: 0;
@@ -233,10 +239,14 @@ nav[role=navigation] {
    }
    @include breakpoint(xlarge) {
       & #logo-nav {
-         @include margin-top(0.5);
-         @include padding-left(2);
-         position: absolute;
+         @if $show-logo-in-sticky-nav == "yes" {
+            display: inline-block;
+            @include margin-top(0.5);
+            @include padding-left(2);
+            position: absolute;
+         } @else {
+            display: none;
+         }
       }
    }
 }
-
