@@ -1,4 +1,4 @@
-# Static-Site-Generator (v0.12)
+# Static-Site-Generator
 Static site generator for vendor sites.
 ___
 ## Requirements

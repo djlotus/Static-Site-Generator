@@ -1,72 +1,31 @@
-/*! Font Size   -   Minor Third (1:1.2) - [ 1.2(minor third ratio) * 16 (base font-size which is set in 
-/*! html element) = font size in pixels ]
-/*! h1  -   2.986 * 16 = 47.776 px
-/*! h2  -   2.488 * 16 = 39.808 px
-/*! h3  -   2.074 * 16 = 33.184 px
-/*! h4  -   1.728 * 16 = 27.648 px
-/*! p  -      1.2 * 16 = 19.2 px
-/*!
-/*! Line Height -   1.5
-/*! Padding     -   0.73685em ( 14 pixels )
-/*!
-/*!=========================================================================================== */
-/*!
-*/
+/*! 
+* 
+* Basic Typography
+* 
+* */
+
+// - - - - - - - - - - - - - - - - - - - -
 
 * ::selection {
    background: $oil;
    color: $color-secondary;
 }
 
-@mixin headings {
-   font: {
-      family: $font-family-headings;
-      weight: 400;
-   }
-   @include padding-left(0);
-
-}
-
 body {
-   font-size: 19px;
-}
-
-h1,h2,h3,h4 {
-   @include headings;
-}
-
-h1 {
-   font-size: em(47.776);
-   @include margin-top(0.5861);
-   @include margin-bottom(0.5861);
-   line-height: 1.1721;
-}
-
-h2 {
-   font-size: em(39.808);
-   @include margin-top(0.7034);
-   line-height: 1.4068;
-}
-
-h3 {
-   font-size: em(33.184);
-   @include margin-top(0.8438);
-   line-height: 1.6876;
-}
-
-h4 {
-   font-size: em(27.648);
-   @include margin-top(1.0127);
-   line-height: 1.0127;
-}
-
-p {
-   font-size: em(19);
-   @include margin-bottom(0.73685);
-   line-height: 1.4737;
+   font-size: 16px;
+   @include breakpoint(medium) {
+      font-size: 19.2px;
+   }
 }
 
 a {
+   color: initial;
+}
+
+a:hover,
+a:focus,
+button:focus,
+button:hover {
    color: $color-links;
 }
 
@@ -78,6 +37,22 @@ a {
    text-align: center;
 }
 
-.text-left {
+.text-right {
    text-align: right;
+}
+
+blockquote {
+   @extend p;
+   font: {
+      style: italic;
+      size: $font-base;
+   }
+   & cite {
+      display: block;
+      @include margin-top();
+      @include padding-left();
+      &:before {
+         content: " - "
+      }
+   }
 }

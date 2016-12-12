@@ -1,8 +1,6 @@
-/*! Test NOVA Framework
+/*!
 * 
-* Authored by James Murphy
-* 
-* Rows
+* Scripts
 * 
 */
 

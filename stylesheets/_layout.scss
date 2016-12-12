@@ -1,13 +1,9 @@
-/*! Test NOVA Framework
+/*!
 * 
-* Authored by James Murphy
-* 
-* Default Layout Styles
+* Layout Styles
 * 
 */
 
-
-// Default Body Styles
 // - - - - - - - - - - - - - - - - - - - -
 
 * {
@@ -45,6 +41,12 @@ hr {
 
 section {
    @include padding(2 * $global-padding);
+}
+
+img {
+   display: inline-block;
+   vertical-align: middle;
+   max-width: 100%;
 }
 
 .sticky {

@@ -1,12 +1,9 @@
-/*! Test NOVA Framework
-* 
-* Authored by James Murphy
+/*! 
 * 
 * Navigation
 * 
 */
 
-// Custom navigation Styles
 // - - - - - - - - - - - - - - - - - - - -
 
 $navigation-align-map: (
@@ -15,19 +12,19 @@ $navigation-align-map: (
    right: flex-end
 );
 
-//$navigation-style:                           "chevron"            !default;
-//$navigation-align:                           "left"               !default;
-//$navigation-background-color:                $oil                 !default;
-//$navigation-links-color:                     white                !default;
-//
-//$navigation-sub-style:                       ""                   !default;
+$navigation-style:                           "chevron"            !default;
+$navigation-align:                           "left"               !default;
+$navigation-background-color:                $oil                 !default;
+$navigation-links-color:                     $white                !default;
+
+$navigation-sub-style:                       ""                   !default;
 
 // Skip Nav
 .skip-nav {
    left: -10000px;
    position: absolute;
    &:focus {   
-      background: #ffca27;
+      background: $color-secondary;
       left: 0;
       z-index: 1000;
       position: relative;
@@ -49,6 +46,9 @@ $navigation-align-map: (
    @include breakpoint(medium) {
       display: none;
    }
+   & button[id=showNav] {
+      @include margin-bottom(0);
+   }
    & button > span {
       font-family: $font-family-buttons;
    }
@@ -63,7 +63,8 @@ nav[role=navigation] {
    letter-spacing: 1px;
    position: fixed;
    width: 0;
-   top: 7rem;
+   top: 5.2rem;
+   z-index: 999;
    & ul {
       @include margin(0);
       @include padding(0);

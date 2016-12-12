@@ -1,4 +1,4 @@
-/*! Test NOVA Framework
+/*! Static Site Framework
 * 
 * Authored by James Murphy
 * 
@@ -53,6 +53,9 @@ $light-grey:						      #e5e5e5;
 $silver:                                  #f2f2f2;
 $white:                                   #ffffff;
 
+$warn:                                    #f04124;
+$success:                                 #0c6e40;
+
 $color-primary:                           $green;
 $color-secondary:                         $gold;
 $color-links:                             $blue;
@@ -70,6 +73,15 @@ $font-base:                               19px;
 $font-scale:                              1.2;
 $line-height:                             1.5;
 
+$headings: (
+   p,
+   h5,
+   h4,
+   h3,
+   h2,
+   h1
+);
+
 $font-margin:                             $global-padding;
 
 $font-bold:							      600;
@@ -85,6 +97,8 @@ $button-bg-color-secondary:               $color-secondary;
 
 $button-color-primary:                    $white;
 $button-color-secondary:                  $oil;
+$button-color-warn:                       $warn;
+$button-color-success:                    $success;
 
 $button-radius:                           $font-base;
 
@@ -98,12 +112,15 @@ $header-bg-color:                         $white;
 $call-to-action-active:                   "yes"; // options: yes; no
 $call-to-action-Halign:                   "right"; // options: left; center; right
 $call-to-action-Valign:                   "middle"; // options: top; middle; bottom
-$call-to-action-control-margin:           10; // used to position cta from edges of page
+$call-to-action-control-margin:           1; // used to position cta from edges of page
 
 // used with header-type = masthead
 $banner-small:                            "#{$image-path}/1300x650.gif"; // path to banner
 $banner-medium:                           "#{$image-path}/1300x650.gif";
 $banner-large:                            "#{$image-path}/1300x650.gif";
+$banner-xlarge:                           "#{$image-path}/header_xl.jpg";
+$banner-xxlarge:                          "#{$image-path}/header_xxl.jpg";
+$banner-height:                           15em; // height of banner with no CTA
 
 // Navigation
 // - - - - - - - - - - - - - - - - - - - -
@@ -114,6 +131,8 @@ $navigation-background-color:             $oil; // Default color for navigation 
 $navigation-links-color:                  $white;
 
 $navigation-sub-style:                    "inverted"; // options: _blank_; inverted
+
+$show-logo-in-sticky-nav:                 "no"; // show logo in sticky nav
 
 // Icon Fonts
 // - - - - - - - - - - - - - - - - - - - -

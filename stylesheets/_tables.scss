@@ -1,0 +1,37 @@
+/*!
+* 
+* Tables
+* 
+*/
+
+// - - - - - - - - - - - - - - - - - - - -
+
+table {
+   @include margin-bottom(2);
+   width: 100%;
+   & caption {
+      background: $oil;
+      color: $white;
+      @include padding();
+   }
+   & td {
+      padding: ($global-padding / 2) + em;
+      color: $white;
+   }
+   & th {
+      @extend td;
+      background: $dark-grey;
+      color: $white;
+      text-align: left;
+   }
+   & tr {
+      background: $color-primary;
+      &:nth-child(even) {
+         background: transparentize($color-primary, 0.1);
+      }
+      & td:last-of-type {
+         text-align: right;
+         border-left: 1px solid $oil;
+      }
+   }
+}

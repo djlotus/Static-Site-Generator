@@ -1,4 +1,4 @@
-if (document.querySelector("[data-tab]")) {
+if (document.querySelector("[data-tab]").length != 0) {
 
 
    // - - - - - - - - - - - - - - - - - - - -

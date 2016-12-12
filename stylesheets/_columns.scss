@@ -1,6 +1,4 @@
-/*! Test NOVA Framework
-* 
-* Authored by James Murphy
+/*! 
 * 
 * Columns
 * 
@@ -35,6 +33,14 @@ $column-count:                         12                            !default;
 
       }
    
+   .#{$bp}-text-center {
+      text-align: center;
+   }
+
+   .#{$bp}-text-right {
+      text-align: right;
+   }
+   
    }
 
 }
@@ -42,17 +48,21 @@ $column-count:                         12                            !default;
 // Columns
 // - - - - - - - - - - - - - - - - - - - -
 .#{columns} {
+   @include padding-left(0);
+   @include padding-right(0);
    float: left;
-   padding: {
-      left: $global-padding + em;
-      right: $global-padding + em;
-   }
-   box-sizing: border-box;
-   &:first-of-type {
-      @include padding-left(0);
-   }
-   &:last-of-type {
-      @include padding-right(0);
+   @include breakpoint(medium) {
+      padding: {
+         left: $global-padding + em;
+         right: $global-padding + em;
+      }
+      box-sizing: border-box;
+      &:first-of-type {
+         @include padding-left(0);
+      }
+      &:last-of-type {
+         @include padding-right(0);
+      }
    }
 }
 

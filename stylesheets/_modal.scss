@@ -1,3 +1,11 @@
+/*!
+* 
+* Modal Styles
+* 
+*/
+
+// - - - - - - - - - - - - - - - - - - - -
+
 [data-modal] {
    position: fixed;
    height: 100%;
@@ -6,11 +14,15 @@
    visibility: hidden;
    left: 0;
    background: rgba(0,0,0,0.7);
+   z-index: 9999;
    & #modal-label {
       @include headings();
       font-size: em(33.184);
       @include margin-top(0.8438);
       line-height: 1.6876;
+   }
+   & h3 {
+      color: $color-primary;
    }
 }
 [data-modal=show] {
@@ -25,10 +37,18 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: left;
+      width: 100%;
+      height: auto;
+      overflow-y: scroll;
+      & .row {
+         @include padding();
+      }
+      @include breakpoint(medium) {
+         width: auto;
+      }
    }
 }
-[data-modal-close],
-[data-modal-open] {
+[data-modal-close] {
    background: none;
    @include padding();
    text-decoration: underline;
