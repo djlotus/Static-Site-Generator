@@ -11,9 +11,6 @@ In order to use this static site generator you must have installed:
 ### Node
 We use Node.js to manage our package dependencies. Make have the latest version of [Node.js] (https://nodejs.org/en/)
   
-### Gulp
-We use [Gulp.js] (www.gulpjs.com) to handle our tasks and builds. Please make sure you have the latest version installed.
-
 ___
 ## Setup
 
@@ -23,48 +20,54 @@ From the terminal (or command line in Windows) navigate to your site's directory
 ```
 $ cd My/Site/Directory
 ```
+Initiate Project
+
+```
+$ npm init
+```
+
 ### Build
-Run NPM install to download and install dependencies
+Run *install* to download and install dependencies
 
 ```
-$ npm insall
+$ npm install
 ```
 
-Run Gulp to build site
+Run *build* to build site
 
 ```
-$ gulp
+$ npm run build
 ```
 ___
 ## Tasks
 Once the site is built you can begin editing. We have a default watch task which will perform 3 seperate tasks for compiling the different parts of the site. Alternatively, you can perform individual tasks depending on which part of the site you wish to compile.
 
 ### Watch
-This task will watch for any changes to files and compile all files.
+This task will launch a browser window via **browser-sync** and watch for any changes to files and compile all files.
 
 ```
-$ gulp watch
+$ npm run watch
 ```
 
 ### HTML
-To build the HTML pages we have setup a task called *fileinclude*. This task will compile the templates and includes into static HTML pages.
+To build the HTML pages we have setup a task called *html*. This task will compile the templates and includes into static HTML pages.
 
 ```
-$ gulp fileinclude
+$ npm run html
 ```
 
 ### Sass
-To compile the stylesheets we have setup a task called *sass*. This task will compile the Scss into nested CSS and add vendor prefixes.
+To compile the stylesheets we have setup a task called *sass*. This task will compile the .scss files into nested CSS and add vendor prefixes.
 
 ```
-$ gulp sass
+$ npm run sass
 ```
 
 ### Scripts
-To compile any used scripts we have setup a task called *scripts*. This task compliles and minifies any scripts used in the site.
+To compile scripts we have setup a task called *scripts*. This task watches for updates to our script files and concatenates them to `dist/js/scripts.js` .
 
 ```
-$ gulp scripts
+$ npm run scripts
 ```
 ___
 ## Components to add:
