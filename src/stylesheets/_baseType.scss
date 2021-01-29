@@ -1,0 +1,58 @@
+/*! 
+* 
+* Basic Typography
+* 
+* */
+
+// - - - - - - - - - - - - - - - - - - - -
+
+* ::selection {
+   background: $oil;
+   color: $color-secondary;
+}
+
+body {
+   font-size: 16px;
+   @include breakpoint(medium) {
+      font-size: 19.2px;
+   }
+}
+
+a {
+   color: initial;
+}
+
+a:hover,
+a:focus,
+button:focus,
+button:hover {
+   color: $color-links;
+}
+
+.text-left {
+   text-align: left;
+}
+
+.text-center {
+   text-align: center;
+}
+
+.text-right {
+   text-align: right;
+}
+
+blockquote {
+   @extend p;
+   font: {
+      style: italic;
+      size: $font-base;
+   }
+   & cite {
+      display: block;
+      @include margin-top();
+      @include padding-left();
+      &:before {
+         content: " - "
+      }
+   }
+}

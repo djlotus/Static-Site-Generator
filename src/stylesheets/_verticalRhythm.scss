@@ -1,0 +1,66 @@
+/*!
+ * Vertical Rhythm
+ */
+
+// Typographic Variables
+// - - - - - - - - - - - - - - - - - - - -
+$font-base:                            16px                     !default;
+$font-scale:                           1.2                        !default;
+$line-height:                          1.5                        !default;
+$base-line-height:                     $font-base * $line-height                       !default;
+
+$headings: (
+   p,
+   h5,
+   h4,
+   h3,
+   h2,
+   h1
+)!default;
+
+@mixin generate-vertical-rhythm($label, $font-base, $line-height, $font-scale) {
+   $scale-value: index($headings, $label) - 1;
+   
+   $fs: $font-base * pow($font-scale, $scale-value);
+   $lh: $font-base * $line-height /$fs;
+   
+   @if $lh <= em($fs) {
+      $lh: $lh * 2;
+   }
+   
+   font-size: em($fs);
+   line-height: $lh;
+   @if $label == p {
+      margin-top: 0;
+   } @else {
+      margin-top: $base-line-height / $fs + $preferred-unit;
+   }
+   
+   @if $label == h1 {
+      margin-bottom: $base-line-height / $fs * 2 + $preferred-unit;
+   } 
+   @else if ($label == h2) or ($label == p) {
+      margin-bottom: $base-line-height / $fs + $preferred-unit;
+   } @else {
+      margin-bottom: 0;
+   }
+}
+
+@mixin headings {
+   font: {
+      family: $font-family-headings;
+      weight: 400;
+   }
+   @include padding-left(0);
+   color: $oil;
+}
+
+
+@each $heading in ($headings) {
+   #{$heading} {
+      @include generate-vertical-rhythm($heading, $font-base, $line-height, $font-scale);
+      @if $heading != p {
+         @include headings();
+      }
+   }
+}
