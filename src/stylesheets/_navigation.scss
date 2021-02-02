@@ -6,24 +6,24 @@
 
 // - - - - - - - - - - - - - - - - - - - -
 
-$navigation-align-map: (
-   left: flex-start,
+$navigation-align-map: (left: flex-start,
    center: center,
-   right: flex-end
-);
+   right: flex-end);
 
-$navigation-style:                           "chevron"            !default;
-$navigation-align:                           "left"               !default;
-$navigation-background-color:                $oil                 !default;
-$navigation-links-color:                     $white                !default;
+$navigation-style: "chevron" !default;
+$navigation-position: "default" !default;
+$navigation-align: "left" !default;
+$navigation-background-color: $oil !default;
+$navigation-links-color: $white !default;
 
-$navigation-sub-style:                       ""                   !default;
+$navigation-sub-style: "" !default;
 
 // Skip Nav
 .skip-nav {
    left: -10000px;
    position: absolute;
-   &:focus {   
+
+   &:focus {
       background: $color-secondary;
       left: 0;
       z-index: 1000;
@@ -40,31 +40,39 @@ $navigation-sub-style:                       ""                   !default;
    position: fixed;
    top: 0;
    width: 100%;
+
    font: {
       size: 1rem;
    }
+
    @include breakpoint(medium) {
       display: none;
    }
+
    & button[id=showNav] {
       @include margin-bottom(0);
    }
+
    & button > span {
       font-family: $font-family-buttons;
    }
 }
+
 nav[role=navigation] {
    background: $navigation-background-color;
+
    font: {
       family: $font-family-navigation;
       weight: $font-thin;
       size: 1.2em;
    }
+
    letter-spacing: 1px;
    position: fixed;
    width: 0;
-   top: 5.2rem;
+   //   top: 5.2rem;
    z-index: 999;
+
    & ul {
       @include margin(0);
       @include padding(0);
@@ -73,71 +81,93 @@ nav[role=navigation] {
       position: relative;
       flex-flow: column nowrap;
       border-right: none;
+
       &[data-nav] {
          left: -100vw;
          @include max-width;
          margin: 0 auto;
       }
+
       &[data-nav=true] {
          left: 0;
       }
+
       & li {
          @include padding(1);
          line-height: 1.228;
+
          &.top-level {
             border-bottom: 1px solid $light-grey;
             @include padding-left(2);
          }
+
          & ul {
             & li {
                display: none;
                @include padding-left(3);
             }
          }
+
+         &[data-dropdown] {
+            @extend %fa-icon;
+            @extend .fas;
+         }
       }
+
       & a {
          color: $navigation-links-color;
+
          font: {
             family: $font-family-navigation;
             weight: $font-thin;
          }
+
          text: {
             decoration: none;
             transform: uppercase;
          }
+
          &:hover,
          &:focus {
             color: $navigation-links-color;
          }
       }
    }
+
    @include breakpoint(medium) {
       position: relative;
       top: 0;
       width: 100%;
+
       & ul {
          background: $navigation-background-color;
          // Use Flexbox to align navigation items :D
          flex-flow: row nowrap;
          justify-content: nav-align($navigation-align);
+
          &[data-nav] {
             left: 0;
          }
+
          & li {
             flex: 0 1 auto;
             text-align: left;
             @include padding();
             border-right: 1px solid $dark-grey;
             position: relative;
+
             &:last-of-type {
                border-right: none;
             }
+
             &.top-level {
                border-bottom: none;
                @include padding-left();
+
                &:hover {
+
                   // set underline for nav links
-                  @if $navigation-style == "bar" {
+                  @if $navigation-style=="bar" {
                      &:before {
                         position: absolute;
                         content: "";
@@ -150,6 +180,7 @@ nav[role=navigation] {
                   }
                }
             }
+
             & ul {
                & li {
                   display: block;
@@ -157,40 +188,48 @@ nav[role=navigation] {
                   border-right: none;
                }
             }
+
             &[data-dropdown] {
                & > a:hover {
                   cursor: default;
                }
+
                & a:focus {
                   & + .dropdown {
                      left: 0;
                   }
                }
-               @if $navigation-style == "chevron" {
+
+               @if $navigation-style=="chevron" {
                   &:before {
                      color: $color-secondary;
-                     content: $icon-nav;
+                     content: fa-content($fa-var-angle-down);
                      display: inline-block;
                      position: absolute;
                      top: 2.5em;
                      font-size: 0.625em;
                      left: calc(50% - 0.325em);
                   }
-               } @else {
+               }
+
+               @else {
                   &:before {
                      content: "";
                   }
                }
             }
+
             &[data-dropdown=true] {
                & .dropdown {
                   left: 0;
                }
             }
+
             &:hover a + ul {
                left: 0;
             }
          }
+
          & ul {
             list-style: none;
             position: absolute;
@@ -201,24 +240,30 @@ nav[role=navigation] {
             width: 300%;
             text-align: left;
             display: block;
+
             &.active {
                left: 0;
             }
-            @if $navigation-sub-style == "inverted" {
+
+            @if $navigation-sub-style=="inverted" {
                & li {
                   @include padding(0.5);
                }
+
                & li:not(:last-of-type) {
                   border-bottom: 1px solid $navigation-background-color;
                }
+
                background: $navigation-links-color;
                border-left: 1px solid $navigation-background-color;
                box-shadow: 3px 3px 5px $navigation-background-color;
                @include padding(0.5);
                font-size: $font-base;
+
                & a {
                   color: $navigation-background-color;
                   font-weight: $font-regular;
+
                   &:hover,
                   &:focus {
                      color: $blue;
@@ -227,9 +272,11 @@ nav[role=navigation] {
                }
             }
          }
+
          & a {
             color: $navigation-links-color;
             text-decoration: none;
+
             &:hover,
             &:focus {
                color: darken($color-secondary, 20%);
@@ -238,14 +285,17 @@ nav[role=navigation] {
       }
 
    }
+
    @include breakpoint(xlarge) {
       & #logo-nav {
-         @if $show-logo-in-sticky-nav == "yes" {
+         @if $show-logo-in-sticky-nav=="yes" {
             display: inline-block;
             @include margin-top(0.5);
             @include padding-left(2);
             position: absolute;
-         } @else {
+         }
+
+         @else {
             display: none;
          }
       }

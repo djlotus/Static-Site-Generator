@@ -1,42 +1,33 @@
 /*! Static Site Framework
 * 
 * Authored by James Murphy
-* 
-* My first attempt at Sass and my first attempt at a Framework
-* 
+* * 
 */
 
 
 // Breakpoints
 // - - - - - - - - - - - - - - - - - - - -
 //
-// (Assume Mobile-First therefore no "small" breakpoint)
 
-// $medium-bp:					           768;
-// $large-bp:					           1100;
-// $xlarge-bp:							   1400;
-// $xxlarge-bp:                            1600;
-
-// $screen:                                'only screen'
 
 // Columns
 // - - - - - - - - - - - - - - - - - - - -
 
-$column-count:                            12;
+$column-count: 12;
 
 
 // Global Gutters (re-name and re-organize)
 //- - - - - - - - - - - - - - - - - - - -
 
-$global-width:							  1000; // Unitless
+$global-width: 1000; // Unitless
 
-$global-padding:						  0.73685; // Unitless
-$global-margin:							  0.73685; // Unitless
+$global-padding: 0.73685; // Unitless
+$global-margin: 0.73685; // Unitless
 
-$preferred-unit:                          rem;
-$max-unitless-value:                      10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
+$preferred-unit: rem;
+$max-unitless-value: 10; // Maximum relative untits for mixins (units greater than this are considered to be pixel based)
 
-$image-path:                              "../img"; // path to images folder
+$image-path: "../img"; // path to images folder
 
 
 // Global Colors
@@ -44,104 +35,98 @@ $image-path:                              "../img"; // path to images folder
 // 
 // (Will use "tranparentize($color, $opacity))
 
-$green:                                   #0c6e40;
-$gold:                         		      #ffca27;
-$blue:                                    #1862B6;
-$oil:                            	      #252525;
-$dark-grey:                               #505050;
-$light-grey:						      #e5e5e5;
-$silver:                                  #f2f2f2;
-$white:                                   #ffffff;
+$green: #0c6e40;
+$gold: #ffca27;
+$blue: #1862B6;
+$oil: #252525;
+$dark-grey: #505050;
+$light-grey: #e5e5e5;
+$silver: #f2f2f2;
+$white: #ffffff;
 
-$warn:                                    #f04124;
-$success:                                 #0c6e40;
+$warn: #f04124;
+$success: #0c6e40;
 
-$color-primary:                           $green;
-$color-secondary:                         $gold;
-$color-links:                             $blue;
+$color-primary: $green;
+$color-secondary: $gold;
+$color-links: $blue;
 
 
 // Typography
 // - - - - - - - - - - - - - - - - - - - -
 
-$font-family-headings:                    "Lato", sans-serif;
-$font-family-body:                        "Lato", sans-serif;
-$font-family-buttons:                     "Archivo Narrow", sans-serif;
-$font-family-navigation:                  "Oswald", sans-serif;
+$font-family-headings: "Lato",
+sans-serif;
+$font-family-body: "Lato",
+sans-serif;
+$font-family-buttons: "Archivo Narrow",
+sans-serif;
+$font-family-navigation: "Oswald",
+sans-serif;
 
-$font-base:                               19px;
-$font-scale:                              1.2;
-$line-height:                             1.5;
+$font-base: 19px;
+$font-scale: 1.2;
+$line-height: 1.5;
 
-$headings: (
-   p,
+$headings: (p,
    h5,
    h4,
    h3,
    h2,
-   h1
-);
+   h1);
 
-$font-margin:                             $global-padding;
+$font-margin: $global-padding;
 
-$font-bold:							      600;
-$font-regular:						      400;
-$font-thin:							      200;
+$font-bold: 600;
+$font-regular: 400;
+$font-thin: 200;
 
 
 // Buttons
 // - - - - - - - - - - - - - - - - - - - -
 
-$button-bg-color-primary:                 $color-primary;
-$button-bg-color-secondary:               $color-secondary;
+$button-bg-color-primary: $color-primary;
+$button-bg-color-secondary: $color-secondary;
 
-$button-color-primary:                    $white;
-$button-color-secondary:                  $oil;
-$button-color-warn:                       $warn;
-$button-color-success:                    $success;
+$button-color-primary: $white;
+$button-color-secondary: $oil;
+$button-color-warn: $warn;
+$button-color-success: $success;
 
-$button-radius:                           $font-base;
+$button-radius: $font-base;
 
 
 // Header
 // - - - - - - - - - - - - - - - - - - - -
 
-$header-style:                            "classic"; // options: masthead; classic
-$header-bg-color:                         $white;
+$header-layout: "masthead"; // options: none; classic; masthead
+$header-style: "split"; // options: traditional; split;
+$header-bg-color: $white;
 
-$call-to-action-active:                   "yes"; // options: yes; no
-$call-to-action-Halign:                   "right"; // options: left; center; right
-$call-to-action-Valign:                   "middle"; // options: top; middle; bottom
-$call-to-action-control-margin:           1; // used to position cta from edges of page
+$call-to-action-active: "yes"; // options: yes; no
+$call-to-action-Halign: "left"; // options: left; center; right
+$call-to-action-Valign: "top"; // options: top; middle; bottom
 
 // used with header-type = masthead
-$banner-small:                            "#{$image-path}/1300x650.gif"; // path to banner
-$banner-medium:                           "#{$image-path}/1300x650.gif";
-$banner-large:                            "#{$image-path}/1300x650.gif";
-$banner-xlarge:                           "#{$image-path}/header_xl.jpg";
-$banner-xxlarge:                          "#{$image-path}/header_xxl.jpg";
-$banner-height:                           15em; // height of banner with no CTA
+$banner-small: "#{$image-path}/1300x650.png"; // path to banner
+$banner-medium: "#{$image-path}/1300x650.png";
+$banner-large: "#{$image-path}/1300x650.png";
+$banner-xlarge: "#{$image-path}/header_xl.jpg";
+$banner-xxlarge: "#{$image-path}/header_xxl.jpg";
+
 
 // Navigation
 // - - - - - - - - - - - - - - - - - - - -
 
-$navigation-style:                        "chevron"; // options: chevron; bar
-$navigation-align:                        "left"; // options: left; center; right
-$navigation-background-color:             $oil; // Default color for navigation background
-$navigation-links-color:                  $white;
+$navigation-style: "chevron"; // options: chevron; bar
+$navigation-align: "left"; // options: left; center; right
+$navigation-position: "sticky"; // options: default; sticky
+$navigation-background-color: $oil; // Default color for navigation background
+$navigation-links-color: $white;
 
-$navigation-sub-style:                    "inverted"; // options: _blank_; inverted
+$navigation-sub-style: "inverted"; // options: _blank_; inverted
 
-$show-logo-in-sticky-nav:                 "no"; // show logo in sticky nav
+$show-logo-in-sticky-nav: "yes"; // show logo in sticky nav
 
 // Icon Fonts
 // - - - - - - - - - - - - - - - - - - - -
-$icomoon-font-path: "fonts";
-$icon-font-family: "icomoon";
-
-$icon-plus-circle: "\f055";
-$icon-minus-circle: "\f056";
-$icon-plus: "\f067";
-$icon-minus: "\f068";
-$icon-nav: "\e900";
-$icon-menu: "\e901";

@@ -12,26 +12,29 @@
 
    ${require('_skipNav.html')}
 
-   <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element
+   <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
 
-   <!--
-<nav role="navigation" data-sticky data-nav-align-top>
-${require('_navigation.html')}
-</nav>
--->
+
+   <nav role="navigation" data-nav-align-top>
+      ${require('_navigation.html')}
+   </nav>
+
 
    <header role="banner">
       ${require('_header.html')}
    </header>
 
-   <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element
+   <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
+
+   <!--
    <nav role="navigation" data-sticky>
-      ${require('_navigation.html')}
+      [add require statement here]
    </nav>
+-->
 
    <main role="main" id="main">
       <section>

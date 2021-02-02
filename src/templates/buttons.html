@@ -16,11 +16,10 @@
       // - - - - - - - - - - - - - - - - - - - - - - - - -
       -->
 
-   <!--
-      <nav role="navigation" data-sticky data-nav-align-top>
-${require('_navigation.html')}
-      </nav>
--->
+   <nav role="navigation" data-sticky data-nav-align-top>
+      ${require('_navigation.html')}
+   </nav>
+
 
    <header role="banner">
       ${require('_header.html')}
@@ -29,9 +28,12 @@ ${require('_navigation.html')}
    <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 -->
-   <nav role="navigation" data-sticky>
-      ${require('_navigation.html')}
-   </nav>
+
+   <!--
+<nav role="navigation" data-sticky>
+[add require statement here]
+</nav>
+-->
 
    <main role="main" id="main">
       <section>

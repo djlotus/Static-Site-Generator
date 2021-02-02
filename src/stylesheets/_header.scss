@@ -1,175 +1,219 @@
 /*! 
 * 
-* Header Styles
+* Header-Alt Styles
 * 
 */
 
-// - - - - - - - - - - - - - - - - - - - -
+$header-layout: "classic" !default; // options: none; classic; masthead
+$header-style: "traditional" !default; // options: traditional; split;
+$header-bg-color: $white !default;
 
-$header-style:                                  "classic"                        !default;
-$header-bg-color:                               "$light-grey"                    !default;
-
-$call-to-action-active:                         "yes"                            !default;
-$call-to-action-Halign:                         "left"                           !default;
-$call-to-action-Valign:                         "middle"                         !default;
-$call-to-action-control:                        1                                !default;
+$call-to-action-active: "yes" !default; // options: yes; no
+$call-to-action-Halign: "left" !default; // options: left; center; right
+$call-to-action-Valign: "middle" !default; // options: top; middle; bottom
 
 // used with header-type = masthead
-$banner-small:                                  "#{$image-path}/1300x650.gif"    !default;
-$banner-medium:                                 "#{$image-path}/1300x650.gif"    !default;
-$banner-large:                                  "#{$image-path}/1300x650.gif"    !default;
-$banner-xlarge:                                 "#{$image-path}/1300x650.gif"    !default;
-$banner-height:                                 20em                             !default;
+$banner-small: "#{$image-path}/1300x650.png" !default; // path to banner
+$banner-medium: "#{$image-path}/1300x650.png" !default;
+$banner-large: "#{$image-path}/1300x650.png" !default;
+$banner-xlarge: "#{$image-path}/header_xl.jpg" !default;
+$banner-xxlarge: "#{$image-path}/header_xxl.jpg" !default;
 
 
-// Default Header Styles
-// - - - - - - - - - - - - - - - - - - - -
+[role=banner] {
 
-header[role=banner] {
-   @include padding();
-   position: relative;
-   background: $header-bg-color;
-   text-align: center;
-   @include breakpoint(medium) {
-      text-align: left;
-   }
-   & .byline {
-      @media screen and (max-width: 374px) {
-         display: none;
-      }
-      font-size: 1.2em;
-      text-align: center;
-      color: $white;
+   @if $navigation-position=="sticky" {
+      //      @include margin-top(4.526);
+      //
+      //      @include breakpoint(medium) {
+      //         @include margin-top(5);
+      //      }
+      //
+      //      @include breakpoint(large) {
+      //         @include margin-top(0);
+      //      }
    }
 }
 
-@if $header-style == classic { // "classic" header style: Logo on left side
-   .call-to-action {
+@if $header-layout=="none" {
+   #header {
       display: none;
    }
-} @else if $header-style == masthead { // "masthead" header style: Large image background with optional CTA
-   header[role=banner] {
-      background: white url(#{$banner-small}) no-repeat top left;
+}
+
+@else if $header-layout=="classic" {
+   #header {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+   }
+}
+
+//TODO :: create mixin/function for this
+@else if $header-layout=="masthead" {
+   #header {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 4rem);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      background: white url(#{$banner-small}) no-repeat center center;
       background-size: cover;
-      @if $call-to-action-active == no {
-         height: $banner-height;
-         & h1 {
-            margin-top: calc( 133px - 115px ); // half of banner height minus padding minus half of element height
-         }
-      }
       @include padding();
+
       @include breakpoint(medium) {
-         background: $oil url(#{$banner-medium}) no-repeat 50% 50%;
-         background-size: cover;
-         @include padding(3);
+
+         grid-template-rows: repeat(6, 4rem);
+
+         @if ($header-style=="split") and ($call-to-action-active=="yes") {
+            grid-template-rows: repeat(6, 1fr);
+         }
       }
+
       @include breakpoint(large) {
-         background: $dark-grey url(#{$banner-large}) no-repeat 50% 50%;
-         background-size: cover;
-         @include padding(3);
-      }
-      @include breakpoint(xlarge) {
-         background: $dark-grey url(#{$banner-xlarge}) no-repeat 50% 50%;
-         background-size: cover;
-         @include padding(3);
-      }
-      @include breakpoint(xxlarge) {
-         background: $dark-grey url(#{$banner-xxlarge}) no-repeat 25% 50%;
-         background-size: cover;
-         @include padding(3);
-      }
-      & h1 {
-         text-align: center;
-         color: $white;
-         text-shadow: $oil 2px 2px 2px;
-         & small {
-            font-size: 50%;
-            color: $light-grey;
-         }
-      }
-      & .row {
-         @include row-reset();
-         @if $call-to-action-active == "yes" {
-            & .cta-container {
-               display: table;
-               display: flex;
-               max-width: 50%;
-               position: relative;
-               @include breakpoint(medium) {
-                  @include margin-top($call-to-action-control);
-                  @include margin-right();
-                  @include margin-bottom($call-to-action-control);
-                  @include margin-left();
-               }
-               @include breakpoint(large) {
-                  max-width: 25%;
-               }
-               @if $call-to-action-Halign == right {
-                  text-align: right;
-                  float: right;
-                  & .button {
-                     margin-right: 0;
-                  }
-               } @else if $call-to-action-Halign == center {
-                  text-align: center;
-                  float: none;
-                  margin: 0 auto;
-                  @include breakpoint(medium) {
-                     @include margin-top($call-to-action-control);
-                     margin-right: auto;
-                     @include margin-bottom($call-to-action-control);
-                     margin-left: auto;
-                  }
-               } @else if $call-to-action-Halign == left {
-                  text-align: left;
-                  float: left;
-                  & .button {
-                     margin-left: 0;
-                  }
-               }
-               @if $call-to-action-Valign == top {
-                  bottom: $call-to-action-control + $preferred-unit;
-               } @else if $call-to-action-Valign == bottom {
-                  top: 1em;
-                  @include breakpoint(medium) {
-                     top: $call-to-action-control + $preferred-unit;
-                  }
-               }
-               & .call-to-action {
-                  @include padding();
-                  max-width: none;
-                  background: transparentize(white, 0.5);
-                  float: none;
-                  & span {
-                     font-size: 1.2em;
-                     font-weight: $font-bold;
-                     &:last-of-type {
-                        font-size: 1em;
-                        font-weight: $font-regular;
-                     }
-                  }
-                  @include breakpoint(large) {
-                     & span {
-                        font-size: em(33.184);
-                        &:last-of-type {
-                           font-size: em(19.2);
-                        }
-                     }
-                  }
-               }
-            }
-         } @else {
-            & .call-to-action {
-               display: none;
-            }
-         }
-         & .columns {
-            @include padding-left(0);
-            @include padding-right(0);
-         }
-         & img {
-            display: none;
-         }
+         grid-template-rows: repeat(6, 1fr);
       }
    }
+
+   .call-to-action {
+      @include padding();
+      background: pink; // debug
+      grid-area: 4 / 1 / 7 / 7;
+
+      // Position Call-to-Action
+      @include breakpoint(medium) {
+         @if ($header-style=="traditional") and ($call-to-action-active=="yes") {
+            @if $call-to-action-Halign=="left" {
+               @if $call-to-action-Valign=="top" {
+                  grid-area: 1 / 1 / 4 / 4;
+               }
+
+               @else if $call-to-action-Valign=="middle" {
+
+                  grid-area: 3 / 1 / 6 / 4;
+
+               }
+
+               @else if $call-to-action-Valign=="bottom" {
+
+                  grid-area: 4 / 1 / 7 / 4;
+
+               }
+            }
+
+            @if $call-to-action-Halign=="center" {
+               @if $call-to-action-Valign=="top" {
+
+                  grid-area: 1 / 2 / 4 / 5;
+
+               }
+
+               @else if $call-to-action-Valign=="middle" {
+
+                  grid-area: 2 / 2 / 6 / 6;
+
+               }
+
+               @else if $call-to-action-Valign=="bottom" {
+
+                  grid-area: 4 / 3 / 7 / 6;
+
+               }
+            }
+
+            @if $call-to-action-Halign=="right" {
+               @if $call-to-action-Valign=="top" {
+
+                  grid-area: 1 / 4 / 4 / 7;
+
+               }
+
+               @else if $call-to-action-Valign=="middle" {
+
+                  grid-area: 2 / 4 / 6 / 7;
+
+               }
+
+               @else if $call-to-action-Valign=="bottom" {
+
+                  grid-area: 4 / 4 / 7 / 7;
+
+               }
+            }
+         }
+
+         @else if ($header-style=="split") and ($call-to-action-active=="yes") {
+            grid-area: 1 / 4 / 7 / 7;
+         }
+      }
+
+      @include breakpoint(large) {
+         @if ($header-style=="traditional") and ($call-to-action-active=="yes") {
+            @if $call-to-action-Halign=="left" {
+               @if $call-to-action-Valign=="top" {
+                  grid-area: 1 / 1 / 3 / 3;
+               }
+
+               @else if $call-to-action-Valign=="middle" {
+
+                  grid-area: 3 / 1 / 5 / 3;
+
+               }
+
+               @else if $call-to-action-Valign=="bottom" {
+
+                  grid-area: 5 / 1 / 7 / 3;
+
+               }
+            }
+
+            @if $call-to-action-Halign=="center" {
+               @if $call-to-action-Valign=="top" {
+
+                  grid-area: 1 / 3 / 3 / 5;
+
+               }
+
+               @else if $call-to-action-Valign=="middle" {
+
+                  grid-area: 3 / 3 / 5 / 5;
+
+               }
+
+               @else if $call-to-action-Valign=="bottom" {
+
+                  grid-area: 5 / 3 / 7 / 5;
+
+               }
+            }
+
+            @if $call-to-action-Halign=="right" {
+               @if $call-to-action-Valign=="top" {
+
+                  grid-area: 1 / 5 / 3 / 7;
+
+               }
+
+               @else if $call-to-action-Valign=="middle" {
+
+                  grid-area: 3 / 5 / 5 / 7;
+
+               }
+
+               @else if $call-to-action-Valign=="bottom" {
+
+                  grid-area: 5 / 5 / 7 / 7;
+
+               }
+            }
+         }
+
+      }
+   }
+}
+
+[data-header-classic] {
+   display: none;
 }

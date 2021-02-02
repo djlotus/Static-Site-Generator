@@ -11,31 +11,37 @@
    @include padding(0);
    @include margin(0);
 }
+
 html {
    font-size: $font-base;
 }
 
 body {
    position: relative;
+
    @include breakpoint(medium) {
       margin-top: 0;
    }
+
    background: white;
    color: $oil;
+
    font: {
       family: $font-family-body;
       weight: $font-regular;
       style: normal;
       size: 1rem;
    }
+
    line-height: $line-height;
    text-rendering: optimizeLegibility;
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
 }
+
 hr {
    max-width: $global-width + px;
-   @include margin($global-margin);
+   margin: rem($global-margin) auto;
    box-shadow: 0 1px $light-grey;
 }
 

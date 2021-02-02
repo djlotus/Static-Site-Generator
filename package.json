@@ -10,8 +10,8 @@
       "clean-css-cli": "^4.3.0",
       "concat-files-cli": "^0.1.6",
       "concurrently": "^5.3.0",
+      "cpy-cli": "^3.1.1",
       "html-includes": "^4.3.3",
-      "mkdirp": "^1.0.4",
       "sass": "^1.32.5",
       "uglify-es": "^3.3.9",
       "uglify-js": "^3.12.5",
@@ -20,9 +20,10 @@
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "createDist": "fse touch dist/css/main.css && fse touch dist/css/main.min.css && fse touch dist/js/scripts.js && fse touch dist/js/scripts.min.js",
+      "copyFiles": "cpy src/webfonts/**.* dist/css/webfonts && cpy src/img/**.* dist/img",
       "html": "html-includes --src src/templates --dest dist --watch",
       "build:html": "html-includes --src src/templates --dest dist",
-      "sass": "sass src/stylesheets/main.scss:dist/css/main.css --watch --style expanded --error-css",
+      "sass": "sass src/stylesheets/main.scss:dist/css/main.css --watch --style expanded --embed-source-map --color --no-error-css",
       "build:sass": "sass src/stylesheets/main.scss:dist/css/main.css --style compressed",
       "concatjs": "uglifyjs src/js/* --beautify --verbose --warn --output dist/js/scripts.js",
       "scripts": "watch \"npm run concatjs\" src/js",
@@ -31,7 +32,7 @@
       "cleanCss": "cleancss -o dist/css/main.min.css dist/css/main.css",
       "browser": "browser-sync start --server 'dist' --files 'dist'",
       "watch": "concurrently -k \"npm run html\" \"npm run sass\" \" npm run scripts\" \"npm run browser\"",
-      "build": "npm run createDist && npm run build:html && npm run build:sass && npm run cleanCss && npm run build:scripts"
+      "build": "npm run createDist && npm run copyFiles && npm run build:html && npm run build:sass && npm run cleanCss && npm run build:scripts"
    },
    "author": "james murphy",
    "license": "ISC",
