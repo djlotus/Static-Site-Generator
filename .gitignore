@@ -8,7 +8,7 @@
 *.so
 dist/
 *_old.*
-*.vs/*
+*vs/*
 
 # Temporary files #
 ###################
