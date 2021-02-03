@@ -29,7 +29,7 @@ $navigation-sub-style: "" !default;
       z-index: 1000;
       position: relative;
       padding: 1em;
-      border: 2px solid #252525;
+      border: 2px solid $oil;
    }
 }
 
@@ -266,7 +266,7 @@ nav[role=navigation] {
 
                   &:hover,
                   &:focus {
-                     color: $blue;
+                     color: blue;
                      text-decoration: underline;
                   }
                }

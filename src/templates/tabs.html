@@ -10,81 +10,85 @@
 
 <body>
 
-   ${require('_skipNav.html')}
+    ${require('_skipNav.html')}
 
-   <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element
-// - - - - - - - - - - - - - - - - - - - - - - - - -
--->
-
-   <nav role="navigation" data-sticky data-nav-align-top>
-      ${require('_navigation.html')}
-   </nav>
+    <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
+    // - - - - - - - - - - - - - - - - - - - - - - - - -
+    -->
 
 
-   <header role="banner">
-      ${require('_header.html')}
-   </header>
+    <nav role="navigation" data-nav-align-top>
+        ${require('_navigation.html')}
+    </nav>
 
-   <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element
-// - - - - - - - - - - - - - - - - - - - - - - - - -
--->
 
-   <!--
-<nav role="navigation" data-sticky>
-[add require statement here]
-</nav>
--->
+    <header role="banner">
+        ${require('_header.html')}
+    </header>
 
-   <main role="main" id="main">
-      <section>
-         <div class="row">
-            <h1>Tabs</h1>
-            <p>Fore ita litteris, quem sed non irure incurreret, deserunt cohaerescant te
-               ingeniis si e ex nulla occaecat nam voluptate ubi incididunt quo quo enim
-               mentitum pariatur, te dolor et dolor, an magna ipsum quae doctrina. Ea admodum
-               est incurreret. Ubi aliquip exquisitaque aut ea sint cupidatat, occaecat varias
-               irure e duis.</p>
+    <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
+    // - - - - - - - - - - - - - - - - - - - - - - - - -
+    -->
+    <!--
+       <nav role="navigation" data-sticky>
+          [add require statement here]
+       </nav>
+    -->
 
-            <ul role="tab-list" class="tabs" id="tabs" tabindex="0">
-               <li role="tab" id="tab1a-title" aria-controls="tab1a-panel" aria-label="Step one: Plan" aria-selected="true" data-tab="active">Tab 1a Title</li>
-               <div role="tabpanel" id="tab1a-panel" aria-hidden="false" data-panel="active">
-                  <p>The first step to a successful project is planning. During your initial meeting with the WSDM team we review your project objectives, audience, design and development needs, content, <a href="#">timetable</a> and deliverables.</p>
-               </div>
+    <main role="main" id="main">
+        <section>
+            <div class="row">
+                <h1>Tabs</h1>
+                <p>
+                    Fore ita litteris, quem sed non irure incurreret, deserunt cohaerescant te
+                    ingeniis si e ex nulla occaecat nam voluptate ubi incididunt quo quo enim
+                    mentitum pariatur, te dolor et dolor, an magna ipsum quae doctrina. Ea admodum
+                    est incurreret. Ubi aliquip exquisitaque aut ea sint cupidatat, occaecat varias
+                    irure e duis.
+                </p>
 
-               <li role="tab" id="tab2a-title" aria-controls="tab2a-panel" aria-label="Step two: Design and Develop" aria-selected="false" data-tab>Tab 2a Title</li>
-               <div role="tabpanel" id="tab2a-panel" aria-hidden="true" data-panel="active">
-                  <p>WSDM staff create design features and develop applications with your input.</p>
-               </div>
+                <ul role="tablist" class="tabs" id="tabs" tabindex="0">
+                    <li role="tab" id="tab1a-title" aria-controls="tab1a-panel" aria-label="Step one: Plan" aria-selected="true" data-tab="active">Tab 1a Title</li>
+                    <div role="tabpanel" id="tab1a-panel" aria-hidden="false" data-panel="active">
+                        <p>The first step to a successful project is planning. During your initial meeting with the WSDM team we review your project objectives, audience, design and development needs, content, <a href="#">timetable</a> and deliverables.</p>
+                    </div>
 
-               <li role="tab" id="tab3a-title" aria-controls="tab3a-panel" aria-label="Step three: Test" aria-selected="false" data-tab>Tab 3a Title</li>
-               <div role="tabpanel" id="tab3a-panel" aria-hidden="true" data-panel="active">
-                  <p>We build your Web pages and/or applications in draft format on the staging server for your review and then make requested revisions.</p>
-               </div>
+                    <li role="tab" id="tab2a-title" aria-controls="tab2a-panel" aria-label="Step two: Design and Develop" aria-selected="false" data-tab>Tab 2a Title</li>
+                    <div role="tabpanel" id="tab2a-panel" aria-hidden="true" data-panel="active">
+                        <p>WSDM staff create design features and develop applications with your input.</p>
+                    </div>
 
-               <li role="tab" id="tab4a-title" aria-controls="tab4a-panel" aria-label="Step four: Implement" aria-selected="false" data-tab>Tab 4a Title</li>
-               <div role="tabpanel" id="tab4a-panel" aria-hidden="true" data-panel="active">
-                  <p>Upon your final approval, WSDM take the draft staging version of your project and publishes it live and continues to maintain the project on the Web with updates you submit.</p>
-               </div>
-            </ul>
+                    <li role="tab" id="tab3a-title" aria-controls="tab3a-panel" aria-label="Step three: Test" aria-selected="false" data-tab>Tab 3a Title</li>
+                    <div role="tabpanel" id="tab3a-panel" aria-hidden="true" data-panel="active">
+                        <p>We build your Web pages and/or applications in draft format on the staging server for your review and then make requested revisions.</p>
+                    </div>
 
-            <hr />
+                    <li role="tab" id="tab4a-title" aria-controls="tab4a-panel" aria-label="Step four: Implement" aria-selected="false" data-tab>Tab 4a Title</li>
+                    <div role="tabpanel" id="tab4a-panel" aria-hidden="true" data-panel="active">
+                        <p>Upon your final approval, WSDM take the draft staging version of your project and publishes it live and continues to maintain the project on the Web with updates you submit.</p>
+                    </div>
+                </ul>
 
-            <p>Fore ita litteris, quem sed non irure incurreret, deserunt cohaerescant te
-               ingeniis si e ex nulla occaecat nam voluptate ubi incididunt quo quo enim
-               mentitum pariatur, te dolor et dolor, an magna ipsum quae doctrina. Ea admodum
-               est incurreret. Ubi aliquip exquisitaque aut ea sint cupidatat, occaecat varias
-               irure e duis.</p>
+                <hr />
 
-         </div>
-      </section>
-   </main>
+                <p>
+                    Fore ita litteris, quem sed non irure incurreret, deserunt cohaerescant te
+                    ingeniis si e ex nulla occaecat nam voluptate ubi incididunt quo quo enim
+                    mentitum pariatur, te dolor et dolor, an magna ipsum quae doctrina. Ea admodum
+                    est incurreret. Ubi aliquip exquisitaque aut ea sint cupidatat, occaecat varias
+                    irure e duis.
+                </p>
 
-   <footer>
-      ${require('_footer.html')}
-   </footer>
+            </div>
+        </section>
+    </main>
 
-   <!-- Scripts -->
-   <script src="js/scripts.js"></script>
+    <footer>
+        ${require('_footer.html')}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
 
 </body>
 

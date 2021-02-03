@@ -5,11 +5,6 @@
 */
 
 
-// Breakpoints
-// - - - - - - - - - - - - - - - - - - - -
-//
-
-
 // Columns
 // - - - - - - - - - - - - - - - - - - - -
 
@@ -55,25 +50,23 @@ $color-links: $blue;
 // Typography
 // - - - - - - - - - - - - - - - - - - - -
 
-$font-family-headings: "Lato",
-sans-serif;
-$font-family-body: "Lato",
-sans-serif;
-$font-family-buttons: "Archivo Narrow",
-sans-serif;
-$font-family-navigation: "Oswald",
-sans-serif;
+$font-family-headings: "Lato", sans-serif;
+$font-family-body: "Lato", sans-serif;
+$font-family-buttons: "Archivo Narrow", sans-serif;
+$font-family-navigation: "Oswald", sans-serif;
 
 $font-base: 19px;
 $font-scale: 1.2;
 $line-height: 1.5;
 
-$headings: (p,
+$headings: (
+    p,
    h5,
    h4,
    h3,
    h2,
-   h1);
+   h1
+);
 
 $font-margin: $global-padding;
 

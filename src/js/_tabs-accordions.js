@@ -1,15 +1,14 @@
-if (document.querySelector("[data-tab]").length != 0) {
+if (document.querySelector("[data-tab]")) {
 
 
    // - - - - - - - - - - - - - - - - - - - -
    // Set Variables 
    // - - - - - - - - - - - - - - - - - - - -
 
-   var tabCollection =                 document.querySelectorAll("[data-tab]"), // create collection of tab elements
-       panelCollection =               document.querySelectorAll("[data-panel]"), // create collection of panel elements
-
-       tabs =                          [], // create empty array for tabs collection
-       panels =						   []; // create empty array for panels collection
+    const tabCollection = document.querySelectorAll("[data-tab]"), // create collection of tab elements
+        panelCollection = document.querySelectorAll("[data-panel]"), // create collection of panel elements
+        tabs =  [], // create empty array for tabs collection
+        panels = []; // create empty array for panels collection
 
 
    // Convert collections to objects; need loop because IE8 does not support Array.prototype.slice.call :(
@@ -20,20 +19,19 @@ if (document.querySelector("[data-tab]").length != 0) {
       panels.push(panelCollection[i]);
    };
 
-   var controlMargin =                 panels[0].scrollHeight, // set initial offset so absolutely positioned panel does not overlap next relatively positioned element
-       panelMargin =                   tabs[0].scrollHeight, // set initial offset so absolutely positioned panel does not overlap tabs elements
-       
-       totalTabs =                     tabs.length, // total number of tabs
-       tabObjects =					   [], // create empty array for tab objects
-   
-       currentTab,                     // create variable for currently active tab
-       nextTab,                        // create variable for current previous tab
-       prevTab,                        // create variable for current next tab
+    const controlMargin = panels[0].scrollHeight, // set initial offset so absolutely positioned panel does not overlap next relatively positioned element
+        panelMargin = tabs[0].scrollHeight, // set initial offset so absolutely positioned panel does not overlap tabs elements
+        totalTabs = tabs.length, // total number of tabs
+        tabObjects = []; // create empty array for tab objects
 
-       attrTab =                       "data-tab", //  set shorthand for tab attribute
-       attrPanel =                     "data-panel", // set shorthand for panel attribute
+    var currentTab, // create variable for currently active tab
+       nextTab, // create variable for current previous tab
+       prevTab, // create variable for current next tab
 
-       control =                       document.getElementById("tabs") || document.getElementById("accordions"); // get tabs container
+       attrTab = "data-tab", //  set shorthand for tab attribute
+       attrPanel = "data-panel", // set shorthand for panel attribute
+
+       control = document.getElementById("tabs") || document.getElementById("accordions"); // get tabs container
 
    // Set initial margin on tabs
    if (control.className === "tabs") {
@@ -206,7 +204,7 @@ if (document.querySelector("[data-tab]").length != 0) {
    // Add Event Handlers
    // - - - - - - - - - - - - - - - - - - - -
    
-   var currentTab =                          document.querySelector('[data-tab="active"]'); // set currently active tab
+   var currentTab = document.querySelector('[data-tab="active"]'); // set currently active tab
 
    if (document.addEventListener) {
       // Mouse Functionality
