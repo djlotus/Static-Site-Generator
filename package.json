@@ -6,7 +6,7 @@
    "dependencies": {},
    "devDependencies": {
       "@atao60/fse-cli": "0.0.44",
-      "browser-sync": "^2.26.14",
+      "browser-sync": "^2.27.10",
       "clean-css-cli": "^4.3.0",
       "concat-files-cli": "^0.1.6",
       "concurrently": "^5.3.0",
