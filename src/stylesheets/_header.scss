@@ -1,6 +1,6 @@
 /*! 
 * 
-* Header-Alt Styles
+* Header Styles
 * 
 */
 
@@ -43,25 +43,27 @@ $banner-xxlarge: "#{$image-path}/header_xxl.jpg" !default;
 
 @else if $header-layout=="classic" {
    #header {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
+      //      display: grid;
+      //      grid-template-columns: 1fr;
+      //      grid-template-rows: 1fr;
+      //      grid-column-gap: 0px;
+      //      grid-row-gap: 0px;
+      @include css-grid();
    }
 }
 
 //TODO :: create mixin/function for this
 @else if $header-layout=="masthead" {
    #header {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(6, 4rem);
-      grid-column-gap: 0px;
-      grid-row-gap: 0px;
+      @include css-grid();
+      //      display: grid;
+      //      grid-template-columns: repeat(6, 1fr);
+      //      grid-template-rows: repeat(6, 4rem);
+      //      grid-column-gap: 0px;
+      //      grid-row-gap: 0px;
       background: white url(#{$banner-small}) no-repeat center center;
       background-size: cover;
-      @include padding();
+      //      @include padding();
 
       @include breakpoint(medium) {
 

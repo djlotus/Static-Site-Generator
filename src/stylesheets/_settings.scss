@@ -50,23 +50,25 @@ $color-links: $blue;
 // Typography
 // - - - - - - - - - - - - - - - - - - - -
 
-$font-family-headings: "Lato", sans-serif;
-$font-family-body: "Lato", sans-serif;
-$font-family-buttons: "Archivo Narrow", sans-serif;
-$font-family-navigation: "Oswald", sans-serif;
+$font-family-headings: "Lato",
+sans-serif;
+$font-family-body: "Lato",
+sans-serif;
+$font-family-buttons: "Archivo Narrow",
+sans-serif;
+$font-family-navigation: "Oswald",
+sans-serif;
 
 $font-base: 19px;
 $font-scale: 1.2;
 $line-height: 1.5;
 
-$headings: (
-    p,
+$headings: (p,
    h5,
    h4,
    h3,
    h2,
-   h1
-);
+   h1);
 
 $font-margin: $global-padding;
 
@@ -119,7 +121,11 @@ $navigation-links-color: $white;
 
 $navigation-sub-style: "inverted"; // options: _blank_; inverted
 
-$show-logo-in-sticky-nav: "yes"; // show logo in sticky nav
+$show-logo-in-sticky-nav: "no"; // show logo in sticky nav
 
-// Icon Fonts
+
+// CSS Grid
 // - - - - - - - - - - - - - - - - - - - -
+
+$grid-template-rows: 6 !default;
+$grid-template-columns: 6 !default;

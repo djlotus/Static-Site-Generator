@@ -62,27 +62,29 @@ for (var i = 0; i <= topLevel.length - 1; i++) {
 // - - - - - - - - - - - - - - - - - - - -
 
 var navButton = document.getElementById("showNav"), // Set nav button
-    mainNav = document.querySelector("[data-nav]"), // Set main nav element
-    navContainer = mainNav.parentElement; // Set parent container
+   mainNav = document.querySelector("[data-nav]"), // Set main nav element
+   navContainer = mainNav.parentElement; // Set parent container
 
 var isClicked = "false"; // Set clicked status to false by default
 
 if (document.addEventListener) {
    navButton.addEventListener("click", function (e) {
       if (isClicked === "false") { // if nav not active, show nav
-         console.log("mobile nav is open"); // log the state of the navigation element
-         navButton.innerHTML = "<br /><span>Hide</span>"; // change text in button to reflect the action of the button
+         //console.log("mobile nav is open"); // log the state of the navigation element
+         navButton.innerHTML = "<br /><span>Hide Navigation</span>"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "true"); // show the navigation element
          isClicked = "true"; // update value of isClicked
          navContainer.style.width = "100%"; // allow container to show
+         navButton.classList.add("icon-menu"); // show close icon
       } else if (isClicked === "true") { // if nav is active, hide nav
-         console.log("mobile nav is closed"); // log the state of the navigation element
-         navButton.innerHTML = "<br /><span>Show</span>"; // change text in button to reflect the action of the button
+         //console.log("mobile nav is closed"); // log the state of the navigation element
+         navButton.innerHTML = "<br /><span>Show Navigation</span>"; // change text in button to reflect the action of the button
          mainNav.setAttribute("data-nav", "false"); // hide the navigation element
          isClicked = "false"; // update value of isClicked
          navContainer.style.width = "0"; // hide container so content under can be interactied with.
+         navButton.classList.remove("icon-menu"); // hide close icon
       } else {
-         console.log("There is a problem with the mobile navigation");
+         //console.log("There is a problem with the mobile navigation");
       }
    })
 };
@@ -92,56 +94,54 @@ if (document.addEventListener) {
 var docBody = document.body // Get body
 
 
-if (document.getElementById("show-nav").getAttribute("display") !=="none") {
-    // - - - - - - - - - - - - - - - - - - - -
-    // Set top offset for header element on mobile
-    // - - - - - - - - - - - - - - - - - - - - 
-    var navbarElement = document.getElementById("show-nav"), // Get mobile navbar element
-        navbarOffset = navbarElement.offsetHeight; // Get height of mobile navbar element
+if (document.getElementById("show-nav").getAttribute("display") !== "none") {
+   // - - - - - - - - - - - - - - - - - - - -
+   // Set top offset for header element on mobile
+   // - - - - - - - - - - - - - - - - - - - - 
+   var navbarElement = document.getElementById("show-nav"), // Get mobile navbar element
+      navbarOffset = navbarElement.offsetHeight; // Get height of mobile navbar element
 
-    docBody.style.marginTop = navbarOffset + "px";
-}
-// - - - - - - - - - - - - - - - - - - - -
-// Position Sticky Navbar
-// - - - - - - - - - - - - - - - - - - - -
-
-var header = document.querySelector("[role=banner]"), // Get header element
-    headerOffset = header.offsetHeight, // Get height of header element
-    regNav = document.querySelector("[role=navigation]"), // get first instance of navigation element
-    stickyNav = document.querySelector("[data-sticky]"); // Get sticky nav element if exists
-    stickyOffset = regNav.offsetHeight; // set height of navigation bar
-
-if (regNav.hasAttribute("data-nav-align-top")) {
-    regNav.className = "sticky";
-    docBody.style.marginTop = stickyOffset + "px";
+   docBody.style.marginTop = navbarOffset + "px";
 } else {
-    if (document.addEventListener) { // If happy browser
-        window.addEventListener("scroll", function () { // add scroll event
+   // - - - - - - - - - - - - - - - - - - - -
+   // Position Sticky Navbar
+   // - - - - - - - - - - - - - - - - - - - -
+
+   var header = document.querySelector("[role=banner]"), // Get header element
+      headerOffset = header.offsetHeight, // Get height of header element
+      regNav = document.querySelector("[role=navigation]"), // get first instance of navigation element
+      stickyNav = document.querySelector("[data-sticky]"); // Get sticky nav element if exists
+   stickyOffset = regNav.offsetHeight; // set height of navigation bar
+
+   if (regNav.hasAttribute("data-nav-align-top")) {
+      regNav.className = "sticky";
+      docBody.style.marginTop = stickyOffset + "px";
+   } else {
+      if (document.addEventListener) { // If happy browser
+         window.addEventListener("scroll", function () { // add scroll event
             if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
-            if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
-                regNav.className = "sticky"; // add class "sticky" to nav element
-            } else {
-                regNav.className = ""; // leave class empty for nav element
+               if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
+                  regNav.className = "sticky"; // add class "sticky" to nav element
+               } else {
+                  regNav.className = ""; // leave class empty for nav element
+               }
             }
-            }
-        })
-    } else if (document.attachEvent) { // If sad browser :( nav should simply not stick
-        window.attachEvent("onscroll", function () { // add scroll event
+         })
+      } else if (document.attachEvent) { // If sad browser :( nav should simply not stick
+         window.attachEvent("onscroll", function () { // add scroll event
             if (stickyNav === regNav) { // if sticky nav element is the same as first instance of navigation
-            if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
-                regNav.className = "sticky"; // add class "sticky" to nav element
-                // show logo in nav after it sticks to top
-                if (window.innerWidth > 1400) { // only show logo in nav if above medium breakpoint
-                    navLogo.style.display = "inline-block";
-                }
-            } else {
-                regNav.className = ""; // leave class empty for nav element
-                navLogo.style.display = "none";
+               if (window.pageYOffset >= headerOffset) { // if window is scrolled equal to or more than the height of the header element
+                  regNav.className = "sticky"; // add class "sticky" to nav element
+                  // show logo in nav after it sticks to top
+                  if (window.innerWidth > 1400) { // only show logo in nav if above medium breakpoint
+                     navLogo.style.display = "inline-block";
+                  }
+               } else {
+                  regNav.className = ""; // leave class empty for nav element
+                  navLogo.style.display = "none";
+               }
             }
-            }
-        })
-    };
+         })
+      };
+   }
 }
-
-
-

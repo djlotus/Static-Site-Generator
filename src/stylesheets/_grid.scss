@@ -1,0 +1,12 @@
+/*!
+ * 
+ * CSS Grid Styles
+ * 
+ */
+
+$grid-template-rows: 6 !default;
+$grid-template-columns: 6 !default;
+
+.grid-container {
+   @include css-grid();
+}

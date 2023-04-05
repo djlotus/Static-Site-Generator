@@ -43,7 +43,10 @@ $navigation-sub-style: "" !default;
 
    font: {
       size: 1rem;
+      weight: 900;
    }
+
+   line-height: 1.228;
 
    @include breakpoint(medium) {
       display: none;
@@ -55,6 +58,15 @@ $navigation-sub-style: "" !default;
 
    & button > span {
       font-family: $font-family-buttons;
+   }
+
+   .icon-menu {
+      @extend %fa-icon;
+      @extend .fas;
+
+      &:before {
+         content: fa-content($fa-var-times);
+      }
    }
 }
 
