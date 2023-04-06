@@ -15,7 +15,7 @@ table {
       @include padding();
    }
    & td {
-      padding: ($global-padding / 2) + em;
+      padding: calc($global-padding / 2) + em;
       color: $white;
    }
    & th {

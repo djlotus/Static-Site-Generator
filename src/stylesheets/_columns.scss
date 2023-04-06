@@ -4,45 +4,40 @@
 * 
 */
 
-$column:                               'columns'                     !default;
-$column-count:                         12                            !default;
+$column: "columns" !default;
+$column-count: 12 !default;
 
 // Generate column widths per screen size
 // - - - - - - - - - - - - - - - - - - - -
 @each $bp in $breakpoints {
-   
    @include breakpoint($bp) {
-      
       @for $i from 1 through $column-count {
          // Standard columns
          .#{$bp}-#{$i} {
-            width: percentage($i / $column-count);
-         };
+            width: percentage(calc($i / $column-count));
+         }
          // Pushed columns
          .#{$bp}-push-#{$i} {
             position: relative;
             right: auto;
-            left: percentage($i / $column-count);
-         };
+            left: percentage(calc($i / $column-count));
+         }
          // Pulled columns
          .#{$bp}-pull-#{$i} {
             position: relative;
             left: auto;
-            right: percentage($i / $column-count);
-         };
-
+            right: percentage(calc($i / $column-count));
+         }
       }
-   
-   .#{$bp}-text-center {
-      text-align: center;
-   }
 
-   .#{$bp}-text-right {
-      text-align: right;
-   }
-   
-   }
+      .#{$bp}-text-center {
+         text-align: center;
+      }
 
+      .#{$bp}-text-right {
+         text-align: right;
+      }
+   }
 }
 
 // Columns
@@ -72,7 +67,7 @@ $column-count:                         12                            !default;
 }
 
 // Handle last column
-[class*=column] + [class*=column] {
+[class*="column"] + [class*="column"] {
    &:last-child {
       float: right;
    }
@@ -82,7 +77,7 @@ $column-count:                         12                            !default;
 }
 
 // Handle centered columns
-[class*=-centered] {
+[class*="-centered"] {
    float: none !important;
    margin: 0 auto;
    display: initial;

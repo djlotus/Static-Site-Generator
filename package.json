@@ -3,19 +3,18 @@
    "version": "1.1.0",
    "description": "static site generator",
    "main": "index.js",
-   "dependencies": {},
    "devDependencies": {
-      "@atao60/fse-cli": "0.0.44",
-      "browser-sync": "^2.26.14",
-      "clean-css-cli": "^4.3.0",
+      "@atao60/fse-cli": "0.1.7",
+      "browser-sync": "^2.29.1",
+      "clean-css-cli": "^5.6.2",
       "concat-files-cli": "^0.1.6",
-      "concurrently": "^5.3.0",
-      "cpy-cli": "^3.1.1",
-      "html-includes": "^4.3.3",
-      "sass": "^1.32.5",
+      "concurrently": "^8.0.1",
+      "cpy-cli": "^4.2.0",
+      "html-includes": "^5.0.0",
+      "sass": "^1.60.0",
       "uglify-es": "^3.3.9",
-      "uglify-js": "^3.12.5",
-      "watch": "^1.0.2"
+      "uglify-js": "^3.17.4",
+      "watch": "^0.13.0"
    },
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,7 +29,7 @@
       "minifyjs": "uglifyjs src/js/* --compress --output dist/js/scripts.min.js",
       "build:scripts": "npm run concatjs && npm run minifyjs",
       "cleanCss": "cleancss -o dist/css/main.min.css dist/css/main.css",
-      "browser": "browser-sync start --server 'dist' --files 'dist'",
+      "browser": "browser-sync start --server \"dist\" --files \"dist\"",
       "watch": "concurrently -k \"npm run html\" \"npm run sass\" \" npm run scripts\" \"npm run browser\"",
       "build": "npm run createDist && npm run copyFiles && npm run build:html && npm run build:sass && npm run cleanCss && npm run build:scripts"
    },

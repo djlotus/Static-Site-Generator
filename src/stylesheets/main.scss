@@ -1,9 +1,10 @@
-@import "icons/fontawesome";
-@import "icons/solid";
-@import "icons/regular";
-@import "icons/brands";
+@import "vendor/icons/fontawesome";
+@import "vendor/icons/solid";
+@import "vendor/icons/regular";
+@import "vendor/icons/brands";
 
 @import "vendor/normalize";
+@import "vendor/hamburgers/hamburgers";
 @import "settings";
 @import "utilities";
 @import "verticalRhythm";
@@ -26,6 +27,7 @@
 @import "modal";
 
 @import "tabs-accordions";
+@import "progressTabs";
 
 //@import "iconStyle";
 

@@ -42,7 +42,7 @@
          -ms-flex-positive: 1;
          flex-grow: 1;
          text-align: center;
-//         max-width: 25%;
+         //         max-width: 25%;
          &:not(:first-of-type) {
             @include margin-left(0.25);
          }
@@ -59,14 +59,13 @@
          cursor: pointer;
       }
    }
-   & > [data-tab=active] {
+   & > [data-tab="active"] {
       font: {
          family: $font-family-body !important;
       }
       background: $oil;
       color: $silver;
    }
-
 
    /* Panels */
    & > [data-panel] {
@@ -78,7 +77,7 @@
          top: $font-base * 3.31578947;
       }
    }
-   & > [data-panel=active] {
+   & > [data-panel="active"] {
       background: white;
       visibility: visible;
       left: 0;
@@ -105,7 +104,7 @@
       @include padding-top();
       @include padding-bottom();
       @include padding-left(2);
-      @include margin-bottom($global-margin / 2);
+      @include margin-bottom(calc($global-margin / 2));
       &:active {
          outline: none;
       }
@@ -114,7 +113,7 @@
          cursor: pointer;
       }
    }
-   & > [data-tab=active] {
+   & > [data-tab="active"] {
       font: {
          family: $font-family-body !important;
       }
@@ -122,21 +121,20 @@
       color: $silver;
    }
 
-
    /* Panels */
    & > [data-panel] {
       @include padding(0);
       max-height: 0;
       visibility: hidden;
-//      -moz-transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
-//      -o-transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
-//      -webkit-transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
-//      transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
+      //      -moz-transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
+      //      -o-transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
+      //      -webkit-transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
+      //      transition: cubic-bezier(0, 0.48, 0.58, 1) 0.035s max-height;
       & > p {
          @include margin(0);
       }
    }
-   & > [data-panel=active] {
+   & > [data-panel="active"] {
       @include padding();
       background: white;
       visibility: visible;

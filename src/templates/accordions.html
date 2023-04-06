@@ -3,18 +3,33 @@
 <html class="no-js" lang="en">
 
 <head>
-   <title>Static Site :: Accordions</title>
-   <meta name="description" content="Your Description" />
-   ${require('_head.html')}
+    ${require('_head.html')}
+    <title>Static Site :: Accordions</title>
+    <meta name="description" content="{Your Description}" />
+    <!-- Social Media Tags -->
+    <meta property="og:site_name" content="{Your Site Name}">
+    <meta property="og:description" content="{Your Description}">
+    <meta property="og:title" content="{The title, headline or name of the page}">
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{A one to two sentence description of your page}">
+    <meta property="og:image" content="{An image URL which should represent your page}">
+    <meta property="og:url" content="{The canonical URL of your page}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="{Alt text for image}">
+    <!-- Analytics Tags -->
+    <meta property="fb:app_id" content="{your_app_id}" />
+    <meta name="twitter:site" content="{@website-username}">
+    <!-- Domain Verification Tags -->
+    <meta name="google-site-verification" content="{...}">
 </head>
 
 <body>
 
     ${require('_skipNav.html')}
 
-    <!-- // To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
-    // - - - - - - - - - - - - - - - - - - - - - - - - -
-    -->
+    <!-- * To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
+    *- - - - - - - - - - - - - - - - - - - - - - - - -
+    *-->
 
 
     <nav role="navigation" data-nav-align-top>
@@ -23,12 +38,12 @@
 
 
     <header role="banner">
-        ${require('_header.html')} 
+        ${require('_header.html')}
     </header>
 
-    <!-- // To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
-    // - - - - - - - - - - - - - - - - - - - - - - - - -
-    -->
+    <!-- * To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
+  * - - - - - - - - - - - - - - - - - - - - - - - - -
+    *-->
     <!--
        <nav role="navigation" data-sticky>
           [add require statement here]
@@ -48,24 +63,33 @@
                 </p>
 
                 <ul role="tablist" class="accordion" id="accordions">
-                    <li role="tab" id="tab1a-title" aria-controls="tab1a-panel" aria-label="Step one: Plan" aria-selected="true" data-tab="active" tabindex="0">Tab 1a Title</li>
+                    <li role="tab" id="tab1a-title" aria-controls="tab1a-panel" aria-label="Step one: Plan"
+                        aria-selected="true" data-tab="active" tabindex="0">Tab 1a Title</li>
                     <div role="tabpanel" id="tab1a-panel" aria-hidden="false" data-panel="active">
-                        <p>The first step to a successful project is planning. During your initial meeting with the WSDM team we review your project objectives, audience, design and development needs, content, timetable and deliverables.</p>
+                        <p>The first step to a successful project is planning. During your initial meeting with the WSDM
+                            team we review your project objectives, audience, design and development needs, content,
+                            timetable and deliverables.</p>
                     </div>
 
-                    <li role="tab" id="tab2a-title" aria-controls="tab2a-panel" aria-label="Step two: Design and Develop" aria-selected="false" data-tab tabindex="0">Tab 2a Title</li>
+                    <li role="tab" id="tab2a-title" aria-controls="tab2a-panel"
+                        aria-label="Step two: Design and Develop" aria-selected="false" data-tab tabindex="0">Tab 2a
+                        Title</li>
                     <div role="tabpanel" id="tab2a-panel" aria-hidden="true" data-panel="active">
                         <p>WSDM staff create design features and develop applications with your input.</p>
                     </div>
 
-                    <li role="tab" id="tab3a-title" aria-controls="tab3a-panel" aria-label="Step three: Test" aria-selected="false" data-tab tabindex="0">Tab 3a Title</li>
+                    <li role="tab" id="tab3a-title" aria-controls="tab3a-panel" aria-label="Step three: Test"
+                        aria-selected="false" data-tab tabindex="0">Tab 3a Title</li>
                     <div role="tabpanel" id="tab3a-panel" aria-hidden="true" data-panel="active">
-                        <p>We build your Web pages and/or applications in draft format on the staging server for your review and then make requested revisions.</p>
+                        <p>We build your Web pages and/or applications in draft format on the staging server for your
+                            review and then make requested revisions.</p>
                     </div>
 
-                    <li role="tab" id="tab4a-title" aria-controls="tab4a-panel" aria-label="Step four: Implement" aria-selected="false" data-tab tabindex="0">Tab 4a Title</li>
+                    <li role="tab" id="tab4a-title" aria-controls="tab4a-panel" aria-label="Step four: Implement"
+                        aria-selected="false" data-tab tabindex="0">Tab 4a Title</li>
                     <div role="tabpanel" id="tab4a-panel" aria-hidden="true" data-panel="active">
-                        <p>Upon your final approval, WSDM take the draft staging version of your project and publishes it live and continues to maintain the project on the Web with updates you submit.</p>
+                        <p>Upon your final approval, WSDM take the draft staging version of your project and publishes
+                            it live and continues to maintain the project on the Web with updates you submit.</p>
                     </div>
                     <hr />
                 </ul>

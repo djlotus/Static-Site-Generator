@@ -4,12 +4,10 @@
 * * 
 */
 
-
 // Columns
 // - - - - - - - - - - - - - - - - - - - -
 
 $column-count: 12;
-
 
 // Global Gutters (re-name and re-organize)
 //- - - - - - - - - - - - - - - - - - - -
@@ -24,15 +22,14 @@ $max-unitless-value: 10; // Maximum relative untits for mixins (units greater th
 
 $image-path: "../img"; // path to images folder
 
-
 // Global Colors
 // - - - - - - - - - - - - - - - - - - - -
-// 
+//
 // (Will use "tranparentize($color, $opacity))
 
 $green: #0c6e40;
 $gold: #ffca27;
-$blue: #1862B6;
+$blue: #1862b6;
 $oil: #252525;
 $dark-grey: #505050;
 $light-grey: #e5e5e5;
@@ -46,36 +43,25 @@ $color-primary: $green;
 $color-secondary: $gold;
 $color-links: $blue;
 
-
 // Typography
 // - - - - - - - - - - - - - - - - - - - -
 
-$font-family-headings: "Lato",
-sans-serif;
-$font-family-body: "Lato",
-sans-serif;
-$font-family-buttons: "Archivo Narrow",
-sans-serif;
-$font-family-navigation: "Oswald",
-sans-serif;
+$font-family-headings: "Lato", sans-serif;
+$font-family-body: "Lato", sans-serif;
+$font-family-buttons: "Archivo Narrow", sans-serif;
+$font-family-navigation: "Oswald", sans-serif;
 
 $font-base: 19px;
 $font-scale: 1.2;
 $line-height: 1.5;
 
-$headings: (p,
-   h5,
-   h4,
-   h3,
-   h2,
-   h1);
+$headings: (p, h5, h4, h3, h2, h1);
 
 $font-margin: $global-padding;
 
 $font-bold: 600;
 $font-regular: 400;
 $font-thin: 200;
-
 
 // Buttons
 // - - - - - - - - - - - - - - - - - - - -
@@ -89,7 +75,6 @@ $button-color-warn: $warn;
 $button-color-success: $success;
 
 $button-radius: $font-base;
-
 
 // Header
 // - - - - - - - - - - - - - - - - - - - -
@@ -109,7 +94,6 @@ $banner-large: "#{$image-path}/1300x650.png";
 $banner-xlarge: "#{$image-path}/header_xl.jpg";
 $banner-xxlarge: "#{$image-path}/header_xxl.jpg";
 
-
 // Navigation
 // - - - - - - - - - - - - - - - - - - - -
 
@@ -123,9 +107,14 @@ $navigation-sub-style: "inverted"; // options: _blank_; inverted
 
 $show-logo-in-sticky-nav: "no"; // show logo in sticky nav
 
-
 // CSS Grid
 // - - - - - - - - - - - - - - - - - - - -
 
 $grid-template-rows: 6 !default;
 $grid-template-columns: 6 !default;
+
+// Progress Tabs
+// - - - - - - - - - - - - - - - - - - - -
+
+$inactive-b-color: #f2f2f2;
+$active-b-color: #252525;

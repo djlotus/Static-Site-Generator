@@ -22,7 +22,6 @@
    }
 }
 
-
 // Calculate em from px
 // - - - - - - - - - - - - - - - - - - - -
 @function em($pixel, $context: $font-base) {
@@ -34,9 +33,8 @@
       $context: $context * 1px;
    }
 
-   @return $pixel / $context * 1em;
+   @return calc($pixel / $context) * 1em;
 }
-
 
 // Calculate rem from px
 // - - - - - - - - - - - - - - - - - - - -
@@ -49,7 +47,7 @@
       $context: $context * 1px;
    }
 
-   @return $pixel / $context * 1rem;
+   @return calc($pixel / $context) * 1rem;
 }
 
 // Typography
@@ -65,7 +63,6 @@
    max-width: $global-width + px;
 }
 
-
 // Row Reset
 // - - - - - - - - - - - - - - - - - - - -
 @mixin row-reset() {
@@ -73,327 +70,232 @@
    margin: 0 !important;
 }
 
-
 // Padding
 // - - - - - - - - - - - - - - - - - - - -
 @mixin padding($padding: $global-padding) {
-   @if type-of($padding) !="number" {
+   @if type-of($padding) != "number" {
       padding: $padding;
-   }
-
-   @else if type-of($padding)=="number" {
+   } @else if type-of($padding) == "number" {
       @if (unitless($padding)) {
-
          // prevent confusion with unitless pixel values
          @if $padding <=$max-unitless-value {
-
             // prevent unit from being added to value of "0"
             @if $padding==0 {
                padding: 0;
-            }
-
-            @else {
+            } @else {
                padding: $padding + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             padding: em($padding);
          }
-      }
-
-      @else {
+      } @else {
          padding: $padding;
       }
    }
 }
 
 @mixin padding-top($padding: $global-padding) {
-   @if type-of($padding) !="number" {
+   @if type-of($padding) != "number" {
       padding-top: $padding;
-   }
-
-   @else if type-of($padding)=="number" {
+   } @else if type-of($padding) == "number" {
       @if (unitless($padding)) {
-
          // prevent confusion with unitless pixel values
          @if $padding <=$max-unitless-value {
-
             // prevent unit from being added to value of "0"
             @if $padding==0 {
                padding-top: 0;
-            }
-
-            @else {
+            } @else {
                padding-top: $padding + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             padding-top: em($padding);
          }
-      }
-
-      @else {
+      } @else {
          padding-top: $padding;
       }
    }
 }
 
 @mixin padding-right($padding: $global-padding) {
-   @if type-of($padding) !="number" {
+   @if type-of($padding) != "number" {
       padding-right: $padding;
-   }
-
-   @else if type-of($padding)=="number" {
+   } @else if type-of($padding) == "number" {
       @if (unitless($padding)) {
-
          // prevent confusion with unitless pixel values
          @if $padding <=$max-unitless-value {
-
             // prevent unit from being added to value of "0"
             @if $padding==0 {
                padding-right: 0;
-            }
-
-            @else {
+            } @else {
                padding-right: $padding + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             padding-right: em($padding);
          }
-      }
-
-      @else {
+      } @else {
          padding-right: $padding;
       }
    }
 }
 
 @mixin padding-bottom($padding: $global-padding) {
-   @if type-of($padding) !="number" {
+   @if type-of($padding) != "number" {
       padding-bottom: $padding;
-   }
-
-   @else if type-of($padding)=="number" {
+   } @else if type-of($padding) == "number" {
       @if (unitless($padding)) {
-
          // prevent confusion with unitless pixel values
          @if $padding <=$max-unitless-value {
-
             // prevent unit from being added to value of "0"
             @if $padding==0 {
                padding-bottom: 0;
-            }
-
-            @else {
+            } @else {
                padding-bottom: $padding + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             padding-bottom: em($padding);
          }
-      }
-
-      @else {
+      } @else {
          padding-bottom: $padding;
       }
    }
 }
 
 @mixin padding-left($padding: $global-padding) {
-   @if type-of($padding) !="number" {
+   @if type-of($padding) != "number" {
       padding-left: $padding;
-   }
-
-   @else if type-of($padding)=="number" {
+   } @else if type-of($padding) == "number" {
       @if (unitless($padding)) {
-
          // prevent confusion with unitless pixel values
          @if $padding <=$max-unitless-value {
-
             // prevent unit from being added to value of "0"
             @if $padding==0 {
                padding-left: 0;
-            }
-
-            @else {
+            } @else {
                padding-left: $padding + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             padding-left: em($padding);
          }
-      }
-
-      @else {
+      } @else {
          padding-left: $padding;
       }
    }
 }
 
-
 // Margin
 // - - - - - - - - - - - - - - - - - - - -
 @mixin margin($margin: $global-margin) {
-   @if type-of($margin) !="number" {
-      margin: $margin
-   }
-
-   @else if type-of($margin)=="number" {
+   @if type-of($margin) != "number" {
+      margin: $margin;
+   } @else if type-of($margin) == "number" {
       @if (unitless($margin)) {
-
          // prevent confusion with unitless pixel values
          @if $margin <=$max-unitless-value {
             @if $margin==0 {
                margin: 0;
-            }
-
-            @else {
+            } @else {
                margin: $margin + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             margin: em($margin);
          }
-      }
-
-      @else {
+      } @else {
          margin: $margin;
       }
    }
 }
 
 @mixin margin-top($margin: $global-margin) {
-   @if type-of($margin) !="number" {
+   @if type-of($margin) != "number" {
       margin-top: $margin;
-   }
-
-   @else if type-of($margin)=="number" {
+   } @else if type-of($margin) == "number" {
       @if (unitless($margin)) {
          @if $margin <=$max-unitless-value {
             @if $margin==0 {
                margin-top: 0;
-            }
-
-            @else {
+            } @else {
                margin-top: $margin + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             margin-top: em($margin);
          }
-      }
-
-      @else {
+      } @else {
          margin-top: $margin;
       }
    }
 }
 
 @mixin margin-right($margin: $global-margin) {
-   @if type-of($margin) !="number" {
+   @if type-of($margin) != "number" {
       margin-right: $margin;
-   }
-
-   @else if type-of($margin)=="number" {
+   } @else if type-of($margin) == "number" {
       @if (unitless($margin)) {
          @if $margin <=$max-unitless-value {
             @if $margin==0 {
                margin-right: 0;
-            }
-
-            @else {
+            } @else {
                margin-right: $margin + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             margin-right: em($margin);
          }
-      }
-
-      @else {
+      } @else {
          margin-right: $margin;
       }
    }
 }
 
 @mixin margin-bottom($margin: $global-margin) {
-   @if type-of($margin) !="number" {
+   @if type-of($margin) != "number" {
       margin-bottom: $margin;
-   }
-
-   @else if type-of($margin)=="number" {
+   } @else if type-of($margin) == "number" {
       @if (unitless($margin)) {
          @if $margin <=$max-unitless-value {
             @if $margin==0 {
                margin-bottom: 0;
-            }
-
-            @else {
+            } @else {
                margin-bottom: $margin + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             margin-bottom: em($margin);
          }
-      }
-
-      @else {
+      } @else {
          margin-bottom: $margin;
       }
    }
 }
 
 @mixin margin-left($margin: $global-margin) {
-   @if type-of($margin) !="number" {
+   @if type-of($margin) != "number" {
       margin-left: $margin;
-   }
-
-   @else if type-of($margin)=="number" {
+   } @else if type-of($margin) == "number" {
       @if (unitless($margin)) {
          @if $margin <=$max-unitless-value {
             @if $margin==0 {
                margin-left: 0;
-            }
-
-            @else {
+            } @else {
                margin-left: $margin + $preferred-unit;
             }
-         }
-
-         @else {
+         } @else {
             margin-left: em($margin);
          }
-      }
-
-      @else {
+      } @else {
          margin-left: $margin;
       }
    }
 }
 
-
 // Navigation Alignment
 // - - - - - - - - - - - - - - - - - - - -
 @function nav-align($flex-align: $navigation-align) {
    @if map-has-key($navigation-align-map, $flex-align) {
-      @return map-get($navigation-align-map, $flex-align)
+      @return map-get($navigation-align-map, $flex-align);
    }
 
    @if not map-has-key ($navigation-align-map) {
       @error "Could not reconcile navigation alignment";
    }
 }
-
 
 // Color Adjustments
 // - - - - - - - - - - - - - - - - - - - -
@@ -414,11 +316,9 @@
       @for $i from 1 through $y {
          $ret: $ret * $x;
       }
-   }
-
-   @else {
+   } @else {
       @for $i from $y to 0 {
-         $ret: $ret / $x;
+         $ret: calc($ret / $x);
       }
    }
 
@@ -427,7 +327,12 @@
 
 // CSS Grid
 // - - - - - - - - - - - - - - - - - - - -
-@mixin css-grid($grid-rows: $grid-template-rows, $grid-columns: $grid-template-columns, $grid-gap-row: 0, $grid-gap-column: 0) {
+@mixin css-grid(
+   $grid-rows: $grid-template-rows,
+   $grid-columns: $grid-template-columns,
+   $grid-gap-row: 0,
+   $grid-gap-column: 0
+) {
    // box sizing
    //max-width: em($global-width);
    margin: 0 auto;

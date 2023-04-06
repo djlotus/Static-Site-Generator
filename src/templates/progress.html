@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+    ${require('_head.html')}
+    <title>Static Site :: Accordions</title>
+    <meta name="description" content="{Your Description}" />
+    <!-- Social Media Tags -->
+    <meta property="og:site_name" content="{Your Site Name}">
+    <meta property="og:description" content="{Your Description}">
+    <meta property="og:title" content="{The title, headline or name of the page}">
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="{A one to two sentence description of your page}">
+    <meta property="og:image" content="{An image URL which should represent your page}">
+    <meta property="og:url" content="{The canonical URL of your page}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="{Alt text for image}">
+    <!-- Analytics Tags -->
+    <meta property="fb:app_id" content="{your_app_id}" />
+    <meta name="twitter:site" content="{@website-username}">
+    <!-- Domain Verification Tags -->
+    <meta name="google-site-verification" content="{...}">
+</head>
+
+<body>
+
+    ${require('_skipNav.html')}
+
+    <!-- * To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
+    *- - - - - - - - - - - - - - - - - - - - - - - - -
+    *-->
+
+
+    <nav role="navigation" data-nav-align-top>
+        ${require('_navigation.html')}
+    </nav>
+
+
+    <header role="banner">
+        ${require('_header.html')}
+    </header>
+
+    <!-- * To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
+  * - - - - - - - - - - - - - - - - - - - - - - - - -
+    *-->
+    <!--
+       <nav role="navigation" data-sticky>
+          [add require statement here]
+       </nav>
+    -->
+
+    <main id="main">
+        ${require('_progress.html')}
+    </main>
+
+    <footer>
+        ${require('_footer.html')}
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
