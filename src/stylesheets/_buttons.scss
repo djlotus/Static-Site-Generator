@@ -25,8 +25,8 @@ button {
    color: $button-color-primary;
    padding: em(7) em(21);
    border: none;
-   background: $button-bg-color-primary;
-   color: $button-color-primary;
+   background: $button-bg-color-secondary;
+   color: $button-color-secondary;
    @include margin();
    @include margin-top(0);
    text-decoration: none;
@@ -61,21 +61,21 @@ button {
    // outlined buttons
    &.hollow {
       background: none;
-      color: $button-bg-color-primary;
-      border: 3px solid $button-bg-color-primary;
+      color: $button-bg-color-secondary;
+      border: 3px solid $button-bg-color-secondary;
 
       &:hover,
       &:focus {
          background: none;
-         color: $button-bg-color-primary;
+         color: $button-bg-color-secondary;
          opacity: 0.6;
       }
    }
 
    &:hover,
    &:focus {
-      background: transparentize($button-bg-color-primary, 0.3);
-      color: $button-color-secondary;
+      background: transparentize($button-bg-color-secondary, 0.3);
+      color: $button-color-primary;
    }
 
    display: inline-block;

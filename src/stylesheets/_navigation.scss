@@ -6,9 +6,11 @@
 
 // - - - - - - - - - - - - - - - - - - - -
 
-$navigation-align-map: (left: flex-start,
+$navigation-align-map: (
+   left: flex-start,
    center: center,
-   right: flex-end);
+   right: flex-end,
+);
 
 $navigation-style: "chevron" !default;
 $navigation-position: "default" !default;
@@ -52,7 +54,7 @@ $navigation-sub-style: "" !default;
       display: none;
    }
 
-   & button[id=showNav] {
+   & button[id="showNav"] {
       @include margin-bottom(0);
    }
 
@@ -70,7 +72,7 @@ $navigation-sub-style: "" !default;
    }
 }
 
-nav[role=navigation] {
+nav[role="navigation"] {
    background: $navigation-background-color;
 
    font: {
@@ -82,7 +84,6 @@ nav[role=navigation] {
    letter-spacing: 1px;
    position: fixed;
    width: 0;
-   //   top: 5.2rem;
    z-index: 999;
 
    & ul {
@@ -100,7 +101,7 @@ nav[role=navigation] {
          margin: 0 auto;
       }
 
-      &[data-nav=true] {
+      &[data-nav="true"] {
          left: 0;
       }
 
@@ -177,9 +178,8 @@ nav[role=navigation] {
                @include padding-left();
 
                &:hover {
-
                   // set underline for nav links
-                  @if $navigation-style=="bar" {
+                  @if $navigation-style== "bar" {
                      &:before {
                         position: absolute;
                         content: "";
@@ -212,7 +212,7 @@ nav[role=navigation] {
                   }
                }
 
-               @if $navigation-style=="chevron" {
+               @if $navigation-style== "chevron" {
                   &:before {
                      color: $color-secondary;
                      content: fa-content($fa-var-angle-down);
@@ -222,16 +222,14 @@ nav[role=navigation] {
                      font-size: 0.625em;
                      left: calc(50% - 0.325em);
                   }
-               }
-
-               @else {
+               } @else {
                   &:before {
                      content: "";
                   }
                }
             }
 
-            &[data-dropdown=true] {
+            &[data-dropdown="true"] {
                & .dropdown {
                   left: 0;
                }
@@ -257,7 +255,7 @@ nav[role=navigation] {
                left: 0;
             }
 
-            @if $navigation-sub-style=="inverted" {
+            @if $navigation-sub-style== "inverted" {
                & li {
                   @include padding(0.5);
                }
@@ -295,19 +293,16 @@ nav[role=navigation] {
             }
          }
       }
-
    }
 
    @include breakpoint(xlarge) {
       & #logo-nav {
-         @if $show-logo-in-sticky-nav=="yes" {
+         @if $show-logo-in-sticky-nav == "yes" {
             display: inline-block;
             @include margin-top(0.5);
             @include padding-left(2);
             position: absolute;
-         }
-
-         @else {
+         } @else {
             display: none;
          }
       }
