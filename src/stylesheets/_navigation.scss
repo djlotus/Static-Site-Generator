@@ -181,6 +181,7 @@ nav[role="navigation"] {
 
          & li {
             flex: 0 1 auto;
+            align-self: baseline;
             text-align: left;
             @include padding();
             border-right: 1px solid $dark-grey;
@@ -260,7 +261,7 @@ nav[role="navigation"] {
          & ul {
             list-style: none;
             position: absolute;
-            top: 100%;
+            top: 102%;
             left: -10000px;
             background: $oil;
             @include padding(0);

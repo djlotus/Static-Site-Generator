@@ -86,7 +86,7 @@ button {
       color: $button-color-primary;
       display: block;
       text-align: center;
-      transition: all 100ms ease-in-out;
+      @include transition($transition-timing-function: ease-in-out);
 
       @include breakpoint(large) {
          display: inline-block;

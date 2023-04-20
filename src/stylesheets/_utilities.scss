@@ -345,3 +345,20 @@
    grid-row-gap: $grid-gap-row;
    place-content: start;
 }
+
+// Transitions
+// - - - - - - - - - - - - - - - - - - - -
+@mixin transition(
+   $transition-timing-function: linear,
+   $transition-duration: 100ms,
+   $transition-property: all
+) {
+   -moz-transition: $transition-timing-function $transition-duration
+      $transition-property;
+   -o-transition: $transition-timing-function $transition-duration
+      $transition-property;
+   -webkit-transition: $transition-timing-function $transition-duration
+      $transition-property;
+   transition: $transition-timing-function $transition-duration
+      $transition-property;
+}

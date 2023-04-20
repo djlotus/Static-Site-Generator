@@ -1,7 +1,7 @@
-@import "vendor/icons/fontawesome";
-@import "vendor/icons/solid";
-@import "vendor/icons/regular";
-@import "vendor/icons/brands";
+@import "vendor/icons/fontawesome.scss";
+@import "vendor/icons/solid.scss";
+@import "vendor/icons/regular.scss";
+@import "vendor/icons/brands.scss";
 
 @import "vendor/normalize";
 @import "vendor/hamburgers/hamburgers";
@@ -29,6 +29,6 @@
 @import "tabs-accordions";
 @import "progressTabs";
 
-//@import "iconStyle";
+@import "icon-styles";
 
 //@import "custom";
