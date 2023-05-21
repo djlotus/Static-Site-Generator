@@ -1,0 +1,91 @@
+/*! 
+*
+* Block Grid
+*
+* */
+
+$max-grid-columns: 6 !default;
+$block-grid-style: "traditional" !default; // options: heading-only; hover-reveal; absolute
+
+// Generate column widths per screen size
+// - - - - - - - - - - - - - - - - - - - -
+@each $bp in $breakpoints {
+   @include breakpoint($bp) {
+      @for $i from 1 through $max-grid-columns {
+         // Standard columns
+         [data-#{$bp}-grid="#{$i}"] {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(#{$i}, auto);
+         }
+      }
+   }
+}
+.block-element {
+   position: relative;
+   text-align: center;
+   font-size: 80%;
+}
+.block-heading {
+   @extend h1;
+   font-size: 1.5rem;
+   color: $white;
+   text-shadow: 2px 2px $oil;
+}
+
+@if ($block-grid-style == "heading-only") {
+   .block-description {
+      display: none;
+   }
+}
+
+@if ($block-grid-style == "hover-reveal") {
+   .block-element {
+      overflow: hidden;
+   }
+   .block-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: rgba($oil, 0);
+      width: 100%;
+      height: 100%;
+      color: $white;
+      @include transition($transition-property: background-color);
+   }
+   .block-description {
+      display: none;
+   }
+   .block-element:hover {
+      img {
+         scale: 120%;
+      }
+      .block-content {
+         background-color: rgba($oil, 0.5);
+         color: $white;
+         cursor: pointer;
+      }
+      .block-heading {
+         display: none;
+      }
+      .block-description {
+         display: block;
+      }
+   }
+}
+@if ($block-grid-style == "absolute") {
+   .block-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex column nowrap;
+      align-items: center;
+      justify-content: space-around;
+      background-color: rgba($oil, 0);
+      width: 100%;
+      height: 100%;
+   }
+}

@@ -333,8 +333,6 @@
    $grid-gap-row: 0,
    $grid-gap-column: 0
 ) {
-   // box sizing
-   //max-width: em($global-width);
    margin: 0 auto;
    @include padding();
    // grid styles
@@ -362,3 +360,6 @@
    transition: $transition-timing-function $transition-duration
       $transition-property;
 }
+
+// Block Grids
+// - - - - - - - - - - - - - - - - - - - -

@@ -122,3 +122,8 @@ $active-b-color: #252525;
 // Icons
 // - - - - - - - - - - - - - - - - - - - -
 $fa-font-path: "../webfonts";
+
+// Block Grid
+// - - - - - - - - - - - - - - - - - - - -
+$max-grid-columns: 6;
+$block-grid-style: "hover-reveal"; // options: heading-only; hover-reveal; absolute
