@@ -73,6 +73,8 @@ ___
 ## Components to add:
 - [x] Tabs
 - [x] Accordions
+- [x] Block Grid
+- [x] Modals
 - [ ] Progress bar
 - [ ] Contact form
 - [ ] Wordpress feed
