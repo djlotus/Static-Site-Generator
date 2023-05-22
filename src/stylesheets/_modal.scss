@@ -6,61 +6,32 @@
 
 // - - - - - - - - - - - - - - - - - - - -
 
-[data-modal] {
-   position: fixed;
-   height: 100%;
-   width: 100%;
-   top: 10000px;
-   visibility: hidden;
-   left: 0;
-   background: rgba(0,0,0,0.7);
-   z-index: 9999;
-   & #modal-label {
-      @include headings();
-      font-size: em(33.184);
-      @include margin-top(0.8438);
-      line-height: 1.6876;
-   }
-   & h3 {
-      color: $color-primary;
-   }
-}
-[data-modal=show] {
-   top: 0;
-   visibility: visible;
-   & .modal {
-      background: $white;
-      color: $oil;
-      @include padding();
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: left;
-      width: 100%;
-      height: auto;
-      overflow-y: scroll;
-      & .row {
-         @include padding();
-      }
-      @include breakpoint(medium) {
-         width: auto;
-      }
-   }
-}
-[data-modal-close] {
-   background: none;
+dialog {
+   margin: auto;
    @include padding();
-   text-decoration: underline;
-   text-align: right;
-   &:focus {
-      outline: -webkit-focus-ring-color auto 5px;
+}
+
+[data-modal] {
+   &::backdrop {
+      background: rgba(0, 0, 0, 0.7);
    }
 }
+
 button[data-modal-close] {
    background: $warn;
    color: $white;
+   @include padding();
    &:hover {
       background: transparentize($warn, 0.3);
    }
+}
+//  Hide from Screen
+// - - - - - - - - - - - - - - - - - - - -
+.sr-only {
+   position: absolute;
+   left: -10000px;
+   top: auto;
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
 }
