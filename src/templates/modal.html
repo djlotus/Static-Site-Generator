@@ -3,9 +3,9 @@
 <html class="no-js" lang="en">
 
 <head>
-   ${require('_head.html')}
    <title>Static Site :: Modal</title>
    <meta name="description" content="{Your Description}" />
+   ${require('components/_head.html')}
    <!-- Social Media Tags -->
    <meta property="og:site_name" content="{Your Site Name}">
    <meta property="og:description" content="{Your Description}">
@@ -25,7 +25,7 @@
 
 <body>
 
-   ${require('_skipNav.html')}
+   ${require('components/_skipNav.html')}
 
    <!-- * To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
     *- - - - - - - - - - - - - - - - - - - - - - - - -
@@ -33,12 +33,12 @@
 
 
    <nav role="navigation" data-nav-align-top>
-      ${require('_navigation.html')}
+      ${require('components/_navigation.html')}
    </nav>
 
 
    <header role="banner">
-      ${require('_header.html')}
+      ${require('components/_header.html')}
    </header>
 
    <!-- * To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
@@ -51,47 +51,11 @@
     -->
 
    <main id="main">
-      <section>
-         <div class="row">
-            <div class="column">
-               <h1>Dialogs and Modals</h1>
-               <p>The native HTML
-                  <code>&lt;dialog&gt;</code> element should be used in creating modal dialogs as it provides usability
-                  and
-                  accessibility
-                  features that must be replicated if using other elements for a similar purpose. Use the appropriate
-                  .showModal() or
-                  .show() method to render dialogs. If creating a custom dialog implementation, ensure all expected
-                  default
-                  behaviors
-                  are supported and proper labeling recommendations are followed.
-               </p>
-            </div>
-            <div class="column col-6">
-               <button id="openModal" class="button">Open Modal</button>
-               <dialog id="modalOne" data-modal>
-                  <button id="closeModal" autofocus data-modal-close>Close</button>
-                  <h2>Hello World!</h2>
-                  <p>This a modal. Notice the <code>:backdrop</code> porperty is set to obscure the web page underneath.
-                  </p>
-               </dialog>
-            </div>
-            <div class="column col-6">
-               <button id="openDialog" class="button">Open Dialog</button>
-               <dialog id="dialogOne" data-dialog>
-                  <button id="closeDialog" autofocus data-modal-close>Close</button>
-                  <h2>Hello World!</h2>
-                  <p>This is a standard dialog. Notice how the web page underneath is not obscured.</p>
-               </dialog>
-            </div>
-
-         </div>
-
-      </section>
+      ${require('components/_modal.html')}
    </main>
 
    <footer>
-      ${require('_footer.html')}
+      ${require('components/_footer.html')}
    </footer>
 
    <!-- Scripts -->

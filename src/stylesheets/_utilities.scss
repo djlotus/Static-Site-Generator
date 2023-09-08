@@ -285,6 +285,7 @@
    }
 }
 
+// TODO :: incorporate this or delete
 // Navigation Alignment
 // - - - - - - - - - - - - - - - - - - - -
 @function nav-align($flex-align: $navigation-align) {
@@ -359,4 +360,98 @@
       $transition-property;
    transition: $transition-timing-function $transition-duration
       $transition-property;
+}
+
+// TODO :: Convert all flexbox elements to use this mixin
+// Flexbox
+// - - - - - - - - - - - - - - - - - - - -
+@mixin displayMode($displayMode) {
+   @if $displayMode == flex {
+      display: flex;
+   } @else if $displayMode == inline-flex {
+      display: inline-flex;
+   } @else {
+      /* Default value */
+      display: flex; /* Default value */
+   }
+}
+
+@mixin justifyContent($justifyContent) {
+   @if $justifyContent == flex-start {
+      justify-content: flex-start;
+   } @else if $justifyContent == flex-end {
+      justify-content: flex-end;
+   } @else if $justifyContent == center {
+      justify-content: center;
+   } @else if $justifyContent == space-between {
+      justify-content: space-between;
+   } @else if $justifyContent == space-around {
+      justify-content: space-around;
+   } @else if $justifyContent == initial {
+      justify-content: initial;
+   } @else if $justifyContent == inherit {
+      justify-content: inherit;
+   } @else {
+   }
+}
+
+@mixin alignItems($alignItems) {
+   @if $alignItems == flex-start {
+      align-items: flex-start;
+   } @else if $alignItems == flex-end {
+      align-items: flex-end;
+   } @else if $alignItems == center {
+      align-items: center;
+   } @else if $alignItems == stretch {
+      align-items: stretch;
+   } @else if $alignItems == baseline {
+      align-items: baseline;
+   } @else if $alignItems == initial {
+      align-items: initial;
+   } @else if $alignItems == inherit {
+      align-items: inherit;
+   } @else {
+   }
+}
+
+@mixin flexDirection($flexDirection) {
+   @if $flexDirection == row {
+      flex-direction: row;
+   } @else if $flexDirection == row-reverse {
+      flex-direction: row-reverse;
+   } @else if $flexDirection == column {
+      flex-direction: column;
+   } @else if $flexDirection == column-reverse {
+      flex-direction: column-reverse;
+   } @else if $flexDirection == initial {
+      flex-direction: initial;
+   } @else if $flexDirection == inherit {
+      flex-direction: inherit;
+   } @else {
+   }
+}
+
+@mixin flexWrap($flexWrap) {
+   @if $flexWrap == no-wrap {
+      flex-wrap: no-wrap;
+   } @else if $flexWrap == wrap {
+      flex-wrap: wrap;
+   } @else if $flexWrap == wrap-reverse {
+      flex-wrap: wrap-reverse;
+   } @else {
+   }
+}
+
+@mixin flexBox(
+   $displayMode: null,
+   $justifyContent: null,
+   $alignItems: null,
+   $flexDirection: null,
+   $flexWrap: null
+) {
+   @include displayMode($displayMode);
+   @include justifyContent($justifyContent);
+   @include alignItems($alignItems);
+   @include flexDirection($flexDirection);
+   @include flexWrap($flexWrap);
 }

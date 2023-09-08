@@ -2,7 +2,7 @@ if (document.querySelector("[data-tab]")) {
    // - - - - - - - - - - - - - - - - - - - -
    // Set Variables
    // - - - - - - - - - - - - - - - - - - - -
-
+   // TODO :: update to use spread operator
    const tabCollection = document.querySelectorAll("[data-tab]"), // create collection of tab elements
       panelCollection = document.querySelectorAll("[data-panel]"), // create collection of panel elements
       tabs = [], // create empty array for tabs collection

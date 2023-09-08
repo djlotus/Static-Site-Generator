@@ -60,15 +60,31 @@ button {
 
    // outlined buttons
    &.hollow {
-      background: none;
+      background: transparent;
       color: $button-bg-color-secondary;
       border: 3px solid $button-bg-color-secondary;
 
       &:hover,
       &:focus {
-         background: none;
+         background: transparent;
          color: $button-bg-color-secondary;
          opacity: 0.6;
+      }
+   }
+
+   &.icon-button {
+      span:first-of-type {
+         @include margin-right();
+      }
+   }
+
+   &.icon-only-button {
+      background: transparent;
+      @include margin(0);
+      @include padding(0.5);
+      &:hover,
+      &:focus {
+         background: inherit;
       }
    }
 

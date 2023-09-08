@@ -46,10 +46,14 @@ $color-links: $blue;
 // Typography
 // - - - - - - - - - - - - - - - - - - - -
 
+// TODO :: Test best font loading strategy
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400;1,700&family=Cherry+Swash:wght@400;700&family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Oswald:wght@300;400;600&display=swap");
+
 $font-family-headings: "Lato", sans-serif;
 $font-family-body: "Lato", sans-serif;
 $font-family-buttons: "Archivo Narrow", sans-serif;
 $font-family-navigation: "Oswald", sans-serif;
+$font-family-display: "Cherry Swash", cursive;
 
 $font-base: 19px;
 $font-scale: 1.2;
@@ -110,8 +114,8 @@ $show-logo-in-sticky-nav: "yes"; // show logo in sticky nav
 // CSS Grid
 // - - - - - - - - - - - - - - - - - - - -
 
-$grid-template-rows: 6 !default;
-$grid-template-columns: 6 !default;
+$grid-template-rows: 6;
+$grid-template-columns: 6;
 
 // Progress Tabs
 // - - - - - - - - - - - - - - - - - - - -
@@ -127,3 +131,9 @@ $fa-font-path: "../webfonts";
 // - - - - - - - - - - - - - - - - - - - -
 $max-grid-columns: 6;
 $block-grid-style: "hover-reveal"; // options: heading-only; hover-reveal; absolute
+
+// Counter
+// - - - - - - - - - - - - - - - - - - - -
+$counter-background-color: $color-primary;
+$counter-font-family: $font-family-display;
+$counter-section-height: 25vh;

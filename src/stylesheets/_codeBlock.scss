@@ -1,0 +1,50 @@
+/*! 
+*
+* Code Blocks
+*
+* */
+
+.code-block {
+   position: relative;
+   background: $silver;
+   border: 1px solid $light-grey;
+   border-radius: 0.25rem;
+   @include padding();
+   font-size: 0.85rem;
+   color: $silver;
+   [data-dialog] {
+      z-index: 9;
+   }
+   pre {
+      color: initial;
+      word-wrap: break-word;
+      white-space: pre-line;
+   }
+
+   .icon-only-button {
+      > svg,
+      svg:focus {
+         fill: $silver;
+      }
+      &:active,
+      &:focus {
+         background: transparent;
+         svg {
+            fill: $silver;
+         }
+      }
+      &:hover {
+         background: transparent;
+         svg {
+            fill: $dark-grey;
+         }
+      }
+   }
+}
+
+button.code-copy {
+   position: absolute;
+   right: 1rem;
+   top: 5rem;
+   z-index: 9;
+}

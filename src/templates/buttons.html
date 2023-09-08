@@ -3,9 +3,9 @@
 <html class="no-js" lang="en">
 
 <head>
-    ${require('_head.html')}
     <title>Static Site :: Buttons</title>
     <meta name="description" content="{Your Description}" />
+    ${require('components/_head.html')}
     <!-- Social Media Tags -->
     <meta property="og:site_name" content="{Your Site Name}">
     <meta property="og:description" content="{Your Description}">
@@ -25,7 +25,7 @@
 
 <body>
 
-    ${require('_skipNav.html')}
+    ${require('components/_skipNav.html')}
 
     <!-- * To move navigation to top of page, uncomment the nav element below and comment out the nav element below the header element [[ Update settings.scss -> $navigation-position == "sticky" ]]
     * - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -33,12 +33,12 @@
 
 
     <nav role="navigation" data-nav-align-top>
-        ${require('_navigation.html')}
+        ${require('components/_navigation.html')}
     </nav>
 
 
     <header role="banner">
-        ${require('_header.html')}
+        ${require('components/_header.html')}
     </header>
 
     <!-- * To move navigation under header, uncomment the nav element below and comment out the nav element above the header element [[ Update settings.scss -> $navigation-position == "default" ]]
@@ -51,126 +51,11 @@
     -->
 
     <main id="main">
-        <section>
-            <div class="row">
-                <div class="small-12 columns">
-                    <h1>Buttons</h1>
-                    <p>
-                        Senserit ne aliquip, aliqua familiaritatem senserit illum aliquip ex expetendis
-                        voluptatibus o nostrud te se quo fugiat malis legam ne iis fugiat magna illum
-                        appellat, illum cupidatat officia do iis velit qui sint, elit e mentitum do
-                        labore. Quis est te duis expetendis, occaecat te nescius ut e malis senserit si
-                        senserit aut fugiat. Possumus enim eram an irure, id litteris exercitation,
-                        excepteur o malis aut iudicem fugiat occaecat cernantur aut multos expetendis si
-                        sunt malis, aliqua senserit et expetendis et eram eiusmod mentitum eu id
-                        offendit ne pariatur. Eu do fugiat occaecat de quae laborum a concursionibus ab
-                        ubi officia efflorescere, esse incididunt hic singulis ne proident de lorem
-                        eiusmod, ipsum mandaremus a exquisitaque id se ipsum senserit mandaremus quo
-                        cupidatat labore singulis occaecat. De litteris sed laborum. Sint arbitror
-                        pariatur nam consequat fugiat probant laboris. Magna cupidatat nescius hic sint
-                        sed ullamco an magna si se aute cupidatat imitarentur, quid ingeniis pariatur.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <h2>Default Buttons</h2>
-                <h3>Sizes</h3>
-                <div class="small-12 medium-8 columns">
-                    <p>
-                        Lorem aliquip consectetur, laborum de magna. Aute efflorescere senserit legam
-                        doctrina sed id in philosophari se offendit quorum duis non nisi si quis eu
-                        incurreret. Nostrud tamen aut senserit instituendarum nam ex pariatur
-                        sempiternum. Eu amet exquisitaque, voluptate quid arbitror, o mentitum de
-                        appellat.
-                    </p>
-                </div>
-                <div class="small-12 medium-4 columns">
-                    <p class="panel">
-                        <a class="button tiny" href="index.html" role="button">Tiny Button</a><br />
-                        <a class="button" href="index.html" role="button">Button</a><br />
-                        <a class="button large" href="index.html" role="button">Large Button</a><br />
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <h3>Styles</h3>
-                <div class="small-12 medium-8 columns">
-                    <p>
-                        Lorem aliquip consectetur, laborum de magna. Aute efflorescere senserit legam
-                        doctrina sed id in philosophari se offendit quorum duis non nisi si quis eu
-                        incurreret. Nostrud tamen aut senserit instituendarum nam ex pariatur
-                        sempiternum. Eu amet exquisitaque, voluptate quid arbitror, o mentitum de
-                        appellat.
-                    </p>
-                </div>
-                <div class="small-12 medium-4 columns">
-                    <p class="panel">
-                        <a class="button radius" href="index.html" role="button">Radius Button</a> <br />
-                        <a class="button hollow" href="index.html" role="button">Hollow Button</a>&nbsp;&nbsp;&nbsp;
-                        <a class="button cta" href="index.html" role="button">Call-To-Action Button</a><br />
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <h3>Alternatives</h3>
-                <div class="small-12 medium-8 columns">
-                    <p>
-                        Lorem aliquip consectetur, laborum de magna. Aute efflorescere senserit legam
-                        doctrina sed id in philosophari se offendit quorum duis non nisi si quis eu
-                        incurreret. Nostrud tamen aut senserit instituendarum nam ex pariatur
-                        sempiternum. Eu amet exquisitaque, voluptate quid arbitror, o mentitum de
-                        appellat.
-                    </p>
-                </div>
-                <div class="small-12 medium-4 columns">
-                    <p class="panel">
-                        <a class="button raised" href="index.html" role="button">Raised Button</a> <br />
-                        <a class="button raised cta" href="index.html" role="button">Raised Call-To-Action
-                            Button</a>&nbsp;&nbsp;&nbsp;
-                        <a class="button raised radius" href="index.html" role="button">Raised Radius Button</a><br />
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <h3>Button Groups</h3>
-                <div class="small-12 medium-8 columns">
-                    <p>
-                        Lorem aliquip consectetur, laborum de magna. Aute efflorescere senserit legam
-                        doctrina sed id in philosophari se offendit quorum duis non nisi si quis eu
-                        incurreret. Nostrud tamen aut senserit instituendarum nam ex pariatur
-                        sempiternum. Eu amet exquisitaque, voluptate quid arbitror, o mentitum de
-                        appellat.
-                    </p>
-                </div>
-                <div class="small-12 medium-4 columns">
-                    <p class="panel">
-                        <span class="button-group">
-                            <a class="button tiny" href="index.html" role="button">Link 1</a><a class="button tiny"
-                                href="index.html" role="button">Link 2</a><a class="button tiny" href="index.html"
-                                role="button">Link 3</a>
-                        </span>
-                        <span class="button-group">
-                            <a class="button cta" href="index.html" role="button">Link 1</a><a class="button disabled"
-                                href="index.html" role="button">Link 2</a><a class="button cta" href="index.html"
-                                role="button">Link 3</a>
-                        </span>
-                        <span class="button-group rounded">
-                            <a class="button cta raised" href="index.html" role="button">Link 1</a><a
-                                class="button disabled raised" href="index.html" role="button">Link 2</a><a
-                                class="button cta raised" href="index.html" role="button">Link 3</a>
-                        </span>
-                    </p>
-                </div>
-            </div>
-
-        </section>
+        ${require('components/_buttons.html')}
     </main>
 
     <footer>
-        ${require('_footer.html')}
+        ${require('components/_footer.html')}
     </footer>
 
     <!-- Scripts -->

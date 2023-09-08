@@ -1,0 +1,59 @@
+<section>
+   <div class="row">
+      <div class="column">
+         <h1>Dialogs and Modals</h1>
+         <p>The native HTML
+            <code>&lt;dialog&gt;</code> element should be used in creating modal dialogs as it provides usability
+            and
+            accessibility
+            features that must be replicated if using other elements for a similar purpose. Use the appropriate
+            .showModal() or
+            .show() method to render dialogs. If creating a custom dialog implementation, ensure all expected
+            default
+            behaviors
+            are supported and proper labeling recommendations are followed.
+         </p>
+      </div>
+      <div class="column col-6">
+         <div data-modal-element>
+            <button id="openModal1" class="button" data-open-modal>Open Modal 1</button>
+            <dialog id="modal1" data-modal>
+               <button id="closeModal1" autofocus data-close-modal>Close</button>
+               <h2>Hello World!</h2>
+               <p>This a modal. Notice the <code>:backdrop</code> porperty is set to obscure the web page underneath.
+               </p>
+            </dialog>
+         </div>
+         <div data-modal-element>
+            <button id="openModal2" class="button" data-open-modal>Open Modal 2</button>
+            <dialog id="modal2" data-modal>
+               <button id="closeModal2" autofocus data-close-modal>Close</button>
+               <h2>Hello World!</h2>
+               <p>This a modal. Notice the <code>:backdrop</code> porperty is set to obscure the web page underneath.
+               </p>
+            </dialog>
+         </div>
+      </div>
+      <div class="column col-6">
+         <div data-dialog-element>
+            <button id="openDialog1" class="button" data-open-dialog>Open Dialog 1</button>
+            <dialog id="dialog1" data-dialog>
+               <button id="closeDialog1" data-close-dialog>Close</button>
+               <h2>Hello World!</h2>
+               <p>This is a standard dialog. Notice how the web page underneath is not obscured and the dialog is
+                  positioned at the top of it's parent element.</p>
+            </dialog>
+         </div>
+         <div data-dialog-element>
+            <button id="openDialog2" class="button" data-open-dialog>Open Dialog 2</button>
+            <dialog id="dialog2" data-dialog>
+               <button id="closeDialog2" data-close-dialog>Close</button>
+               <h2>Hello World!</h2>
+               <p>This is a standard dialog. Notice how the web page underneath is not obscured and the dialog is
+                  positioned at the top of
+                  it's parent element.</p>
+            </dialog>
+         </div>
+      </div>
+   </div>
+</section>

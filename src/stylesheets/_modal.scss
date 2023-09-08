@@ -17,21 +17,12 @@ dialog {
    }
 }
 
-button[data-modal-close] {
+button[data-close-modal],
+button[data-close-dialog] {
    background: $warn;
    color: $white;
    @include padding();
    &:hover {
       background: transparentize($warn, 0.3);
    }
-}
-//  Hide from Screen
-// - - - - - - - - - - - - - - - - - - - -
-.sr-only {
-   position: absolute;
-   left: -10000px;
-   top: auto;
-   width: 1px;
-   height: 1px;
-   overflow: hidden;
 }

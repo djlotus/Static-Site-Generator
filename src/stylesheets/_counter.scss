@@ -1,0 +1,27 @@
+/*! 
+*
+* Counter
+*
+* */
+
+$counter-background-color: $color-primary !default;
+$counter-font-family: $font-family-display !default;
+$counter-section-height: 25vh !default;
+
+#counter {
+   background-color: $counter-background-color;
+   color: $oil;
+   > .row {
+      @include flexBox(flex, space-between, center, row);
+      height: $counter-section-height;
+      overflow: hidden;
+      .counter-container {
+         @include flexBox(flex, center, center, column);
+         .counter {
+            font-family: $counter-font-family;
+            font-size: 3rem;
+            @include margin-top();
+         }
+      }
+   }
+}
