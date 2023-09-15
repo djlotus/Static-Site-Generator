@@ -76,7 +76,6 @@ ___
 - [x] Block Grid
 - [x] Modals
 - [X] Number Counter
-- [ ] Progress bar
 - [ ] Contact form
 - [ ] Wordpress feed
 - [ ] Testimonials
