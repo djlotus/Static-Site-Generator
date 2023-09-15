@@ -81,3 +81,5 @@ ___
 - [ ] Wordpress feed
 - [ ] Testimonials
 - [ ] Profiles
+- [ ] Full width CTA
+- [ ] Heading styles
